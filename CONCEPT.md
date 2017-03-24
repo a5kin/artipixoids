@@ -7,7 +7,7 @@
 
 ## Main goals
 
-1. **Artistic**
+#### 1. Artistic
 
 1.1. We are going to generate the beautiful objects of abstract digital arts, even at the cost of computational resources. 
 
@@ -23,7 +23,7 @@
 
 1.5 Yet, if at least one person found them beautiful, we let them live.
 
-2. **Scientific**
+#### 2. Scientific
 
 2.1. We are going to make experiments to test the hypothesis that a life can self-organize in artificial (digital) environment from a completely random initial state.
 
@@ -35,29 +35,43 @@
 
 2.2.3. *Reproductivity*: a lifeform should be able to replicate, creating new individuals with small enough differences to consider them inexact copy.
 
-2.2.4. *Diversity*: there should be enough different lifeforms to put them in groups called 'species'. Or even further, in 'families', 'orders', 'classes', etc.
+2.2.4. *Novelty*: new lifeforms should arise out of the old ones, and they should act more effectively than the old ones. 
 
-2.2.5. *Symbiosis*: different species should learn to live in symbiosis and help each other to survive and improve.
+2.2.5. *Diversity*: there should be enough different lifeforms to put them in groups called 'species'.
 
-2.2.6. *Evolution*: new species should arise out of the old ones, and they should act more effectively than the old ones. 
+2.2.6. *Complementarity*: different species should learn to live in symbiosis and help each other to survive and improve, forming stable ecosystems.
 
-2.2.7. *Adaptability*: lifeforms should learn to evolve in a way they are constantly adapting to aggressive environmental changes.
+2.2.7. *Adaptability*: species should learn to evolve in a way they are constantly adapting to aggressive environmental changes.
 
 2.3. The properties of artificial environment, as we see it, are following.
 
-- (TODO)
+2.3.1. Discrete. [TODO]
 
-3. **Divine**
+2.3.2. Deterministic. [TODO]
 
-- (TODO)
+2.3.3. Local updates. [TODO]
 
-4. **Social**
+2.3.4. Energy conservation. [TODO]
 
-- (TODO)
+2.3.5. Genetic quanta. [TODO]
 
-5. **Other**
+2.3.6. Magnetism / gravitation. [TODO]
 
-- (TODO)
+2.3.7. Heterogeneous / PRNG. [TODO]
+
+2.3.8. Quantum mutations. [TODO]
+
+#### 3. Divine
+
+(TODO)
+
+#### 4. Social
+
+(TODO)
+
+#### 5. Other
+
+(TODO)
 
 
 ## Basic Rules
