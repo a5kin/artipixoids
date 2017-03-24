@@ -25,6 +25,20 @@
 
 2. **Scientific**
 
+2.1. We are going to make experiments to test the hypothesis that a life can self-organize in artificial (digital) environment from a completely random initial state.
+
+2.2. The properties of life, as we see it, are following.
+
+2.2.1. Integrity: every lifeform should be distinct from its environment, and should preserve its individuality during the lifespan.
+2.2.2. Sustainability: a lifeform should be able to self-repair in case of damage, and to maintain the physical manifestation (body) for a long enough period of time.
+2.2.3. Reproductivity: a lifeform should be able to replicate, creating new individuals with small enough differences to consider them inexact copy.
+2.2.4. Diversity: there should be enough different lifeforms to put them in groups called 'species'. Or even further, in 'families', 'orders', 'classes', etc.
+2.2.5. Symbiosis: different species should learn to live in symbiosis and help each other to survive and improve.
+2.2.6. Evolution: new species should arise out of the old ones, and they should act more effectively than the old ones. 
+2.2.7. Adaptability: lifeforms should learn to evolve in a way they are constantly adapting to aggressive environmental changes.
+
+2.3. The properties of artificial environment, as we see it, are following.
+
 - (TODO)
 
 3. **Divine**
