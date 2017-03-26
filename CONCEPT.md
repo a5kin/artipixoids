@@ -25,7 +25,7 @@
 
 #### 2. Scientific
 
-2.1. We are going to make experiments to test the hypothesis that a life can self-organize in artificial (digital) environment from a completely random initial state.
+2.1. We are going to make experiments to test the hypothesis that a life can self-organize in artificial (digital) environment from a random initial state.
 
 2.2. The *properties of life*, as we see it, are following.
 
@@ -45,7 +45,7 @@
 
 2.3. The *properties of artificial environment*, as we see it, are following.
 
-2.3.1. *Discreteness*: the space and time of our environment should be discrete. So, space should consist of indivisible quanta, and their updates should occur in separate timesteps synchronously. In addition, any property of spatial quanta should take integer values only. This requirements will allow us to run the simulation of our environment on modern digital computational systems.
+2.3.1. *Discreteness*: the space and time of our environment should be discrete. So, space should consist of indivisible quanta, and their updates should occur in separate timesteps synchronously. In addition, any parameter of spatial quanta should take integer values only. This requirements will allow us to run the simulation of our environment on modern digital computational systems.
 
 2.3.2. *Determinancy*: a global state of the environment at the timestep ``N`` should lead to one and only one global state at the timestep ``N + 1``. This will give us ensurance of the exactly same outcome, every time we run a particular experiment with the same initial state.
 
@@ -57,11 +57,19 @@
 
 2.3.6. *Polymorhism*: each quantum should have a microprogram, influencing its local update rules to some degree. A microprogram in return could also be changed according to update rules. This will allow us to add genetic informational component to the quantum level. We believe, this component is the key for the emergence of self-organized matter effects at the higher (macro) levels.
 
-2.3.7. *Heterogeneity*: optionally, some pseudorandom component would influence local updates too. For that, each quanta should have its own PRNG with long enough period. This will allow energy to spread in complex chaotic patterns, rather than in direct lines.
+2.3.7. *Heterogeneity*: optionally, some pseudorandom component would influence local updates too. For that, each quanta should have its own PRNG with long enough period. This will allow energy to spread in chaotic clouds, rather than in direct lines.
 
-2.3.8. *Mutability*: optionally, a quantum's microprogram would randomly mutate over time. This will result in wider genetic search for better microprograms, and also may prevent the whole environment from being conquested with a single genome.
+2.3.8. *Mutability*: optionally, a quantum's microprogram would randomly mutate over time. This will result in wider genetic search for better microprograms, and also may prevent the whole environment from being conquested by a single genome.
 
 2.3.9. *Magnetism*: optionally, quanta would have the tendency to 'attract' each other with some sort of force (gravitational, electromagnetic, or any other). We believe, magnetism is another key aspect behind the phenomenon of life as we know it.
+
+2.4. Random initial state of the space could be designed using following known patterns.
+
+2.4.1. *'Primordial Soup'*: each and every quantum initially has an equally small amount of energy, other parameters are random. This is a good test for the ability of energy to self-organize.
+
+2.4.2. *'Big Bang'*: a small area of space is initialized with a very high amount of energy and random parameters per each quantum. Outside the area, quanta has either zero or minimum possible amount of energy. This is a good test for the ability of energy to spread in empty space.
+
+2.4.3. *'Super Cluster'*: same as Big Bang, but several areas with a bit lower energies are randomly initialized. The positions of areas are random across the space. This is a good test for gravitational effects, and also for collisions of different energy beams, produced in micro-bangs.
 
 #### 3. Divine
 
