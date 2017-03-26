@@ -47,21 +47,21 @@
 
 2.3.1. *Discreteness*: the space and time of our environment should be discrete. So, space should consist of indivisible quanta, and their updates should occur in separate timesteps synchronously. In addition, any property of spatial quanta should take integer values only. This requirements will allow us to run the simulation of our environment on modern digital computational systems.
 
-2.3.2. *Determinancy*: a global state of the environment at the timestep N should lead to one and only one global state at the timestep N + 1. This will give us ensurance of the exactly same outcome given the same initial state for a particular experiment.
+2.3.2. *Determinancy*: a global state of the environment at the timestep ``N`` should lead to one and only one global state at the timestep ``N + 1``. This will give us ensurance of the exactly same outcome, every time we run a particular experiment with the same initial state.
 
-2.3.3. *Locality*: each quantum should have the same number and the same topology of its neighbors, and quantum's state should be updated using nothing more than the states of its neighbors. This will allow us to exploit the massively parallel computations, thus greatly speeding up the simulation.
+2.3.3. *Locality*: each quantum should have the same number and the same topology of its neighbors, and quantum's state should be updated using nothing more than the states of its neighbors and its own state. This will allow us to exploit the massively parallel computations, thus greatly speeding up the simulation.
 
-2.3.4. *Insularity*: each quantum should have an energy level, and sum of all quanta's energy levels should be a constant value. Energy conservation will make us sure, that none of our experiments will lead neither to the extinction nor to the explosion of 'matter'.
+2.3.4. *Isolation*: the environment as a whole should behave like an isolated thermodynamic system. So, each quantum should have an energy level, and sum of all quanta's energy levels should be a constant value. Energy conservation will make us sure, that none of our experiments will lead neither to the extinction nor to the explosion of 'matter'.
 
-2.3.5. *Isotropy*: all possible reflections of quantum's neighborhood at the timestep N should lead to the same quantum's state at timestep N + 1. This will allow energy to spread in all possible directions uniformly. 
+2.3.5. *Isotropy*: all possible reflections of quantum's neighborhood at the timestep ``N`` should lead to the same new quantum's state at timestep ``N + 1``. This will allow energy to spread in all possible directions uniformly. 
 
-2.3.6. *Polymorhism*. [TODO]
+2.3.6. *Polymorhism*: each quantum should have a microprogram, influencing its local update rules to some degree. A microprogram in return could also be changed according to update rules. This will allow us to add genetic informational component to the quantum level. We believe, this component is the key for the emergence of self-organized matter effects at the higher (macro) levels.
 
-2.3.7. *Heterogeneity*. [TODO]
+2.3.7. *Heterogeneity*: optionally, some pseudorandom component would influence local updates too. For that, each quanta should have its own PRNG with long enough period. This will allow energy to spread in complex chaotic patterns, rather than in direct lines.
 
-2.3.8. *Mutability*. [TODO]
+2.3.8. *Mutability*: optionally, a quantum's microprogram would randomly mutate over time. This will result in wider genetic search for better microprograms, and also may prevent the whole environment from being conquested with a single genome.
 
-2.3.9. *Magnetism*. [TODO]
+2.3.9. *Magnetism*: optionally, quanta would have the tendency to 'attract' each other with some sort of force (gravitational, electromagnetic, or any other). We believe, magnetism is another key aspect behind the phenomenon of life as we know it.
 
 #### 3. Divine
 
