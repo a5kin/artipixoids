@@ -11,7 +11,7 @@
 
 1.1. We are going to generate the beautiful objects of abstract digital arts, even at the cost of computational resources. 
 
-1.2. The objects of arts are: static images, videos, sound, 3D models, etc.
+1.2. The objects of arts are: static images, videos, sounds, 3D models, etc.
 
 1.3. We will consider the object as Artipixoid if and only if:
 
@@ -27,9 +27,9 @@
 
 2.1. We are going to make experiments to test the hypothesis that a life can self-organize in artificial (digital) environment from a completely random initial state.
 
-2.2. The properties of life, as we see it, are following.
+2.2. The *properties of life*, as we see it, are following.
 
-2.2.1. *Integrity*: every lifeform should be distinct from its environment, and should preserve its individuality during the lifespan.
+2.2.1. *Integrity*: every lifeform should be distinct from its local environment, and should preserve its individuality during the lifespan.
 
 2.2.2. *Sustainability*: a lifeform should be able to self-repair in case of damage, and to maintain the physical manifestation (body) for a long enough period of time.
 
@@ -43,23 +43,25 @@
 
 2.2.7. *Adaptability*: species should learn to evolve in a way they are constantly adapting to aggressive environmental changes.
 
-2.3. The properties of artificial environment, as we see it, are following.
+2.3. The *properties of artificial environment*, as we see it, are following.
 
-2.3.1. Discrete. [TODO]
+2.3.1. *Discreteness*: the space and time of our environment should be discrete. So, space should consist of indivisible quanta, and their updates should occur in separate timesteps synchronously. In addition, any property of spatial quanta should take integer values only. This requirements will allow us to run the simulation of our environment on modern digital computational systems.
 
-2.3.2. Deterministic. [TODO]
+2.3.2. *Determinancy*: a global state of the environment at the timestep N should lead to one and only one global state at the timestep N + 1. This will give us ensurance of the exactly same outcome given the same initial state for a particular experiment.
 
-2.3.3. Local updates. [TODO]
+2.3.3. *Locality*: each quantum should have the same number and the same topology of its neighbors, and quantum's state should be updated using nothing more than the states of its neighbors. This will allow us to exploit the massively parallel computations, thus greatly speeding up the simulation.
 
-2.3.4. Energy conservation. [TODO]
+2.3.4. *Insularity*: each quantum should have an energy level, and sum of all quanta's energy levels should be a constant value. Energy conservation will make us sure, that none of our experiments will lead neither to the extinction nor to the explosion of 'matter'.
 
-2.3.5. Genetic quanta. [TODO]
+2.3.5. *Isotropy*: all possible reflections of quantum's neighborhood at the timestep N should lead to the same quantum's state at timestep N + 1. This will allow energy to spread in all possible directions uniformly. 
 
-2.3.6. Magnetism / gravitation. [TODO]
+2.3.6. *Polymorhism*. [TODO]
 
-2.3.7. Heterogeneous / PRNG. [TODO]
+2.3.7. *Heterogeneity*. [TODO]
 
-2.3.8. Quantum mutations. [TODO]
+2.3.8. *Mutability*. [TODO]
+
+2.3.9. *Magnetism*. [TODO]
 
 #### 3. Divine
 
