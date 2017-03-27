@@ -27,7 +27,7 @@
 
 2.1. We are going to make experiments to test the hypothesis that a life can self-organize in artificial (digital) environment from a random initial state.
 
-2.2. The *properties of life*, as we see it, are following.
+2.2. __*The properties of life*__, as we see it, are following.
 
 2.2.1. *Integrity*: every lifeform should be distinct from its local environment, and should preserve its individuality during the lifespan.
 
@@ -43,7 +43,7 @@
 
 2.2.7. *Adaptability*: species should learn to evolve in a way they are constantly adapting to aggressive environmental changes.
 
-2.3. The *properties of artificial environment*, as we see it, are following.
+2.3. __*The properties of artificial environment*__, as we see it, are following.
 
 2.3.1. *Discreteness*: the space and time of our environment should be discrete. So, space should consist of indivisible quanta, and their updates should occur in separate timesteps synchronously. In addition, any parameter of spatial quanta should take integer values only. This requirements will allow us to run the simulation of our environment on modern digital computational systems.
 
@@ -63,13 +63,21 @@
 
 2.3.9. *Magnetism*: optionally, quanta would have the tendency to 'attract' each other with some sort of force (gravitational, electromagnetic, or any other). We believe, magnetism is another key aspect behind the phenomenon of life as we know it.
 
-2.4. Random initial state of the space could be designed using following known patterns.
+2.4. __*Random initial state*__ could be obtained using following known patterns.
 
-2.4.1. *'Primordial Soup'*: each and every quantum initially has an equally small amount of energy, other parameters are random. This is a good test for the ability of energy to self-organize.
+2.4.1. *'Primordial Soup'*: each and every quantum initially has an equally small amount of energy, other parameters are random. This is a good test for the ability of energy to self-organize in clusters from the completely uniform distribution. The bigger clusters are, the better. Fractal clusters are even better.
 
-2.4.2. *'Big Bang'*: a small area of space is initialized with a very high amount of energy and random parameters per each quantum. Outside the area, quanta has either zero or minimum possible amount of energy. This is a good test for the ability of energy to spread in empty space.
+2.4.2. *'Big Bang'*: a small area of space is initialized with a high amount of energy and random parameters per each quantum. Outside the area, quanta has either zero or minimum possible amount of energy. This is a good test for the ability of energy to spread in empty space. We could also detect the fastest types of energy using this pattern. 
 
 2.4.3. *'Super Cluster'*: same as Big Bang, but several areas with a bit lower energies are randomly initialized. The positions of areas are random across the space. This is a good test for gravitational effects, and also for collisions of different energy beams, produced in micro-bangs.
+
+2.5. To obtain better results, we reserve the rights to intervene the natural process of evolution. This will ruin the idea of self-emergence, but still may prove the possibility of artificial life in our environment. The presumable methods of intervention are following.
+
+2.5.1. *Genetic Selection*. [TODO]
+
+2.5.2. *Direct mutation*. [TODO]
+
+2.5.3. *Pre-designed components*. [TODO]
 
 #### 3. Divine
 
