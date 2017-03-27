@@ -81,7 +81,17 @@
 
 ### 3. Divine
 
-(TODO)
+3.1. We, as young goddesses and gods, are willing to create worlds with one click of our fingers. Actually, it doesn't have to be a click, a tap of one finger is even better.
+
+3.2. After the tap, we are willing to say the Word, which contains the essence of the future world.
+
+3.3. Then, the world should begin to bloom, and it should be the same every time we said the same Word.
+
+3.4. Some of us will just meditate on the beauty of their worlds, wandering around and changing the views.
+
+3.5. Others will actively play demiurges using that wizardry from 2.5, or even more powerful stuff.
+
+3.6. And some will get bored and destroy the creation with a single tap of the finger. Thus, letting them live in some parallel universe, free of divine will and happy.
 
 ### 4. Social
 
