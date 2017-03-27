@@ -7,7 +7,7 @@
 
 ## Main goals
 
-#### 1. Artistic
+### 1. Artistic
 
 1.1. We are going to generate the beautiful objects of abstract digital arts, even at the cost of computational resources. 
 
@@ -23,7 +23,7 @@
 
 1.5 Yet, if at least one person found them beautiful, we let them live.
 
-#### 2. Scientific
+### 2. Scientific
 
 2.1. We are going to make experiments to test the hypothesis that a life can self-organize in artificial (digital) environment from a random initial state.
 
@@ -71,23 +71,23 @@
 
 2.4.3. *'Super Cluster'*: same as Big Bang, but several areas with a bit lower energies are randomly initialized. The positions of areas are random across the space. This is a good test for gravitational effects, and also for collisions of different energy beams, produced in micro-bangs.
 
-2.5. To obtain better results, we reserve the rights to intervene the natural process of evolution. This will ruin the idea of self-emergence, but still may prove the possibility of artificial life in our environment. The presumable methods of intervention are following.
+2.5. To obtain the better results, we reserve the rights to intervene the natural process of evolution. This will ruin the idea of self-emergence, but still may prove the possibility of artificial life in our environment. __*The presumable methods of intervention*__ are following.
 
-2.5.1. *Genetic Selection*. [TODO]
+2.5.1. *Genetic selection*: during the simulation, we are cutting out the most interesting and promising areas of space, then combine them all in a single initial state and repeat the process recursively while novel phenomena of interest are showing up.
 
-2.5.2. *Direct mutation*. [TODO]
+2.5.2. *Directed mutation* (a.k.a. 'Hand of Fate): during the simulation, we are occasionaly pointing our finger to a small area of interest, and all quanta in this area are randomly changing parameters, excluding energy level. Then, evolution continues. 
 
-2.5.3. *Pre-designed components*. [TODO]
+2.5.3. *Pre-designed components*: we are designing patterns of matter manually quantum by quantum, then using them either as a parts of more complex designs or to impact on 'raw' matter in some way.
 
-#### 3. Divine
-
-(TODO)
-
-#### 4. Social
+### 3. Divine
 
 (TODO)
 
-#### 5. Other
+### 4. Social
+
+(TODO)
+
+### 5. Other
 
 (TODO)
 
