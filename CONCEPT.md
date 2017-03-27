@@ -73,9 +73,9 @@
 
 2.5. To obtain the better results, we reserve the rights to intervene the natural process of evolution. This will ruin the idea of self-emergence, but still may prove the possibility of artificial life in our environment. __*The presumable methods of intervention*__ are following.
 
-2.5.1. *Genetic selection*: during the simulation, we are cutting out the most interesting and promising areas of space, then combine them all in a single initial state and repeat the process recursively while novel phenomena of interest are showing up.
+2.5.1. *Genetic selection*: during the simulation, we are collecting the most interesting and promising areas of space, then combine them all in a single initial state and repeat the process recursively while novel phenomena of interest are showing up.
 
-2.5.2. *Directed mutation* (a.k.a. 'Hand of Fate): during the simulation, we are occasionaly pointing our finger to a small area of interest, and all quanta in this area are randomly changing parameters, excluding energy level. Then, evolution continues. 
+2.5.2. *Directed mutation* (a.k.a. 'Hand of Fate'): during the simulation, we are occasionaly pointing our finger to a small area of interest, and all quanta in this area are randomly changing parameters, excluding energy level. Then, evolution continues. 
 
 2.5.3. *Pre-designed components*: we are designing patterns of matter manually quantum by quantum, then using them either as a parts of more complex designs or to impact on 'raw' matter in some way.
 
@@ -91,15 +91,23 @@
 
 3.5. Others will actively play demiurges using that wizardry from 2.5, or even more powerful stuff.
 
-3.6. And some will get bored and destroy the creation with a single tap of the finger. Thus, letting them live in some parallel universe, free of divine will and happy.
+3.6. And some will get bored and destroy the creation with a single tap of the finger. Thus, letting its habitants live in some parallel universe, free of divine will and happy.
 
 ### 4. Social
 
-(TODO)
+4.1. We are going to build the community over those who interested in any of previously mentioned ideas.
+
+4.2. For that, we need a framework, implementing basic CA engine described below, along with a set of modular tools to easily build engine modifications.
+
+4.3. Then, we will be able to exchange new modifications in a form of compact modules.
+
+4.4. We will also be able to exchange new modular tools and extend our framework with them for future re-using.
+
+4.5. Finally, for each modification, we will be able to make a collection of the experiment files with initial state and hyperparameters included, and run them in uniform interactive environment.
 
 ### 5. Other
 
-(TODO)
+Nothing there yet. This section is reserved just to fit the law of fives.
 
 
 ## Basic Rules
