@@ -112,7 +112,9 @@ Nothing there yet. This section is reserved just to fit the law of fives.
 
 ## Basic Rules
 
-There is a special subclass of cellular automata that allows us to implement all the properties described in section 2.3. We call it Buffered Cellular Automata. If in regular CA a partucular cell has a state S, in Buffered CA it has a main state S0 and N 'buffered' states S1, ..., SN, where N is the number of cell's neighbours.
+There is a special subclass of cellular automata that allows us to implement all the properties described in section 2.3. We call it Buffered State Cellular Automata. 
+
+Instead of a single state ``S`` (as in regular CA), in BSCA each cell has a main state ``S<sub>0</sub>`` and ``N`` 'buffered' states ``S<sub>1</sub>, ..., S<sub>N</sub>``, where ``N`` is the number of cell's neighbours.
 
 (TODO)
 
