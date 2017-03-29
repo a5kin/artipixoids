@@ -114,12 +114,25 @@ Nothing there yet. This section is reserved just to fit the law of fives.
 
 There is a special subclass of cellular automata that allows us to implement all the properties described in section 2.3. We call it Buffered State Cellular Automata.
 
-![Single cell states in 2D BSCA with Von Neumann neighborhood.](img/bsca_cell.png "Single cell states in 2D BSCA with Von Neumann neighborhood.")
-##### Single cell states in 2D BSCA with Von Neumann neighborhood.
+![Single cell states in BSCA.](img/bsca_cell.png "Single cell states in BSCA.")
+**Single cell's states in BSCA.**
 
-Instead of a single state *S* (as in regular CA), in BSCA each cell has a main state *S<sub>0</sub>* and *N* 'buffered' states *S<sub>1</sub>, ..., S<sub>N</sub>*, where *N*` is the number of cell's neighbours.
+Instead of a single state *S* (as in regular CA), each cell in BSCA has a main state *S<sub>0</sub>* and 'buffered' states *S<sub>1</sub>, ..., S<sub>N</sub>*, where *N*` is the number of cell's neighbours. 
+
+The update is going in 2 phases: emit and absorb.
+
+![Emit Phase in BSCA.](img/bsca_emit.png "Emit Phase in BSCA.")
+**Emit Phase**
 
 (TODO)
+
+![Absorb Phase in BSCA.](img/bsca_absorb.png "Absorb Phase in BSCA.")
+**Absorb Phase**
+
+(TODO)
+
+
+
 
 
 
