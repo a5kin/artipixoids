@@ -120,7 +120,7 @@ As in any CA, grid in BSCA is *D*-dimensional lattice of cells, each having a fi
 
 *(x<sub>0</sub>, ..., x<sub>D - 1</sub>) = &chi;(i), &emsp; i &isin; [0, M - 1]*, &emsp;&emsp; (1)
 
-where *&chi;* is lattice topology function. The index of *j*-th neighbor could be obtained as: 
+where *&chi;* is lattice topology function. The index of cell's *j*-th neighbor could be obtained as: 
 
 *I = &nu;(i, j), &emsp; i &isin; [0, M - 1], &emsp; j &isin; [1, N]*, &emsp;&emsp; (2)
 
@@ -128,7 +128,7 @@ where *&nu;* is neighborhood topology function. Thus, we will assume the whole g
 
 *d(&chi;(0), &chi;(&nu;(0, j))) = d(&chi;(1), &chi;(&nu;(0, j))) = ... = d(&chi;(M - 1), &chi;(&nu;(0, j))), &emsp; j = 1, ..., N*,  &emsp;&emsp; (3)
 
-where *d* is D-dimensional Euclidean distance function.
+where *d* is D-dimensional Euclidean distance function. So, the distance between the position of cell and the position of its *j*-th neighbor should be a constant value for each cell in a grid.
 
 #### Border Effects
 
