@@ -116,22 +116,25 @@ There is a special subclass of cellular automata that allows us to implement all
 
 #### Grid and neighborhood topologies
 
-As in any CA, grid in BSCA is *D*-dimensional lattice of cells, each having a fixed number of neighbors *N*, *D &isin; [1, &infin;)*, *N &isin; [1, &infin;)*. The automaton also has an array *C* of *M* cells, *M &isin; [1, &infin;)*. Then, cartesian coordinates of the cell with index *i* could be obtained as 
+As in any CA, grid in BSCA is *D*-dimensional lattice of cells, each having a fixed number of neighbors *N*. The cells are stored in an array *C* of size *M*. *D, N, M &isin; [1, &infin;)*. Then, cartesian coordinates of the cell with index *i* could be obtained as 
 
-*(x<sub>0</sub>, ..., x<sub>D - 1</sub>) = &chi;(i), i &isin; [0, M - 1]*
+*(x<sub>0</sub>, ..., x<sub>D - 1</sub>) = &chi;(i), &emsp; i &isin; [0, M - 1]*, &emsp;&emsp; (1)
 
 where *&chi;* is lattice topology function. The index of *j*-th neighbor could be obtained as: 
 
-*i = &nu;(j), j &isin; [1, N],*
+*I = &nu;(i, j), &emsp; i &isin; [0, M - 1], &emsp; j &isin; [1, N]*, &emsp;&emsp; (2)
 
-where *&nu;* is neighborhood topology function. Thus, we will assume the whole grid topology is valid if and only if the following equation holds:
+where *&nu;* is neighborhood topology function. Thus, we will assume the whole grid topology is valid if and only if the following equation holds for each value of *j*:
 
-*d(&chi;(0), &chi;(&nu;(j))) = d(&chi;(1), &chi;(&nu;(j))) = ... = d(&chi;(M - 1), &chi;(&nu;(j))),*
+*d(&chi;(0), &chi;(&nu;(0, j))) = d(&chi;(1), &chi;(&nu;(0, j))) = ... = d(&chi;(M - 1), &chi;(&nu;(0, j))), &emsp; j = 1, ..., N*,  &emsp;&emsp; (3)
 
 where *d* is D-dimensional Euclidean distance function.
 
+#### Border Effects
 
-#### Single cell design in BSCA
+(TODO)
+
+#### Single cell design
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
 
 Instead of a single state *S* (as in regular CA), each cell in BSCA has a main state *S<sub>0</sub>* and 'buffered' states *S<sub>1</sub>, ..., S<sub>N</sub>*, where *N*` is the number of cell's neighbours. 
