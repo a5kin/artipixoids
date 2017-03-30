@@ -112,22 +112,30 @@ Nothing there yet. This section is reserved just to fit the law of fives.
 
 ## Basic Rules
 
-There is a special subclass of cellular automata that allows us to implement all the properties described in section 2.3. We call it Buffered State Cellular Automata.
+There is a special subclass of cellular automata that allows us to implement all the properties described in section 2.3. We call it *Buffered State Cellular Automata* (BSCA).
 
-![Single cell states in BSCA.](img/bsca_cell.png "Single cell states in BSCA.")  
-**Single cell's states in BSCA.**
+#### Grid and neighborhood
+
+As in any CA, grid in BSCA is finite-dimensional lattice of cells, each having a fixed topology of its neighbors. Let the number of dimensions is *D &isin; [1, &infin;)*, and the number of neighbors is *N &isin; [1, &infin;)*. The automaton has a finite array of cells *C*. Then, cartesian coordinates of the cell with index *i*, could be obtained with function &chi;: 
+
+(x<sub>0</sub>, ..., x<sub>D - 1</sub>) = &chi;(i) (1)
+
+
+
+#### Single cell design in BSCA
+![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
 
 Instead of a single state *S* (as in regular CA), each cell in BSCA has a main state *S<sub>0</sub>* and 'buffered' states *S<sub>1</sub>, ..., S<sub>N</sub>*, where *N*` is the number of cell's neighbours. 
 
 The update is going in 2 phases: emit and absorb.
 
+### Emit Phase
 ![Emit Phase in BSCA.](img/bsca_emit.png "Emit Phase in BSCA.")  
-**Emit Phase**
 
 (TODO)
 
+### Absorb Phase
 ![Absorb Phase in BSCA.](img/bsca_absorb.png "Absorb Phase in BSCA.")  
-**Absorb Phase**
 
 (TODO)
 
