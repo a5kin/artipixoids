@@ -122,7 +122,7 @@ As in any CA, grid in BSCA is *D*-dimensional lattice of cells, each having a fi
 
 where *&chi;* is lattice topology function. The index of *j*-th neighbor could be obtained as: 
 
-*i = &nu;(j), j &isin; [1, N], *
+*i = &nu;(j), j &isin; [1, N],*
 
 where *&nu;* is neighborhood topology function. Thus, we will assume the whole grid topology is valid if and only if the following equation holds:
 
