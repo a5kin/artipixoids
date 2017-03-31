@@ -134,14 +134,14 @@ where *d* is D-dimensional Euclidean distance function. So, the distance between
 
 Let *L* be a set of all cells coordinates *L = {&chi;(i)}, i = 0 .. M - 1*, then we could obtain *j*-th neighbour of a cell with index *i* as:
 
-&eta;(i, j) = C<sub>I</sub>, I = &chi;<sup>-1</sup>(&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &isin; L, &emsp;&emsp; (4)
-&eta;(i, j) = &beta((&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &notin; L,
+*&eta;(i, j) = C<sub>I</sub>, I = &chi;<sup>-1</sup>(&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &isin; L,*  
+*&eta;(i, j) = &beta;((&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &notin; L,* &emsp;&emsp; (4)
 
-where &eta; is a wrapper over a border function &beta;, &chi;<sup>-1</sup> is a reverse lattice topology function:
+where &eta; is a wrapper over a border function &beta;, and &chi;<sup>-1</sup> is a reverse lattice topology function:
 
 &chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (5)
 
-Border function &beta; could take a variety of forms. It could just be a constant pre-defined state of the cell (static borders). Or wrap borders to higher dimensional manifold topology, like torus, MÅˆebius strip or Klein bottle. Or even yield a random state each time. Be warned though, any topology that breaks the lattice homogeneity (see Eq. 3), as well as constant and generated values, will break an energy conservation also, as will be described below.
+Border function &beta; could take a variety of forms. It could just be a constant pre-defined state of the cell (static borders). Or wrap borders to higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time. Be warned though, any topology that breaks the lattice homogeneity (see Eq. 3), as well as constant and generated values, will break an energy conservation also, as will be described below.
 
 #### Single cell design
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
