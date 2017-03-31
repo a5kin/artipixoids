@@ -134,8 +134,8 @@ where *d* is D-dimensional Euclidean distance function. So, the distance between
 
 Let *L* be a set of all cells coordinates *L = {&chi;(i)}, i = 0 .. M - 1*, then we could obtain *j*-th neighbour of a cell with index *i* as:
 
-*&eta;(i, j) = C<sub>I</sub>, I = &chi;<sup>-1</sup>(&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &isin; L,*  
-*&eta;(i, j) = &beta;((&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &notin; L,* &emsp;&emsp; (4)
+*&eta;(i, j) = C<sub>I</sub>, &emsp; I = &chi;<sup>-1</sup>(&nu;(&chi;(i), j)), &emsp; &nu;(&chi;(i), j) &isin; L,*  
+*&eta;(i, j) = &beta;((&nu;(&chi;(i), j)), &emsp; &nu;(&chi;(i), j) &notin; L,* &emsp;&emsp; (4)
 
 where &eta; is a wrapper over a border function &beta;, and &chi;<sup>-1</sup> is a reverse lattice topology function:
 
