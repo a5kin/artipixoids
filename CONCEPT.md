@@ -57,7 +57,7 @@
 
 2.3.6. *Polymorhism*: each quantum should have a microprogram, influencing its local update rules to some degree. A microprogram in return could also be changed according to update rules. This will allow us to add genetic informational component to the quantum level. We believe, this component is the key for the emergence of self-organized matter effects at the higher (macro) levels.
 
-2.3.7. *Heterogeneity*: optionally, some pseudorandom component would influence local updates too. For that, each quanta should have its own PRNG with long enough period. This will allow energy to spread in chaotic clouds, rather than in direct lines.
+2.3.7. *Stochasticity*: optionally, some pseudorandom component would influence local updates too. For that, each quanta should have its own PRNG with long enough period. This will allow energy to spread in chaotic clouds, rather than in direct lines.
 
 2.3.8. *Mutability*: optionally, a quantum's microprogram would randomly mutate over time. This will result in wider genetic search for better microprograms, and also may prevent the whole environment from being conquested by a single genome.
 
@@ -116,23 +116,32 @@ There is a special subclass of cellular automata that allows us to implement all
 
 #### Grid and neighborhood topologies
 
-As in any CA, grid in BSCA is *D*-dimensional lattice of cells, each having a fixed number of neighbors *N*. The cells are stored in an array *C* of size *M*. *D, N, M &isin; [1, &infin;)*. Then, cartesian coordinates of the cell with index *i* could be obtained as 
+As in any CA, grid in BSCA is *D*-dimensional lattice of cells, each having a fixed number of neighbors *N*. The cells are stored in an array *C = &lang;c<sub>0</sub>, ..., c<sub>M - 1</sub>&rang;*. *(D, N, M) &isin; [1 .. &infin;)*. Then, cartesian coordinates of the cell with index *i* could be obtained as 
 
-*(x<sub>0</sub>, ..., x<sub>D - 1</sub>) = &chi;(i), &emsp; i &isin; [0, M - 1]*, &emsp;&emsp; (1)
+*[x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &chi;(i), &emsp; i &isin; [0 .. M)*, &emsp;&emsp; (1)
 
-where *&chi;* is lattice topology function. The index of cell's *j*-th neighbor could be obtained as: 
+where *&chi;* is lattice topology function. The cartesian coordinates of cell's *j*-th neighbor could be obtained as: 
 
-*I = &nu;(i, j), &emsp; i &isin; [0, M - 1], &emsp; j &isin; [1, N]*, &emsp;&emsp; (2)
+*[x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &nu;(&chi;(i), j), &emsp; i &isin; [0 .. M), &emsp; j &isin; [1 .. N]*, &emsp;&emsp; (2)
 
 where *&nu;* is neighborhood topology function. Thus, we will assume the whole grid topology is valid if and only if the following equation holds for each value of *j*:
 
-*d(&chi;(0), &chi;(&nu;(0, j))) = d(&chi;(1), &chi;(&nu;(0, j))) = ... = d(&chi;(M - 1), &chi;(&nu;(0, j))), &emsp; j = 1, ..., N*,  &emsp;&emsp; (3)
+*d(&chi;(0), &nu;(&chi;(0), j)) = d(&chi;(1), &nu;(&chi;(1), j)) = ... = d(&chi;(M - 1), &nu;(&chi;(M - 1), j)), &emsp; j = 1, ..., N*, &emsp;&emsp; (3)
 
 where *d* is D-dimensional Euclidean distance function. So, the distance between the position of cell and the position of its *j*-th neighbor should be a constant value for each cell in a grid.
 
 #### Border Effects
 
-(TODO)
+Let *L* be a set of all cells coordinates *L = {&chi;(i)}, i = 0 .. M - 1*, then we could obtain *j*-th neighbour of a cell with index *i* as:
+
+&eta;(i, j) = C<sub>I</sub>, I = &chi;<sup>-1</sup>(&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &isin; L, &emsp;&emsp; (4)
+&eta;(i, j) = &beta((&nu;(&chi;(i), j)), &nu;(&chi;(i), j) &notin; L,
+
+where &eta; is a wrapper over a border function &beta;, &chi;<sup>-1</sup> is a reverse lattice topology function:
+
+&chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (5)
+
+Border function &beta; could take a variety of forms. It could just be a constant pre-defined state of the cell (static borders). Or wrap borders to higher dimensional manifold topology, like torus, MÅˆebius strip or Klein bottle. Or even yield a random state each time. Be warned though, any topology that breaks the lattice homogeneity (see Eq. 3), as well as constant and generated values, will break an energy conservation also, as will be described below.
 
 #### Single cell design
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
