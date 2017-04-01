@@ -158,12 +158,12 @@ then the following inequality holds for all border cells:
 
 |A<sub>i</sub>| &ne; N, &emsp; i &isin; [0 .. M). &emsp;&emsp; (7)
 
-In order to correctly process all cells, including border ones, we have to define a conditional function for neighbors obtainment:
+In order to correctly process all cells, including border ones, we have to define a conditional function &eta; for neighbors obtainment. Let call it a *neighbour function*:
 
 &eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;,  
 &eta;(i, j) = &beta;(&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, &emsp;&emsp; (8)
 
-where &eta; is a *neighbour function*, &beta; is a *border function* returning a state for a hypothetic cells outside &Chi;, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
+where &beta; is a *border function* returning a state for a hypothetic cells outside &Chi;, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
 &chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (9)
 
@@ -176,11 +176,11 @@ In case of wrapping, the border function will take a form of
 where &beta;<sup>\*</sup> is a *wrap function*, mapping off-board coordinates to other cells on the board, and on-board coordinates strictly to the cells with those coordinates:
 
 &beta;<sup>\*</sup>(x) = &chi;<sup>-1</sup>(x), &emsp; x &isin; &Chi;,  
-&beta;<sup>\*</sup>(x) &isin; [0 .. M - 1], &emsp; x &notin; &Chi;,  
+&beta;<sup>\*</sup>(x) &isin; [0 .. M), &emsp; x &notin; &Chi;, &emsp;&emsp; (11)
 
 We will assume that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq. 10, and the following condition holds:
 
-C<sub>i</sub> &isin; {&eta;(i', j) | j &isin; [1 .. N]}, &emsp; i' &isin; {&beta;<sup>\*</sup>(&nu;(&Chi;<sub>i</sub>, j)) | j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M), &emsp;&emsp; (11)
+C<sub>i</sub> &isin; {&eta;(i', j) | j &isin; [1 .. N]}, &emsp; i' &isin; {&beta;<sup>\*</sup>(&nu;(&Chi;<sub>i</sub>, j)) | j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M), &emsp;&emsp; (12)
 
 so, each cell should be present in a set of neighbours of all its neighbours.
 
