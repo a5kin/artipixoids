@@ -144,9 +144,9 @@ where &nu; is *neighborhood topology function*.
 
 Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of j:
 
-&delta;(&Chi;<sub>0</sub>, &nu;(&Chi;<sub>0</sub>, j)) = &delta;(&Chi;<sub>1</sub>, &nu;(&Chi;<sub>1</sub>, j)) = ... = &delta;(&Chi;<sub>M - 1</sub>, &nu;(&Chi;<sub>M - 1</sub>, j)), &emsp; j = 1, ..., N, &emsp;&emsp; (5)
+&delta;(&Chi;<sub>i</sub>, &nu;(&Chi;<sub>i</sub>, j)) = d<sub>i</sub>, &emsp; i = 0, ..., M - 1, &emsp; j = 1, ..., N, &emsp;&emsp; (5)
 
-where &delta; is D-dimensional Euclidean distance function. So, the distance between the position of cell and the position of its j-th neighbor should be a constant value for each cell in a grid.
+where d<sub>i</sub> is a constant value for each j, and &delta; is D-dimensional Euclidean distance function. So, the distance between the position of cell and the position of its j-th neighbor should be a constant value for each cell in a grid.
 
 #### Border Effects
 
@@ -161,7 +161,7 @@ then the following inequality holds for all border cells:
 In order to correctly process all cells, including border ones, we have to define a conditional function for neighbors obtainment:
 
 &eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;,  
-&eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, &emsp;&emsp; (7)
+&eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, &emsp;&emsp; (8)
 
 where &eta; is a *neighbour function*, &beta; is a *border function* returning a state for a hypothetic cells outside &Chi;, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
