@@ -171,9 +171,9 @@ Border function &beta; could take a variety of forms. It could just be a constan
 
 In case of wrapping, the border function will take a form of
 
-&beta;(x) = C<sub>&beta;<sup>*</sup>(x)</sub>, &emsp; &beta;<sup>*</sup>(x) &isin; [0 .. M), &emsp;&emsp; (10)
+&beta;(x) = C<sub>&beta;<sup>\*</sup>(x)</sub>, &emsp; &beta;<sup>\*</sup>(x) &isin; [0 .. M), &emsp;&emsp; (10)
 
-where &beta;<sup>*</sup> is a *wrap function*, mapping off-board coordinates to cells on the board.
+where &beta;<sup>\*</sup> is a *wrap function*, mapping off-board coordinates to cells on the board.
 
 We will assume then that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq. 10, and the following condition holds:
 
@@ -181,7 +181,7 @@ C<sub>i</sub> &isin; {&eta;(i', j) | j &isin; [1 .. N]}, &emsp; i' &isin; {&chi;
 
 so, each cell should be present in a set of neighbours of all its neighbours.
 
-Be warned, any border function that breaks the neighborhood homogeneity (Eq. 11), will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
+Be warned, any border function that breaks the neighborhood homogeneity, will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
 
 #### Single cell design
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
