@@ -116,34 +116,34 @@ There is a special subclass of cellular automata that allows us to implement all
 
 #### Grid and neighborhood topologies
 
-As in any CA, grid in BSCA is *D*-dimensional lattice of cells, each having a fixed number of neighbors *N*. The cells are stored in a sequence *C = (c<sub>0</sub>, ..., c<sub>M - 1</sub>)*, where elements are nested sequences with uniform structure called states. See the exact definition of state in the sections below. *(D, N, M) &isin; [1 .. &infin;)*.
+As in any CA, grid in BSCA is D-dimensional lattice of cells, each having a fixed number of neighbors N. The cells are stored in a sequence C = (c<sub>0</sub>, ..., c<sub>M - 1</sub>), where elements are nested sequences with uniform structure called states. See the exact definition of state in the sections below. (D, N, M) &isin; [1 .. &infin;).
 
-The cartesian coordinates of the cell with index *i* could be obtained as 
+The cartesian coordinates of the cell with index i could be obtained as 
 
-*[x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &chi;(i), &emsp; i &isin; [0 .. M)*, &emsp;&emsp; (1)
+[x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &chi;(i), &emsp; i &isin; [0 .. M), &emsp;&emsp; (1)
 
-where *&chi;* is lattice topology function. Let also define a sequence of all cells' coordinates as 
+where &chi; is lattice topology function. Let also define a sequence of all cells' coordinates as 
 
-&Chi; = (&chi;(0), ..., &chi(M - 1)) &emsp;&emsp; (2)
+&Chi; = (&chi;(0), ..., &chi;(M - 1)) &emsp;&emsp; (2)
 
-The cartesian coordinates of cell's *j*-th neighbor could be obtained as
+The cartesian coordinates of cell's j-th neighbor could be obtained as
 
-*[x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &nu;(&Chi;<sub>i</sub>, j), &emsp; i &isin; [0 .. M), &emsp; j &isin; [1 .. N]*, &emsp;&emsp; (3)
+[x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &nu;(&Chi;<sub>i</sub>, j), &emsp; i &isin; [0 .. M), &emsp; j &isin; [1 .. N], &emsp;&emsp; (3)
 
-where *&nu;* is neighborhood topology function. Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of *j*:
+where &nu; is neighborhood topology function. Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of j:
 
-*d(&Chi;<sub>0</sub>, &nu;(&Chi;<sub>0</sub>, j)) = d(&Chi;<sub>1</sub>, &nu;(&Chi;<sub>1</sub>, j)) = ... = d(&Chi;<sub>M - 1</sub>, &nu;(&Chi;<sub>M - 1</sub>, j)), &emsp; j = 1, ..., N*, &emsp;&emsp; (4)
+d(&Chi;<sub>0</sub>, &nu;(&Chi;<sub>0</sub>, j)) = d(&Chi;<sub>1</sub>, &nu;(&Chi;<sub>1</sub>, j)) = ... = d(&Chi;<sub>M - 1</sub>, &nu;(&Chi;<sub>M - 1</sub>, j)), &emsp; j = 1, ..., N, &emsp;&emsp; (4)
 
-where *d* is D-dimensional Euclidean distance function. So, the distance between the position of cell and the position of its *j*-th neighbor should be a constant value for each cell in a grid.
+where d is D-dimensional Euclidean distance function. So, the distance between the position of cell and the position of its j-th neighbor should be a constant value for each cell in a grid.
 
 #### Border Effects
 
-Let introduce *B* as a set of all cells' coordinates *B = {&chi;(i) | i = [0 .. M)}, *. We will also refer to *B* as a 'board'. Then we could obtain *j*-th neighbour of a cell with index *i* as:
+Let introduce B as a set of all cells' coordinates B = {&chi;(i) | i = [0 .. M)}. We will also refer to B as a 'board'. Then we could obtain j-th neighbour of a cell with index i as:
 
-*&eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; B,*  
-*&eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; B,* &emsp;&emsp; (5)
+&eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; B,  
+&eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; B, &emsp;&emsp; (5)
 
-where &eta; is a neighbour function, &beta; is a border function returning a state for a hypothetic cells outside *B*, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
+where &eta; is a neighbour function, &beta; is a border function returning a state for a hypothetic cells outside B, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
 &chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (6)
 
@@ -152,7 +152,7 @@ Border function &beta; could take a variety of forms. It could just be a constan
 #### Single cell design
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
 
-Instead of a single state *S* (as in regular CA), each cell in BSCA has a main state *S<sub>0</sub>* and 'buffered' states *S<sub>1</sub>, ..., S<sub>N</sub>*, where *N*` is the number of cell's neighbours. 
+Instead of a single state S (as in regular CA), each cell in BSCA has a main state S<sub>0</sub> and 'buffered' states S<sub>1</sub>, ..., S<sub>N</sub>, where N` is the number of cell's neighbours. 
 
 The update is going in 2 phases: emit and absorb.
 
