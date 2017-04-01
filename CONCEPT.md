@@ -150,9 +150,13 @@ where &delta; is D-dimensional Euclidean distance function. So, the distance bet
 
 #### Border Effects
 
-A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. The following inequality holds for all border cells:
+A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. If N<sub>i</sub> is a set of all i-th cell's neighbors, inside &Chi;:
 
-|{C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;, j &isin; [1 .. N]}| &ne; N, &emsp; i &isin; [0 .. M). &emsp;&emsp; (6)
+N<sub>i</sub> = {C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;, j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M). &emsp;&emsp; (6)
+
+then the following inequality holds for all border cells:
+
+|N<sub>i</sub>| &ne; N, &emsp; i &isin; [0 .. M). &emsp;&emsp; (7)
 
 In order to correctly process all cells, including border ones, we have to define a conditional function for neighbors obtainment:
 
@@ -161,7 +165,7 @@ In order to correctly process all cells, including border ones, we have to defin
 
 where &eta; is a *neighbour function*, &beta; is a *border function* returning a state for a hypothetic cells outside &Chi;, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
-&chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (8)
+&chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (9)
 
 Border function &beta; could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time. Be warned though, any border function that breaks the lattice homogeneity (see Eq. 5), will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
 
