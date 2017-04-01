@@ -116,27 +116,33 @@ There is a special subclass of cellular automata that allows us to implement all
 
 #### Grid and neighborhood topologies
 
-As in any CA, grid in BSCA is D-dimensional lattice of cells, each having a N neighbors. (D, N) &isin; [1 .. &infin;).
+As in any CA, grid in BSCA is D-dimensional lattice of cells, each having N neighbors. (D, N) &isin; [1 .. &infin;).
 
 The cells are stored in a sequence 
 
 C = (c<sub>0</sub>, ..., c<sub>M - 1</sub>), &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
 
-where elements are nested sequences with uniform structure called *state*. See the exact definition of state in the sections below. We may refer to C as a *'board state'* later.
+where elements are nested sequences with uniform structure called *state*. See the exact definition of state in the sections below. We may refer to C as to a *board state* later.
 
 The cartesian coordinates of the cell with index i could be obtained as 
 
 [x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &chi;(i), &emsp; i &isin; [0 .. M), &emsp;&emsp; (2)
 
-where &chi; is *lattice topology function*. Let also define a sequence of all cells' coordinates as 
+where &chi; is *lattice topology function*. 
 
-&Chi; = (&chi;(0), ..., &chi;(M - 1)) &emsp;&emsp; (3)
+Let also define a sequence of all cells' coordinates as 
+
+&Chi; = (&chi;(0), ..., &chi;(M - 1)). &emsp;&emsp; (3)
+
+We may refer to &Chi; as to just a *board* later.
 
 The cartesian coordinates of cell's j-th neighbor could be obtained as
 
 [x<sub>0</sub>, ..., x<sub>D - 1</sub>] = &nu;(&Chi;<sub>i</sub>, j), &emsp; i &isin; [0 .. M), &emsp; j &isin; [1 .. N], &emsp;&emsp; (4)
 
-where &nu; is *neighborhood topology function*. Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of j:
+where &nu; is *neighborhood topology function*. 
+
+Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of j:
 
 &delta;(&Chi;<sub>0</sub>, &nu;(&Chi;<sub>0</sub>, j)) = &delta;(&Chi;<sub>1</sub>, &nu;(&Chi;<sub>1</sub>, j)) = ... = &delta;(&Chi;<sub>M - 1</sub>, &nu;(&Chi;<sub>M - 1</sub>, j)), &emsp; j = 1, ..., N, &emsp;&emsp; (5)
 
@@ -144,14 +150,18 @@ where &delta; is D-dimensional Euclidean distance function. So, the distance bet
 
 #### Border Effects
 
-Let introduce B as a set of all cells' coordinates B = {&chi;(i) | i = [0 .. M)}. We may also refer to B as a 'board' set. Then we could obtain the state of j-th neighbour of a cell C<sub>i</sub> as
+A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. Let define the set B of all border cells:
 
-&eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; B,  
-&eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; B, &emsp;&emsp; (6)
+B = {C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;}, &emsp;&emsp; (6)
+
+We could obtain the state of j-th neighbour of a cell C<sub>i</sub> as
+
+&eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;,  
+&eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, &emsp;&emsp; (7)
 
 where &eta; is a *neighbour function*, &beta; is a *border function* returning a state for a hypothetic cells outside B, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
-&chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (7)
+&chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (8)
 
 Border function &beta; could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time. Be warned though, any border function that breaks the lattice homogeneity (see Eq. 5), will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
 
