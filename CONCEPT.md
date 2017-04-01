@@ -120,7 +120,7 @@ As in any CA, grid in BSCA is D-dimensional lattice of cells, each having N neig
 
 The cells are stored in a sequence 
 
-C = (c<sub>0</sub>, ..., c<sub>M - 1</sub>), &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
+C = &lang;c<sub>i</sub> | i = 0 .. M - 1&rang;, &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
 
 where elements are nested sequences with uniform structure called *state*. See the exact definition of state in the sections below. We may refer to C as to a *board state* later.
 
@@ -132,7 +132,7 @@ where &chi; is *lattice topology function*.
 
 Let also define a sequence of all cells' coordinates as 
 
-&Chi; = (&chi;(0), ..., &chi;(M - 1)). &emsp;&emsp; (3)
+&Chi; = &lang;&chi;(i) | i = 0 .. M - 1&rang;. &emsp;&emsp; (3)
 
 We may refer to &Chi; as to just a *board* later.
 
