@@ -150,13 +150,13 @@ where &delta; is D-dimensional Euclidean distance function. So, the distance bet
 
 #### Border Effects
 
-A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. If N<sub>i</sub> is a set of all i-th cell's neighbors, inside &Chi;:
+A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. If A<sub>i</sub> is a set of all i-th cell's neighbors, that are inside &Chi;:
 
-N<sub>i</sub> = {C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;, j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M). &emsp;&emsp; (6)
+A<sub>i</sub> = {C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;, j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M), &emsp;&emsp; (6)
 
 then the following inequality holds for all border cells:
 
-|N<sub>i</sub>| &ne; N, &emsp; i &isin; [0 .. M). &emsp;&emsp; (7)
+|A<sub>i</sub>| &ne; N, &emsp; i &isin; [0 .. M). &emsp;&emsp; (7)
 
 In order to correctly process all cells, including border ones, we have to define a conditional function for neighbors obtainment:
 
