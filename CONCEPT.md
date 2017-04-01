@@ -144,9 +144,9 @@ where &nu; is *neighborhood topology function*.
 
 Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of j:
 
-&delta;(&Chi;<sub>i</sub>, &nu;(&Chi;<sub>i</sub>, j)) = d<sub>i</sub>, &emsp; i = 0, ..., M - 1, &emsp; j = 1, ..., N, &emsp;&emsp; (5)
+&Chi;<sub>i</sub> - &nu;(&Chi;<sub>i</sub>, j) = d<sub>j</sub>, &emsp; i = 0, ..., M - 1, &emsp; j = 1, ..., N, &emsp;&emsp; (5)
 
-where d<sub>i</sub> is a constant value for each j, and &delta; is D-dimensional Euclidean distance function. So, the distance between the position of cell and the position of its j-th neighbor should be a constant value for each cell in a grid.
+where d<sub>j</sub> is a constant vector for each j. So, the vector difference between the positions of cell and its j-th neighbor should be a constant for each cell in a grid.
 
 #### Border Effects
 
@@ -161,16 +161,32 @@ then the following inequality holds for all border cells:
 In order to correctly process all cells, including border ones, we have to define a conditional function for neighbors obtainment:
 
 &eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;,  
-&eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, &emsp;&emsp; (8)
+&eta;(i, j) = &beta;(&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, &emsp;&emsp; (8)
 
 where &eta; is a *neighbour function*, &beta; is a *border function* returning a state for a hypothetic cells outside &Chi;, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
 &chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (9)
 
-Border function &beta; could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time. Be warned though, any border function that breaks the lattice homogeneity (see Eq. 5), will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
+Border function &beta; could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time.
+
+In case of wrapping, the border function will take a form of
+
+&beta;(x) = C<sub>&beta;<sup>*</sup>(x)</sub>, &emsp; &beta;<sup>*</sup>(x) &isin; [0 .. M), &emsp;&emsp; (10)
+
+where &beta;<sup>*</sup> is a *wrap function*, mapping off-board coordinates to cells on the board.
+
+We will assume then that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq. 10, and the following condition holds:
+
+C<sub>i</sub> &isin; {&eta;(i', j) | j &isin; [1 .. N]}, &emsp; i' &isin; {&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j)) | j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M), &emsp;&emsp; (11)
+
+so, each cell should be present in a set of neighbours of all its neighbours.
+
+Be warned, any border function that breaks the neighborhood homogeneity (Eq. 11), will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
 
 #### Single cell design
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
+
+(TODO)
 
 Instead of a single state S (as in regular CA), each cell in BSCA has a main state S<sub>0</sub> and 'buffered' states S<sub>1</sub>, ..., S<sub>N</sub>, where N is the number of cell's neighbours. 
 
