@@ -150,16 +150,16 @@ where &delta; is D-dimensional Euclidean distance function. So, the distance bet
 
 #### Border Effects
 
-A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. Let define the set B of all border cells:
+A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. Let define the set B containing all border cells:
 
 B = {C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, j &isin; [1 .. N]}, &emsp;&emsp; (6)
 
-We could obtain the state of j-th neighbour of a cell C<sub>i</sub> as
+In order to correctly process all cells, including border ones, we have to define a conditional function for neighbors obtainment:
 
 &eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j))</sub>, &emsp; &nu;(&Chi;<sub>i</sub>, j) &isin; &Chi;,  
 &eta;(i, j) = &beta;((&nu;(&Chi;<sub>i</sub>, j)), &emsp; &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, &emsp;&emsp; (7)
 
-where &eta; is a *neighbour function*, &beta; is a *border function* returning a state for a hypothetic cells outside B, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
+where &eta; is a *neighbour function*, &beta; is a *border function* returning a state for a hypothetic cells outside &Chi;, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
 &chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (8)
 
