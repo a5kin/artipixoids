@@ -132,16 +132,16 @@ where *d* is D-dimensional Euclidean distance function. So, the distance between
 
 #### Border Effects
 
-Let *L* be a set of all cells coordinates *L = {&chi;(i)}, i = 0 .. M - 1*, then we could obtain *j*-th neighbour of a cell with index *i* as:
+Let introduce *B* as a set of all cells' coordinates *B = {&chi;(i)}, i = 0 .. M - 1*. We will also refer to *B* as a 'board'. Then we could obtain *j*-th neighbour of a cell with index *i* as:
 
-*&eta;(i, j) = C<sub>I</sub>, &emsp; I = &chi;<sup>-1</sup>(&nu;(&chi;(i), j)), &emsp; &nu;(&chi;(i), j) &isin; L,*  
-*&eta;(i, j) = &beta;((&nu;(&chi;(i), j)), &emsp; &nu;(&chi;(i), j) &notin; L,* &emsp;&emsp; (4)
+*&eta;(i, j) = C<sub>&chi;<sup>-1</sup>(&nu;(&chi;(i), j))</sub>, &emsp; &nu;(&chi;(i), j) &isin; B,*  
+*&eta;(i, j) = &beta;((&nu;(&chi;(i), j)), &emsp; &nu;(&chi;(i), j) &notin; B,* &emsp;&emsp; (4)
 
-where &eta; is a wrapper over a border function &beta;, and &chi;<sup>-1</sup> is a reverse lattice topology function:
+where &eta; is a neighbour function, &beta; is a border function returning a state for a hypothetic cells outside *B*, and &chi;<sup>-1</sup> is a reverse lattice topology function, satisfying the following equation:
 
 &chi;<sup>-1</sup>(&chi;(i)) = i. &emsp;&emsp; (5)
 
-Border function &beta; could take a variety of forms. It could just be a constant pre-defined state of the cell (static borders). Or wrap borders to higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time. Be warned though, any topology that breaks the lattice homogeneity (see Eq. 3), as well as constant and generated values, will break an energy conservation also, as will be described below.
+Border function &beta; could take a variety of forms. It could just be a constant pre-defined state of the cell (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time. Be warned though, any border function that breaks the lattice homogeneity (see Eq. 3), will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
 
 #### Single cell design
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
