@@ -152,7 +152,7 @@ where &delta; is D-dimensional Euclidean distance function. So, the distance bet
 
 A *border cell* is a cell, having at least one of its neighbours off the board &Chi;. Let define the set B of all border cells:
 
-B = {C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;}, &emsp;&emsp; (6)
+B = {C<sub>i</sub> | &nu;(&Chi;<sub>i</sub>, j) &notin; &Chi;, j &isin; [1 .. N]}, &emsp;&emsp; (6)
 
 We could obtain the state of j-th neighbour of a cell C<sub>i</sub> as
 
