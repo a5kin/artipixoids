@@ -173,11 +173,14 @@ In case of wrapping, the border function will take a form of
 
 &beta;(x) = C<sub>&beta;<sup>\*</sup>(x)</sub>, &emsp; &beta;<sup>\*</sup>(x) &isin; [0 .. M), &emsp;&emsp; (10)
 
-where &beta;<sup>\*</sup> is a *wrap function*, mapping off-board coordinates to cells on the board.
+where &beta;<sup>\*</sup> is a *wrap function*, mapping off-board coordinates to other cells on the board, and on-board coordinates strictly to the cells with those coordinates:
 
-We will assume then that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq. 10, and the following condition holds:
+&beta;<sup>\*</sup>(x) = &chi;<sup>-1</sup>(x), &emsp; x &isin; &Chi;,  
+&beta;<sup>\*</sup>(x) &isin; [0 .. M - 1], &emsp; x &notin; &Chi;,  
 
-C<sub>i</sub> &isin; {&eta;(i', j) | j &isin; [1 .. N]}, &emsp; i' &isin; {&chi;<sup>-1</sup>(&nu;(&Chi;<sub>i</sub>, j)) | j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M), &emsp;&emsp; (11)
+We will assume that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq. 10, and the following condition holds:
+
+C<sub>i</sub> &isin; {&eta;(i', j) | j &isin; [1 .. N]}, &emsp; i' &isin; {&beta;<sup>\*</sup>(&nu;(&Chi;<sub>i</sub>, j)) | j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M), &emsp;&emsp; (11)
 
 so, each cell should be present in a set of neighbours of all its neighbours.
 
