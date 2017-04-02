@@ -182,11 +182,14 @@ We will assume that the whole grid neighborhood is homogeneous if and only if th
 
 C<sub>i</sub> &isin; {&eta;(i', j) | j &isin; [1 .. N]}, &emsp; i' &isin; {&beta;<sup>\*</sup>(&nu;(&Chi;<sub>i</sub>, j)) | j &isin; [1 .. N]}, &emsp; i &isin; [0 .. M), &emsp;&emsp; (12)
 
-so, each cell should be present in a set of neighbours of all its neighbours.
+so, each cell should be present in a set of neighbours for all of its neighbours.
 
 Be warned, any border function that breaks the neighborhood homogeneity, will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
 
 #### Single cell design
+
+Let define a property as either an integer or a sequence of properties.
+
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
 
 (TODO)
@@ -202,12 +205,4 @@ The update is going in 2 phases: emit and absorb.
 
 ### Absorb Phase
 ![Absorb Phase in BSCA.](img/bsca_absorb.png "Absorb Phase in BSCA.")  
-
-(TODO)
-
-
-
-
-
-
 
