@@ -195,10 +195,10 @@ P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub
 
 Let also define a recursive function &phi;, that will just replace all integers with zeros in a nested sequence:
 
-&phi;(p) = 0, &emsp; p &isin; &#8484;,
-&phi;(p) = &lang;&phi(p<sub>i</sub>) | i &isin; [0, |p|)&rang;, &emsp; p &isin; &#8484;. &emsp;&emsp; (14)
+&phi;(p) = 0, &emsp; p &isin; &#8484;,  
+&phi;(p) = &lang;&phi(p<sub>i</sub>) | i &notin; [0, |p|)&rang;, &emsp; p &isin; &#8484;. &emsp;&emsp; (14)
 
-We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have same topology if and only if the following equation holds:
+We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have the same topology if and only if the following equation holds:
 
 &phi;(p<sub>1</sub>) = &phi;(p<sub>2</sub>). &emsp;&emsp; (14)
 
