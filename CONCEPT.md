@@ -122,7 +122,7 @@ The cells are stored in a sequence
 
 C = &lang;c<sub>i</sub> | i = 0 .. M - 1&rang;, &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
 
-where elements are nested sequences with uniform structure called *state*. See the exact definition of state in the sections below. We may refer to C as to a *board state* later.
+where elements are nested sequences with uniform structure called *cell state*. See the exact definition of cell state in the sections below. We may refer to C as to a *board state* later.
 
 The cartesian coordinates of the cell with index i could be obtained as 
 
@@ -186,41 +186,48 @@ so, each cell should be present in a set of neighbours for all of its neighbours
 
 Be warned, any border function that breaks the neighborhood homogeneity, will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
 
-#### Single cell design
+#### Single Cell Design
 
 Let recursively define a parameter as either an integer or a sequence of parameters. Then, the infinite set P of all possible parameters is
 
 P<sub>0</sub> = &#8484;,  
-P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i &isin; [0, j)&rang; | j &isin; [1, &infin;)}, &emsp;&emsp; (13)
+P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i = 0 .. j - 1&rang; | j &isin; [1 .. &infin;)}, &emsp;&emsp; (13)
 
 thus we can say that *p* is a *parameter* if and only if p &isin; P.
 
 Let also define a recursive function &phi;, that will replace all integers with zeros in a parameter:
 
 &phi;(p) = 0, &emsp; p &isin; &#8484;,  
-&phi;(p) = &lang;&phi;(p<sub>i</sub>) | i &isin; [0, |p|)&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
+&phi;(p) = &lang;&phi;(p<sub>i</sub>) | i = 0 .. |p| - 1)&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
 
 We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have the same topology if and only if the following equation holds:
 
 &phi;(p<sub>1</sub>) = &phi;(p<sub>2</sub>). &emsp;&emsp; (15)
 
-The *generic state* S then is a parameter with a constant topology within a particular BSCA:
+The *generic state* S then is a parameter with the constant topology within a particular BSCA:
 
 S &isin; P, &emsp; &phi;(S) = p<sub>c</sub>, &emsp;&emsp; (16)
 
 where p<sub>c</sub> is a constant topology value.
 
-![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
+The *cell state* C<sub>i</sub> (see Eq. 1) is a sequence of N + 1 generic states:
 
-Instead of a single state S (as in regular CA), each cell in BSCA has a main state S<sub>0</sub> and 'buffered' states S<sub>1</sub>, ..., S<sub>N</sub>, where N is the number of cell's neighbours. 
+C<sub>i</sub> = &lang;S<sub>i</sub> | S &isin; P, &phi;(S) = p<sub>c</sub>, i = 0 .. N&rang;, &emsp;&emsp; (17)
 
-The update is going in 2 phases: emit and absorb.
+![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")
 
-### Emit Phase
+where S<sub>0</sub> is the *main state*, and S<sub>1</sub> .. S<sub>N</sub> are the *buffered states*, one per each neighbor. At the picture above, you can see a cell design for 2-dimensional BSCA with Von Neumann neiborhood. Buffered neighbor states is cruicial aspect of BSCA, it is the basic thing allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
+
+#### Time and Updates
+
+(TODO)
+
+#### Emit Phase
 ![Emit Phase in BSCA.](img/bsca_emit.png "Emit Phase in BSCA.")  
 
 (TODO)
 
-### Absorb Phase
+#### Absorb Phase
 ![Absorb Phase in BSCA.](img/bsca_absorb.png "Absorb Phase in BSCA.")  
 
+(TODO)
