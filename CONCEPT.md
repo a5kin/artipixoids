@@ -198,7 +198,7 @@ thus we can say that *p* is a *parameter* if and only if p &isin; P.
 Let also define a recursive function &phi;, that will replace all integers with zeros in a parameter:
 
 &phi;(p) = 0, &emsp; p &isin; &#8484;,  
-&phi;(p) = &lang;&phi(p<sub>i</sub>) | i &isin; [0, |p|)&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
+&phi;(p) = &lang;&phi;(p<sub>i</sub>) | i &isin; [0, |p|)&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
 
 We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have the same topology if and only if the following equation holds:
 
