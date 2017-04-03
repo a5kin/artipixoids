@@ -122,7 +122,7 @@ The cells are stored in a sequence
 
 C = &lang;c<sub>i</sub> | i = 0 .. M - 1&rang;, &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
 
-where elements are nested sequences with uniform structure called *cell state*. See the exact definition of cell state in Eq. 17 below. We may refer to C as to a *board state* later.
+where elements are nested sequences with uniform structure called *cell state*. See the exact definition of the cell state in Eq. 17 below. We may refer to C as to a *board state* later.
 
 The cartesian coordinates of the cell with index i could be obtained as 
 
@@ -212,7 +212,7 @@ where p<sub>c</sub> is a constant topology value.
 
 The *cell state* C<sub>i</sub> (see Eq. 1) is a sequence of N + 1 generic states:
 
-C<sub>i</sub> = &lang;S<sub>i</sub> | S &isin; P, &phi;(S) = p<sub>c</sub>, i = 0 .. N&rang;, &emsp;&emsp; (17)
+C<sub>i</sub> = &lang;S<sub>i</sub> | S<sub>i</sub> &isin; P, &phi;(S) = p<sub>c</sub>, i = 0 .. N&rang;, &emsp;&emsp; (17)
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")
 
