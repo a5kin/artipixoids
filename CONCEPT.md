@@ -188,7 +188,10 @@ Be warned, any border function that breaks the neighborhood homogeneity, will al
 
 #### Single cell design
 
-Let define a property as either an integer or a sequence of properties.
+Let recursively define a parameter as either an integer or a sequence of parameters. Then, the infinite set P of all possible parameters is
+
+P<sub>0</sub> = &#8484;,  
+P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i &isin; [1, j)&rang; | j &isin; [2, &infin;)}, &emsp;&emsp; (13)
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
 
