@@ -122,7 +122,7 @@ The cells are stored in a sequence
 
 C = &lang;c<sub>i</sub> | i = 0 .. M - 1&rang;, &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
 
-where elements are nested sequences with uniform structure called *cell state*. See the exact definition of cell state in the sections below. We may refer to C as to a *board state* later.
+where elements are nested sequences with uniform structure called *cell state*. See the exact definition of cell state in Eq. 17 below. We may refer to C as to a *board state* later.
 
 The cartesian coordinates of the cell with index i could be obtained as 
 
@@ -216,7 +216,7 @@ C<sub>i</sub> = &lang;S<sub>i</sub> | S &isin; P, &phi;(S) = p<sub>c</sub>, i = 
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")
 
-where S<sub>0</sub> is the *main state*, and S<sub>1</sub> .. S<sub>N</sub> are the *buffered states*, one per each neighbor. At the picture above, you can see a cell design for 2-dimensional BSCA with Von Neumann neiborhood. Buffered neighbor states is cruicial aspect of BSCA, it is the basic thing allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
+where S<sub>0</sub> is the *main state*, and S<sub>1</sub>, ..., S<sub>N</sub> are the *buffered states*, one per each neighbor. At the picture above, you can see a cell design for 2-dimensional BSCA with Von Neumann neiborhood. Buffered neighbor states is cruicial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
 
 #### Time and Updates
 
