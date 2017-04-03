@@ -191,20 +191,26 @@ Be warned, any border function that breaks the neighborhood homogeneity, will al
 Let recursively define a parameter as either an integer or a sequence of parameters. Then, the infinite set P of all possible parameters is
 
 P<sub>0</sub> = &#8484;,  
-P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i &isin; [0, j)&rang; | j &isin; [1, &infin;)}. &emsp;&emsp; (13)
+P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i &isin; [0, j)&rang; | j &isin; [1, &infin;)}, &emsp;&emsp; (13)
 
-Let also define a recursive function &phi;, that will just replace all integers with zeros in a nested sequence:
+thus we can say that *p* is a *parameter* if and only if p &isin; P.
+
+Let also define a recursive function &phi;, that will replace all integers with zeros in a parameter:
 
 &phi;(p) = 0, &emsp; p &isin; &#8484;,  
 &phi;(p) = &lang;&phi(p<sub>i</sub>) | i &isin; [0, |p|)&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
 
 We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have the same topology if and only if the following equation holds:
 
-&phi;(p<sub>1</sub>) = &phi;(p<sub>2</sub>). &emsp;&emsp; (14)
+&phi;(p<sub>1</sub>) = &phi;(p<sub>2</sub>). &emsp;&emsp; (15)
+
+The *generic state* S then is a parameter with a constant topology within a particular BSCA:
+
+S &isin; P, &emsp; &phi;(S) = p<sub>c</sub>, &emsp;&emsp; (16)
+
+where p<sub>c</sub> is a constant topology value.
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
-
-(TODO)
 
 Instead of a single state S (as in regular CA), each cell in BSCA has a main state S<sub>0</sub> and 'buffered' states S<sub>1</sub>, ..., S<sub>N</sub>, where N is the number of cell's neighbours. 
 
