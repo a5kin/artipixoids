@@ -191,7 +191,16 @@ Be warned, any border function that breaks the neighborhood homogeneity, will al
 Let recursively define a parameter as either an integer or a sequence of parameters. Then, the infinite set P of all possible parameters is
 
 P<sub>0</sub> = &#8484;,  
-P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i &isin; [1, j)&rang; | j &isin; [2, &infin;)}, &emsp;&emsp; (13)
+P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i &isin; [0, j)&rang; | j &isin; [1, &infin;)}. &emsp;&emsp; (13)
+
+Let also define a recursive function &phi;, that will just replace all integers with zeros in a nested sequence:
+
+&phi;(p) = 0, &emsp; p &isin; &#8484,
+&phi;(p) = &lang;&phi(p<sub>i</sub>) | i &isin; [0, |p|)&rang;, &emsp; p &isin; &#8484. &emsp;&emsp; (14)
+
+We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have same topology if and only if the following equation holds:
+
+&phi;(p<sub>1</sub>) = &phi;(p<sub>2</sub>). &emsp;&emsp; (14)
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")  
 
