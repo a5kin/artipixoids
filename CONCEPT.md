@@ -216,7 +216,7 @@ c<sub>i</sub> = &lang;S<sub>0</sub>, ..., S<sub>N</sub>&rang;, &emsp; S<sub>i</s
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")
 
-where S<sub>0</sub> is the *main state*, and S<sub>1</sub>, ..., S<sub>N</sub> are the *buffered states*, one per each neighbor. At the picture above, you can see a cell design for 2-dimensional BSCA with Von Neumann neiborhood. Buffered neighbor states is the cruicial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
+where S<sub>0</sub> is the *main state*, and S<sub>1</sub>, ..., S<sub>N</sub> are the *buffered states*, one per each neighbor. At the picture above, you can see a cell design for 2-dimensional BSCA with Von Neumann neighborhood. Buffered neighbor states is the cruicial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
 
 Let also define two more sets for future use:
 
@@ -226,6 +226,13 @@ S<sub>b</sub> = S<sub>c</sub><sup>M</sup>, &emsp;&emsp; (19)
 where S<sub>c</sub> is a set of all possible cell states, and S<sub>b</sub> is a set of all possible board states.
 
 #### Time and Updates
+
+The *universe* is a board state evolving in discrete timesteps. Let define the universe *U* as a potentially infinite recurrent sequence:
+
+U<sub>0</sub> = C<sub>s</sub>,  
+U<sub>t + 1</sub> = &omega;(U<sub>t</sub>),
+
+where C<sub>s</sub> is an *initial board state* (also called *seed*), *t* is a timestep number and &omega; is an *evolution function*.
 
 (TODO)
 
