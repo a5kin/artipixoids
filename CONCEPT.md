@@ -198,7 +198,7 @@ thus we can say that *p* is a *parameter* if and only if p &isin; P.
 Let also define a recursive function &phi;, that will replace all integers with zeros in a parameter:
 
 &phi;(p) = 0, &emsp; p &isin; &#8484;,  
-&phi;(p) = &lang;&phi;(p<sub>0</sub>), ..., &phi;(p<sub>|p| - 1</sub>))&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
+&phi;(p) = &lang;&phi;(p<sub>0</sub>), ..., &phi;(p<sub>|p| - 1</sub>)&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
 
 We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have the same topology if and only if the following equation holds:
 
@@ -212,7 +212,7 @@ where p<sub>c</sub> is a constant topology value.
 
 The *cell state* c<sub>i</sub> (see Eq. 1) is a sequence of N + 1 generic states:
 
-c<sub>i</sub> = &lang;S<sub>0</sub>, ..., S<sub>0</sub>&rang;, S<sub>i</sub> &isin; S<sub>s</sub> &forall; i &isin; [0 .. N], &emsp;&emsp; (17)
+c<sub>i</sub> = &lang;S<sub>0</sub>, ..., S<sub>N</sub>&rang;, &emsp; S<sub>i</sub> &isin; S<sub>s</sub> &forall; i &isin; [0 .. N], &emsp;&emsp; (17)
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")
 
