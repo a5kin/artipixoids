@@ -191,7 +191,7 @@ Be warned, any border function that breaks the neighborhood homogeneity, will al
 Let recursively define a parameter as either an integer or a sequence of parameters. Then, the infinite set P of all possible parameters is
 
 P<sub>0</sub> = &#8484;,  
-P<sub>n + 1</sub> = P<sub>n</sub> &cup; {&lang;p<sub>i</sub> &isin; P<sub>n</sub> | i = 0 .. j - 1&rang; | j &isin; [1 .. &infin;)}, &emsp;&emsp; (13)
+P<sub>n + 1</sub> = &#8899;<sub>i = 1 .. &infin;</sub> P<sub>n</sub><sup>i</sup>, &emsp;&emsp; (13)
 
 thus we can say that *p* is a *parameter* if and only if p &isin; P.
 
