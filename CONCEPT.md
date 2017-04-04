@@ -204,19 +204,26 @@ We will call &phi; *parameter topology function*, and will assume two parameters
 
 &phi;(p<sub>1</sub>) = &phi;(p<sub>2</sub>). &emsp;&emsp; (15)
 
-The *generic state* s then is a parameter with the constant topology within a particular BSCA:
+The *generic state* then is a parameter with the constant topology within a particular BSCA. Let define S<sub>s</sub> as a set of all possible generic states:
 
-s &isin; P, &emsp; &phi;(s) = p<sub>c</sub>, &emsp;&emsp; (16)
+S<sub>s</sub> = {s | s &isin; P, &phi;(s) = p<sub>c</sub>}, &emsp;&emsp; (16)
 
 where p<sub>c</sub> is a constant topology value.
 
-The *cell state* C<sub>i</sub> (see Eq. 1) is a sequence of N + 1 generic states:
+The *cell state* c<sub>i</sub> (see Eq. 1) is a sequence of N + 1 generic states:
 
-C<sub>i</sub> = &lang;S<sub>j</sub> | S<sub>j</sub> &isin; P, &phi;(S) = p<sub>c</sub>, j = 0 .. N&rang;, &emsp;&emsp; (17)
+c<sub>i</sub> = &lang;S<sub>j</sub> &isin; S<sub>s</sub> | j = 0 .. N&rang;, &emsp;&emsp; (17)
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")
 
 where S<sub>0</sub> is the *main state*, and S<sub>1</sub>, ..., S<sub>N</sub> are the *buffered states*, one per each neighbor. At the picture above, you can see a cell design for 2-dimensional BSCA with Von Neumann neiborhood. Buffered neighbor states is the cruicial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
+
+Let also define two more sets for future use:
+
+S<sub>c</sub> = S<sub>s</sub><sup>N + 1</sup>, &emsp;&emsp; (18)  
+S<sub>b</sub> = S<sub>c</sub><sup>M</sup>, &emsp;&emsp; (19)
+
+where S<sub>c</sub> is a set of all possible cell states, and S<sub>b</sub> is a set of all possible board states.
 
 #### Time and Updates
 
