@@ -118,9 +118,9 @@ There is a special subclass of cellular automata that allows us to implement all
 
 As in any CA, grid in BSCA is D-dimensional lattice of cells, each having N neighbors. (D, N) &isin; [1 .. &infin;).
 
-The cells are stored in a sequence 
+The cells are stored in a sequence of length M:
 
-C = &lang;c<sub>i</sub> | i = 0 .. M - 1&rang;, &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
+C = &lang;c<sub>0</sub>, ..., c<sub>M - 1</sub>&rang;, &emsp; M &isin; [1 .. &infin;), &emsp;&emsp; (1)
 
 where elements are nested sequences with uniform structure called *cell state*. See the exact definition of the cell state in Eq. 17 below. We may refer to C as to a *board state* later.
 
@@ -132,7 +132,7 @@ where &chi; is *lattice topology function*.
 
 Let also define a sequence of all cells' coordinates as 
 
-&Chi; = &lang;&chi;(i) | i = 0 .. M - 1&rang;. &emsp;&emsp; (3)
+&Chi; = &lang;&chi;(0), ..., &chi;(M - 1)&rang;. &emsp;&emsp; (3)
 
 We may refer to &Chi; as to just a *board* later.
 
@@ -198,7 +198,7 @@ thus we can say that *p* is a *parameter* if and only if p &isin; P.
 Let also define a recursive function &phi;, that will replace all integers with zeros in a parameter:
 
 &phi;(p) = 0, &emsp; p &isin; &#8484;,  
-&phi;(p) = &lang;&phi;(p<sub>i</sub>) | i = 0 .. |p| - 1)&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
+&phi;(p) = &lang;&phi;(p<sub>0</sub>), ..., &phi;(p<sub>|p| - 1</sub>))&rang;, &emsp; p &notin; &#8484;. &emsp;&emsp; (14)
 
 We will call &phi; *parameter topology function*, and will assume two parameters p<sub>1</sub> and p<sub>2</sub> have the same topology if and only if the following equation holds:
 
@@ -212,7 +212,7 @@ where p<sub>c</sub> is a constant topology value.
 
 The *cell state* c<sub>i</sub> (see Eq. 1) is a sequence of N + 1 generic states:
 
-c<sub>i</sub> = &lang;S<sub>j</sub> &isin; S<sub>s</sub> | j = 0 .. N&rang;, &emsp;&emsp; (17)
+c<sub>i</sub> = &lang;S<sub>0</sub>, ..., S<sub>0</sub>&rang;, S<sub>i</sub> &isin; S<sub>s</sub> &forall; i &isin; [0 .. N], &emsp;&emsp; (17)
 
 ![Single cell design in BSCA.](img/bsca_cell.png "Single cell design in BSCA.")
 
