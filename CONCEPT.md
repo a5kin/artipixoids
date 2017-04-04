@@ -230,11 +230,15 @@ where S<sub>c</sub> is a set of all possible cell states, and S<sub>b</sub> is a
 The *universe* is a board state evolving in discrete timesteps. Let define the universe *U* as a potentially infinite recurrent sequence:
 
 U<sub>0</sub> = C<sub>s</sub>,  
-U<sub>t + 1</sub> = &omega;(U<sub>t</sub>),
+U<sub>t + 1</sub> = &omega;(U<sub>t</sub>), &emsp;&emsp; (20)
 
-where C<sub>s</sub> is an *initial board state* (also called *seed*), *t* is a timestep number and &omega; is an *evolution function*.
+where C<sub>s</sub> is an *initial board state* (also called *seed*), *t* is a timestep number and &omega; is an *update function*, &omega;(u) &isin; S<sub>b</sub>.
 
-(TODO)
+In BSCA, the evolution at a single timestep is going in two phases: *emit phase* and *absorb phase*, so update function will take a form of
+
+&omega;(u) = &alpha;(&epsilon;(u)), &emsp;&emsp; (21)
+
+where &alpha; is *absorb function* and &epsilon; is *emit function*. Let describe how both of them works in the next sections.
 
 #### Emit Phase
 ![Emit Phase in BSCA.](img/bsca_emit.png "Emit Phase in BSCA.")  
