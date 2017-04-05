@@ -1,15 +1,18 @@
-\documentclass[a4paper,12pt,draft,UTF8]{article}
+\documentclass[a4paper,12pt,UTF8]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{inputenc}
 \usepackage{geometry}
+\usepackage{float}
 
 \title{\bf Artipixoids!\\\large The Concept (draft)}
 \author{by Andrey Zamaraev\\a5kin@github.com}
+
 \setlength{\parindent}{0ex}
 \setlength{\parskip}{1em}
+\graphicspath{ {img/} }
 
 \begin{document}
 
@@ -129,9 +132,10 @@
 
     The cells are stored in a sequence of length $M$:
     \begin{equation}
+      \label{eq:cells}
       C = \langle c_0, ..., c_{M - 1} \rangle, \quad M \in {[1 .. \infty)},
     \end{equation}
-    where elements are nested sequences with uniform structure called \textit{cell state}. See the exact definition of the cell state in Eq. 17 below. We may refer to $C$ as to a \textit{board state} later.
+    where elements are nested sequences with uniform structure called \textit{cell state}. See the exact definition of the cell state in Eq.~17 below. We may refer to $C$ as to a \textit{board state} later.
 
     The cartesian coordinates of the cell with index $i$ could be obtained as 
     \begin{equation}
@@ -181,7 +185,7 @@
       \chi^{-1}(\chi(i)) = i.
     \end{equation}
 
-    Border function $\beta$ could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Möebius strip or Klein bottle. It could even yield a random state each time.
+    Border function $\beta$ could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time.
 
     In case of wrapping, the border function will take a form of
     \begin{equation}
@@ -215,5 +219,83 @@
       \end{split}
     \end{align}
     thus we can say that $p$ is a \textit{parameter} if and only if $p \in P$.
+
+    Let also define a recursive function $\phi$, that will replace all integers with zeros in a parameter:
+    \begin{equation}
+      \phi(p) = 
+      \begin{cases}
+        0, \quad & \text{if } p \in \mathbb{Z},\\
+        \langle \phi(p_0), ..., \phi(p_{|p|-1}) \rangle, \quad & \text{if } p \notin \mathbb{Z}.
+      \end{cases}
+    \end{equation}
+
+    We will call $\phi$ \textit{parameter topology function}, and will assume two parameters $p_1$ and $p_2$ have the same topology if and only if the following equation holds:
+    \begin{equation}
+      \phi(p_1) = \phi(p2).
+    \end{equation}
+
+    The \textit{generic state} then is a parameter with the constant topology within a particular BSCA. Let define $S_s$ as a set of all possible generic states:
+    \begin{equation}
+      S_s = \{ s \mid s \in P, \phi(s) = p_c \},
+    \end{equation}
+    where $p_c$ is a constant topology value.
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{bsca_cell}
+      \caption{Single cell design in BSCA.}
+      \label{fig:cell-design}
+    \end{figure}
+
+    The \textit{cell state} $c$ (see Eq.~\ref{eq:cells}) is a sequence of $N + 1$ generic states:
+    \begin{equation}
+      \label{eq:cell-state}
+      c = \langle S_0, ..., S_N \rangle, \quad S_i \in S_s \forall i \in {[0 .. N]},
+    \end{equation}
+    where $S_0$ is the \textit{main state}, and $S_1$, ..., $S_N$ are the \textit{buffered states}, one per each neighbor. At the Fig.~\ref{fig:cell-design}, you can see a cell design for 2-dimensional BSCA with Von Neumann neighborhood. Buffered neighbor states is the cruicial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
+
+    Let also define two more sets for future use:
+    \begin{align}
+      S_c &= S_s^{N + 1},\\
+      S_b &= S_c^M,
+    \end{align}
+    where $S_c$ is a set of all possible cell states, and $S_b$ is a set of all possible board states.
+
+  \subsection{Time and Updates}
+
+    The \textit{universe} is a board state evolving in discrete timesteps. Let define the universe $U$ as a potentially infinite recurrent sequence:
+    \begin{align}
+      \begin{split}
+        U_0 &= C_s,\\
+        U_{t + 1} &= \omega(U_t),
+      \end{split}
+    \end{align}
+    where $C_s$ is an \textit{initial board state} (also called \textit{seed}), $t$ is a timestep number and $\omega$ is an \textit{update function}, $\omega(u) \in S_b$.
+
+    In BSCA, the evolution at a single timestep is going in two phases: \textit{emit phase} and \textit{absorb phase}, so update function will take a form of
+    \begin{equation}
+      \omega(u) = \alpha(\epsilon(u)),
+    \end{equation}
+    where $\alpha$ is \textit{absorb function} and $\epsilon$; is \textit{emit function}. Let describe how both of them works in the next sections.
+
+  \subsection{Emit Phase}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{bsca_emit}
+      \caption{Emit Phase in BSCA.}
+      \label{fig:emit-phase}
+    \end{figure}
+
+    (TODO)
+
+  \subsection{Absorb Phase}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{bsca_absorb}
+      \caption{Absorb Phase in BSCA.}
+      \label{fig:emit-phase}
+    \end{figure}
+
+   (TODO)
 
 \end{document}
