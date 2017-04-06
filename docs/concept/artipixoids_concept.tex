@@ -23,13 +23,15 @@
     2D pleasure, 2D pain.
   \end{verse}
 
-  \textbf{Artipixoids!} is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle. Started in the end of 2014, it has undergone several major modifications, and is still in development. But now is the right time to share basic concepts underlying all previous modifications, so others could use it to build their own wonderful worlds. 
+  \textbf{Artipixoids!} is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle. Started in the end of 2014, it has undergone several major modifications, and is still in development. But now is the right time to share basic concepts underlying all previous modifications, so others could use it to build their own wonderful worlds.
+
+  The document is split up in two parts. In \textit{The Manifesto} we will outline the main areas of the project development, and the main goals per each area. In \textit{The Core} section, we will give the formal definitions to the features we would like to see in the core of our future framework. 
 
   \newpage
   \tableofcontents
 
   \newpage
-  \section{The Manifest}
+  \section{The Manifesto}
 
   \subsection{Artistic}
 
@@ -101,7 +103,7 @@
     \item After the tap, we are willing to say the Word, which contains the essence of the future world.
     \item Then, the world should begin to bloom, and it should be the same every time we said the same Word.
     \item Some of us will just meditate on the beauty of their worlds, wandering around and changing the views.
-    \item Others will actively play demiurges using that wizardry from 2.5, or even more powerful stuff.
+    \item Others will actively play demiurges using scientific wizardry from previous section, or even more powerful stuff.
     \item And some will get bored and destroy the creation with a single tap of the finger. Thus, letting its habitants live in some parallel universe, free of divine will and happy.
   \end{enumerate}
 
@@ -279,6 +281,13 @@
     where $\alpha$ is \textit{absorb function} and $\epsilon$; is \textit{emit function}. Let describe how both of them works in the next sections.
 
   \subsection{Emit Phase}
+
+    In the process of emit, each cell spreads the message to its neighbors, modifying corresponding buffer states. It could change its own main state as well. The emit function takes a form of
+    \begin{equation}
+      \epsilon(C) = \langle \sigma(\langle {C_i}_0, \eta(i, 1)_0, ..., \eta(i, N)_0 \rangle) \mid i = 0 .. M - 1 \rangle,
+    \end{equation}
+    where $\sigma$ is the \textit{decision function}, taking a sequence of neighbors' main states, and returning the new cell state.
+    
     \begin{figure}[H]
       \centering
       \includegraphics[scale=0.2]{bsca_emit}
