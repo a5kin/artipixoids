@@ -272,7 +272,7 @@
         U_{t + 1} &= \omega(U_t),
       \end{split}
     \end{align}
-    where $C_s$ is an \textit{initial board state} (also called \textit{seed}), $t$ is a timestep number and $\omega$ is an \textit{update function}, $\omega(u) \in S_b$.
+    where $C_s$ is an \textit{initial board state} (also called \textit{seed}), $t$ is a timestep number and $\omega: S_b \to S_B$ is an \textit{update function}.
 
     In BSCA, the evolution at a single timestep is going in two phases: \textit{emit phase} and \textit{absorb phase}, so update function will take a form of
     \begin{equation}
@@ -282,12 +282,6 @@
 
   \subsection{Emit Phase}
 
-    In the process of emit, each cell spreads the message to its neighbors, modifying corresponding buffer states. It could change its own main state as well. The emit function takes a form of
-    \begin{equation}
-      \epsilon(C) = \langle \sigma(\langle {C_i}_0, \eta(i, 1)_0, ..., \eta(i, N)_0 \rangle) \mid i = 0 .. M - 1 \rangle,
-    \end{equation}
-    where $\sigma$ is the \textit{decision function}, taking a sequence of neighbors' main states, and returning the new cell state.
-    
     \begin{figure}[H]
       \centering
       \includegraphics[scale=0.2]{bsca_emit}
@@ -295,7 +289,33 @@
       \label{fig:emit-phase}
     \end{figure}
 
-    (TODO)
+    The process of emit is like sending the messages from a cell to its neighbors. Each cell performs it as follows.
+    \begin{enumerate}
+      \item 
+        The cell is taking a sequence of all its neighbors' main states, as well as its own main state:
+        \begin{equation}
+          \label{eq:neighbors-main-sequence}
+          \eta_e(C, i) = \langle \gamma({C_i}, 0), \gamma(\eta(i, 1), 0), ..., \gamma(\eta(i, N), 0) \rangle,
+        \end{equation}
+        where $i$ is the cell's index and $\gamma$ is a function for obtaining an item from the sequence:
+        \begin{equation}
+          \label{eq:item-obtaining}
+          \gamma(s, i) = s_i.
+        \end{equation}
+      \item
+        The cell is modifying its buffers and main state as a result of \textit{decision function} $\sigma: S_c \to S_c$:
+        \begin{equation}
+          C_i := \sigma(\eta_e(C, i)),
+        \end{equation}
+        where $i$ is the cell's index.
+      \item
+        At the end of emit phase, each buffer should contain a generic state intended for a specific neigbor. 
+    \end{enumerate}
+
+    The whole emit function $\epsilon: S_b \to S_b$ thus takes a form of
+    \begin{equation}
+      \epsilon(C) = \langle \sigma(\eta_e(C, 0)), ..., \sigma(\eta_e(C, M - 1)) \rangle,
+    \end{equation}
 
   \subsection{Absorb Phase}
     \begin{figure}[H]
