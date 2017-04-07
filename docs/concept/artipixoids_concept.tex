@@ -1,12 +1,16 @@
-\documentclass[a4paper,12pt,UTF8]{article}
+\documentclass[a4paper,12pt,tikz,UTF8]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{inputenc}
 \usepackage{geometry}
 \usepackage{float}
 \usepackage{epigraph}
+\usepackage{pstricks}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
 
 \title{\bf Artipixoids!\\\large The Concept (draft)}
 \author{by Andrey Zamaraev\\a5kin@github.com}
@@ -246,7 +250,21 @@
 
     \begin{figure}[H]
       \centering
-      \includegraphics[scale=0.2]{bsca_cell}
+      \begin{tikzpicture}[node distance=1.4cm]
+        \tikzstyle{main}=[rectangle, thick, double, draw=black!100, fill=white!100, minimum size=4mm]
+        \tikzstyle{buffer}=[rectangle, thick, draw=black!50, fill=white!100, minimum size=4mm]
+        \begin{scope}
+          \node [main] (s0) {$S_0$};
+          \node [buffer] (s1) [above of=s0] {$S_1$};
+          \node [buffer] (s2) [right of=s0] {$S_2$};
+          \node [buffer] (s3) [below of=s0] {$S_3$};
+          \node [buffer] (s4) [left of=s0] {$S_4$};
+        \end{scope}
+        \begin{pgfonlayer}{background}
+          \filldraw [line width=4mm, join=round, black!10]
+          (s1.north  -| s2.east)  rectangle (s3.south  -| s4.west);
+        \end{pgfonlayer}
+      \end{tikzpicture}
       \caption{Single cell design in BSCA.}
       \label{fig:cell-design}
     \end{figure}
@@ -328,5 +346,6 @@
     \end{figure}
 
    (TODO)
+
 
 \end{document}
