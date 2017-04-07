@@ -6,22 +6,24 @@
 \usepackage{inputenc}
 \usepackage{geometry}
 \usepackage{float}
+\usepackage{epigraph}
 
 \title{\bf Artipixoids!\\\large The Concept (draft)}
 \author{by Andrey Zamaraev\\a5kin@github.com}
 
 \setlength{\parindent}{0ex}
 \setlength{\parskip}{1em}
+\setlength\epigraphrule{0pt}
 \graphicspath{ {img/} }
 
 \begin{document}
 
   \maketitle
 
-  \begin{verse}
+  \epigraph{
     \it 2D body, 2D brain,\\
     2D pleasure, 2D pain.
-  \end{verse}
+  }{--- Flatlander credo}
 
   \textbf{Artipixoids!} is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle. Started in the end of 2014, it has undergone several major modifications, and is still in development. But now is the right time to share basic concepts underlying all previous modifications, so others could use it to build their own wonderful worlds.
 
@@ -178,8 +180,8 @@
     \begin{equation}
       \eta(i, j) = 
       \begin{cases}
-        C_{\chi^{-1}(\nu(X_i, j))}, & \quad \text{if } \nu(X_i, j) \in X,\\  
-        \beta(\nu(X_i, j)), & \quad \text{if } \nu(X_i, j) \notin X,
+        C_{\chi^{-1}(\nu(X_i, j))} & \quad \text{if } \nu(X_i, j) \in X,\\  
+        \beta(\nu(X_i, j)) & \quad \text{if } \nu(X_i, j) \notin X,
       \end{cases}
     \end{equation}
     where $\beta$ is a \textit{border function} returning a state for a hypothetic cells outside $X$, and $\chi^{-1}$ is a reverse lattice topology function, satisfying the following equation:
@@ -187,7 +189,7 @@
       \chi^{-1}(\chi(i)) = i.
     \end{equation}
 
-    Border function $\beta$ could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, Moebius strip or Klein bottle. It could even yield a random state each time.
+    Border function $\beta$ could take a variety of forms. It could just be a constant pre-defined state (static borders). Or wrap borders into higher dimensional manifold topology, like torus, M\:oebius strip or Klein bottle. It could even yield a random state each time.
 
     In case of wrapping, the border function will take a form of
     \begin{equation}
@@ -198,8 +200,8 @@
     \begin{equation}
       \beta^*(x) = 
       \begin{cases}
-        \chi^{-1}(x), & \quad \text{if } x \in X,\\
-        i \in {[0 .. M)}, & \quad \text{if } x \notin X.
+        \chi^{-1}(x) & \quad \text{if } x \in X,\\
+        i \in {[0 .. M)} & \quad \text{if } x \notin X.
       \end{cases}
     \end{equation}
 
@@ -222,23 +224,23 @@
     \end{align}
     thus we can say that $p$ is a \textit{parameter} if and only if $p \in P$.
 
-    Let also define a recursive function $\phi$, that will replace all integers with zeros in a parameter:
+    Let also define a recursive function $\varphi$, that will replace all integers with zeros in a parameter:
     \begin{equation}
-      \phi(p) = 
+      \varphi(p) = 
       \begin{cases}
-        0, \quad & \text{if } p \in \mathbb{Z},\\
-        \langle \phi(p_0), ..., \phi(p_{|p|-1}) \rangle, \quad & \text{if } p \notin \mathbb{Z}.
+        0 \quad & \text{if } p \in \mathbb{Z},\\
+        \langle \varphi(p_0), ..., \varphi(p_{|p|-1}) \rangle \quad & \text{if } p \notin \mathbb{Z}.
       \end{cases}
     \end{equation}
 
-    We will call $\phi$ \textit{parameter topology function}, and will assume two parameters $p_1$ and $p_2$ have the same topology if and only if the following equation holds:
+    We will call $\varphi$ \textit{parameter topology function}, and will assume two parameters $p_1$ and $p_2$ have the same topology if and only if the following equation holds:
     \begin{equation}
-      \phi(p_1) = \phi(p_2).
+      \varphi(p_1) = \varphi(p_2).
     \end{equation}
 
     The \textit{generic state} then is a parameter with the constant topology within a particular BSCA. Let define $S_s$ as a set of all possible generic states:
     \begin{equation}
-      S_s = \{ s \mid s \in P, \phi(s) = p_c \},
+      S_s = \{ s \mid s \in P, \varphi(s) = p_c \},
     \end{equation}
     where $p_c$ is a constant topology value.
 
@@ -276,9 +278,9 @@
 
     In BSCA, the evolution at a single timestep is going in two phases: \textit{emit phase} and \textit{absorb phase}, so update function will take a form of
     \begin{equation}
-      \omega(u) = \alpha(\epsilon(u)),
+      \omega(u) = \alpha(\varepsilon(u)),
     \end{equation}
-    where $\alpha$ is \textit{absorb function} and $\epsilon$; is \textit{emit function}. Let describe how both of them works in the next sections.
+    where $\alpha$ is \textit{absorb function} and $\varepsilon$; is \textit{emit function}. Let describe how both of them works in the next sections.
 
   \subsection{Emit Phase}
 
@@ -312,9 +314,9 @@
         At the end of emit phase, each buffer should contain a generic state intended for a specific neigbor. 
     \end{enumerate}
 
-    The whole emit function $\epsilon: S_b \to S_b$ thus takes a form of
+    The whole emit function $\varepsilon: S_b \to S_b$ thus takes a form of
     \begin{equation}
-      \epsilon(C) = \langle \sigma(\eta_e(C, 0)), ..., \sigma(\eta_e(C, M - 1)) \rangle,
+      \varepsilon(C) = \langle \sigma(\eta_e(C, 0)), ..., \sigma(\eta_e(C, M - 1)) \rangle,
     \end{equation}
 
   \subsection{Absorb Phase}
