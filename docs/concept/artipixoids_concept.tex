@@ -251,8 +251,8 @@
     \begin{figure}[h]
       \centering
       \begin{tikzpicture}[node distance=1.4cm]
-        \tikzstyle{main}=[rectangle, thick, double, draw=black!100, fill=white!100, minimum size=4mm]
-        \tikzstyle{buffer}=[rectangle, thick, draw=black!50, fill=white!100, minimum size=4mm]
+        \tikzstyle{main}=[rectangle, ultra thick, draw=black!100, fill=white!100, minimum size=4mm]
+        \tikzstyle{buffer}=[rectangle, ultra thick, draw=black!50, fill=white!100, minimum size=4mm]
         \begin{scope}
           \node [main] (s0) {$S_0$};
           \node [buffer] (s1) [above of=s0] {$S_1$};
@@ -305,8 +305,8 @@
     \begin{figure}[H]
       \centering
       \begin{tikzpicture}[node distance=8mm]
-        \tikzstyle{main}=[rectangle, thick, double, draw=black!100, fill=white!100, minimum size=4mm]
-        \tikzstyle{buffer}=[rectangle, thick, draw=black!50, fill=white!100, minimum size=4mm]
+        \tikzstyle{main}=[rectangle, ultra thick, draw=black!100, fill=white!100, minimum size=4mm]
+        \tikzstyle{buffer}=[rectangle, ultra thick, draw=black!50, fill=white!100, minimum size=4mm]
         \pgfmathtruncatemacro{\gridsize}{2};
         \pgfmathtruncatemacro{\cellsize}{25};
         \foreach \x in {0, ..., \gridsize}
