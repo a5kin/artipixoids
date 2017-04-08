@@ -248,7 +248,7 @@
     \end{equation}
     where $p_c$ is a constant topology value.
 
-    \begin{figure}[H]
+    \begin{figure}[h]
       \centering
       \begin{tikzpicture}[node distance=1.4cm]
         \tikzstyle{main}=[rectangle, thick, double, draw=black!100, fill=white!100, minimum size=4mm]
@@ -304,7 +304,45 @@
 
     \begin{figure}[H]
       \centering
-      \includegraphics[scale=0.2]{bsca_emit}
+      \begin{tikzpicture}[node distance=8mm]
+        \tikzstyle{main}=[rectangle, thick, double, draw=black!100, fill=white!100, minimum size=4mm]
+        \tikzstyle{buffer}=[rectangle, thick, draw=black!50, fill=white!100, minimum size=4mm]
+        \pgfmathtruncatemacro{\gridsize}{2};
+        \pgfmathtruncatemacro{\cellsize}{25};
+        \foreach \x in {0, ..., \gridsize}
+          \foreach \y in {0, ..., \gridsize}
+          {
+            \pgfmathtruncatemacro{\xs}{\x * \cellsize};
+            \pgfmathtruncatemacro{\ys}{\y * \cellsize};
+            \begin{scope}[xshift=\xs mm,yshift=\ys mm]
+              \node [main] (s0\x\y) {};
+              \node [buffer] (s1\x\y) [above of=s0\x\y] {};
+              \node [buffer] (s2\x\y) [right of=s0\x\y] {};
+              \node [buffer] (s3\x\y) [below of=s0\x\y] {};
+              \node [buffer] (s4\x\y) [left of=s0\x\y] {};
+            \end{scope}
+            \begin{pgfonlayer}{background}
+              \filldraw [line width=4mm, join=round, black!10]
+              (s1\x\y.north  -| s2\x\y.east)  rectangle (s3\x\y.south  -| s4\x\y.west);
+            \end{pgfonlayer}
+          }
+        \foreach \x in {0, ..., \gridsize}
+          \foreach \y in {0, ..., \gridsize}
+          {
+            \pgfmathtruncatemacro{\xs}{\x * \cellsize};
+            \pgfmathtruncatemacro{\ys}{\y * \cellsize};
+            \begin{scope}[xshift=\xs mm,yshift=\ys mm,rounded corners=1mm]
+              \draw[->] (s0\x\y.east) -- +(.2,0) |- (s1\x\y.east);
+              \draw[->] (s0\x\y.south) -- +(0,-.2) -| (s2\x\y.south);
+              \draw[->] (s0\x\y.west) -- +(-.2,0) |- (s3\x\y.west);
+              \draw[->] (s0\x\y.north) -- +(0,.2) -| (s4\x\y.north);
+            \end{scope}
+            \begin{pgfonlayer}{background}
+              \filldraw [line width=4mm, join=round, black!10]
+              (s1\x\y.north  -| s2\x\y.east)  rectangle (s3\x\y.south  -| s4\x\y.west);
+            \end{pgfonlayer}
+          }
+      \end{tikzpicture}
       \caption{Emit Phase in BSCA.}
       \label{fig:emit-phase}
     \end{figure}
@@ -338,7 +376,7 @@
     \end{equation}
 
   \subsection{Absorb Phase}
-    \begin{figure}[H]
+    \begin{figure}[h]
       \centering
       \includegraphics[scale=0.2]{bsca_absorb}
       \caption{Absorb Phase in BSCA.}
