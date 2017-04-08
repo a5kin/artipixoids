@@ -10,6 +10,7 @@
 \usepackage{epigraph}
 \usepackage{pstricks}
 \usepackage{tikz}
+\usepackage{ifthen}
 \usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
 
 \title{\bf Artipixoids!\\\large The Concept (draft)}
@@ -308,7 +309,7 @@
         \tikzstyle{main}=[rectangle, ultra thick, draw=black!100, fill=white!100, minimum size=4mm]
         \tikzstyle{buffer}=[rectangle, ultra thick, draw=black!50, fill=white!100, minimum size=4mm]
         \pgfmathtruncatemacro{\gridsize}{2};
-        \pgfmathtruncatemacro{\cellsize}{25};
+        \pgfmathtruncatemacro{\cellsize}{26};
         \foreach \x in {0, ..., \gridsize}
           \foreach \y in {0, ..., \gridsize}
           {
@@ -376,11 +377,70 @@
     \end{equation}
 
   \subsection{Absorb Phase}
-    \begin{figure}[h]
+
+    \begin{figure}[H]
       \centering
-      \includegraphics[scale=0.2]{bsca_absorb}
+      \begin{tikzpicture}[node distance=8mm]
+        \tikzstyle{main}=[rectangle, ultra thick, draw=black!100, fill=white!100, minimum size=4mm]
+        \tikzstyle{buffer}=[rectangle, ultra thick, draw=black!50, fill=white!100, minimum size=4mm]
+        \pgfmathtruncatemacro{\gridsize}{2};
+        \pgfmathtruncatemacro{\cellsize}{26};
+        \foreach \x in {0, ..., \gridsize}
+          \foreach \y in {0, ..., \gridsize}
+          {
+            \pgfmathtruncatemacro{\xs}{\x * \cellsize};
+            \pgfmathtruncatemacro{\ys}{\y * \cellsize};
+            \begin{scope}[xshift=\xs mm,yshift=\ys mm]
+              \node [main] (s0\x\y) {};
+              \node [buffer] (s1\x\y) [above of=s0\x\y] {};
+              \node [buffer] (s2\x\y) [right of=s0\x\y] {};
+              \node [buffer] (s3\x\y) [below of=s0\x\y] {};
+              \node [buffer] (s4\x\y) [left of=s0\x\y] {};
+            \end{scope}
+            \begin{pgfonlayer}{background}
+              \filldraw [line width=4mm, join=round, black!10]
+              (s1\x\y.north  -| s2\x\y.east)  rectangle (s3\x\y.south  -| s4\x\y.west);
+            \end{pgfonlayer}
+          }
+        \foreach \x in {0, ..., \gridsize}
+          \foreach \y in {0, ..., \gridsize}
+          {
+            \pgfmathtruncatemacro{\xs}{\x * \cellsize};
+            \pgfmathtruncatemacro{\ys}{\y * \cellsize};
+            \pgfmathtruncatemacro{\xp}{\x + 1};
+            \pgfmathtruncatemacro{\xm}{\x - 1};
+            \pgfmathtruncatemacro{\yp}{\y + 1};
+            \pgfmathtruncatemacro{\ym}{\y - 1};
+            \begin{scope}[xshift=\xs mm,yshift=\ys mm,rounded corners=1mm]
+              \ifthenelse{\x < \gridsize}{
+                \draw[->] (s4\xp\y.north) -- +(0,.2) -| (s0\x\y.north);
+              }{
+                \draw[<-] (s0\x\y.north) -| +(0,.2) -- +(1.5,.2);
+              }
+              \ifthenelse{\ym > -1}{
+                \draw[->] (s1\x\ym.east) -- +(.2,0) |- (s0\x\y.east);
+              }{
+                \draw[<-] (s0\x\y.east) -- +(.2,0) |- +(.2,-1.5);
+              }
+              \ifthenelse{\xm > -1}{
+                \draw[->] (s2\xm\y.south) -- +(0,-.2) -| (s0\x\y.south);
+              }{
+                \draw[<-] (s0\x\y.south) |- +(0,-.2) -- +(-1.5,-.2);
+              }
+              \ifthenelse{\y < \gridsize + 2}{
+                \draw[->] (s3\x\yp.west) -- +(-.2,0) |- (s0\x\y.west);
+              }{
+                \draw[<-] (s0\x\y.west) -| +(-.2,0) -- +(-.2,1.5);
+              }       
+            \end{scope}
+            \begin{pgfonlayer}{background}
+              \filldraw [line width=4mm, join=round, black!10]
+              (s1\x\y.north  -| s2\x\y.east)  rectangle (s3\x\y.south  -| s4\x\y.west);
+            \end{pgfonlayer}
+          }
+      \end{tikzpicture}
       \caption{Absorb Phase in BSCA.}
-      \label{fig:emit-phase}
+      \label{fig:absorb-phase}
     \end{figure}
 
    (TODO)
