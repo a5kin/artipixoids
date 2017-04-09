@@ -366,15 +366,17 @@
         \begin{equation}
           C_i := \sigma(\eta_e(C, i)),
         \end{equation}
-        where $i$ is the cell's index.
+        where $i$ is the cell's index and $C$ is a board state at the current timestep $t$: $C = U_t$. The decision function $\sigma$ could be as complex as you need: from naive sum of neighbor values to sophisticated microprogram execution.
       \item
-        At the end of emit phase, each buffer should contain a generic state intended for a specific neigbor. 
+        At the end of emit phase, each buffer should contain a generic state intended for a specific neigbor.
     \end{enumerate}
 
     The whole emit function $\varepsilon: S_b \to S_b$ thus takes a form of
     \begin{equation}
       \varepsilon(C) = \langle \sigma(\eta_e(C, 0)), ..., \sigma(\eta_e(C, M - 1)) \rangle,
     \end{equation}
+
+    Fig.~\ref{fig:emit-phase} shows the emit phase for 2-dimensional BSCA with Von Neumann neighborhood. The arrows are indicating the updates. So, at this phase, the main states are read-only, and the buffers are write-only within every given cell, which gives us the ability to use massively parallel architectures.
 
   \subsection{Absorb Phase}
 
