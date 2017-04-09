@@ -366,9 +366,9 @@
         \begin{equation}
           C_i := \sigma(\eta_e(C, i)),
         \end{equation}
-        where $i$ is the cell's index and $C$ is a board state at the current timestep $t$: $C = U_t$. The decision function $\sigma$ could be as complex as you need: from naive sum of neighbor values to sophisticated microprogram execution.
+        where $i$ is the cell's index and $C$ is a board state at the current timestep $t$: $C = U_t$. The decision function $\sigma$ could be as complex as you need: from naive copy of main state to sophisticated microprogram execution.
       \item
-        At the end of emit phase, each buffer should contain a generic state intended for a specific neigbor.
+        At the end of emit phase, each buffer should contain a generic state intended for a specific neighbor.
     \end{enumerate}
 
     The whole emit function $\varepsilon: S_b \to S_b$ thus takes a form of
@@ -376,7 +376,7 @@
       \varepsilon(C) = \langle \sigma(\eta_e(C, 0)), ..., \sigma(\eta_e(C, M - 1)) \rangle,
     \end{equation}
 
-    Fig.~\ref{fig:emit-phase} shows the emit phase for 2-dimensional BSCA with Von Neumann neighborhood. The arrows are indicating the updates. So, at this phase, the main states are read-only, and the buffers are write-only within every given cell, which gives us the ability to use massively parallel architectures.
+    Fig.~\ref{fig:emit-phase} shows the emit phase for 2-dimensional BSCA with Von Neumann neighborhood. The arrows are indicating the updates. So, at this phase, the main states are read-only, and the buffers are write-only within every given cell, which makes the process ``thread safe''.
 
   \subsection{Absorb Phase}
 
@@ -445,7 +445,46 @@
       \label{fig:absorb-phase}
     \end{figure}
 
-   (TODO)
+    At the absorb phase, each cell is receiving buffered states as ``messages'' from its neighbors, then evolving. It goes as follows.
+    \begin{enumerate}
+      \item 
+        From each neighbor, the cell is taking a buffered state intended for itself, and making a sequence from these states, along with its own main state:
+        \begin{equation}
+          \label{eq:neighbors-main-sequence}
+          \eta_a(C, i) = \langle \gamma({C_i}, 0), \gamma(\eta(i, 1), \iota^{-1}(i)), ..., \gamma(\eta(i, N), \iota^{-1}(i)) \rangle,
+        \end{equation}
+        where $i$ is the cell's index, $\gamma$ is a function from Eq.~\ref{eq:item-obtaining}, and $\iota^{-1}: \mathbb{Z} \to \mathbb{Z}$ is the function for reverse neighbor index obtaining, for which the following equation holds:
+        \begin{equation}
+          \eta(i, j) = \eta(\chi^{-1}(\nu(X_i, j)), \iota^{-1}(j)).
+        \end{equation}
+      \item
+        The cell is modifying its own main state as a result of \textit{blend function} $\psi: S_c \to S_c$:
+        \begin{equation}
+          C_i := \psi(\eta_a(C, i)),
+        \end{equation}
+        where $i$ is the cell's index and $C$ is a board state at the current timestep $t$: $C = U_t$. The blend function $\psi$ is generally performing a combination of incoming buffer states. It could be a sum or mean value or some genome crossover etc. Although, no one can keep you from inventing more exotic blend functions.
+      \item
+        At the end of absorb phase, each cell's main state is evolved and a subject to the observation, you can record it, use in visualization and so on.
+    \end{enumerate}
 
+    The whole absorb function $\alpha: S_b \to S_b$ thus takes a form of
+    \begin{equation}
+      \alpha(C) = \langle \psi(\eta_a(C, 0)), ..., \psi(\eta_a(C, M - 1)) \rangle,
+    \end{equation}
+
+    Fig.~\ref{fig:absorb-phase} shows the absorb phase for 2-dimensional BSCA with Von Neumann neighborhood. The arrows are indicating the updates. So, at this phase, the buffered states are read-only, and the main states are write-only within every given cell, which in combination with emit phase, gives us the ability to safely run the whole process on massively parallel architectures.
+
+  \subsection{Invariance Patterns}
+
+  \subsubsection{Energy conservation}
+
+    (TODO)
+
+  \subsubsection{Genetic Microprograms}
+
+    (TODO)
+
+  \subsection{Optimization Patterns}
+    (TODO)
 
 \end{document}
