@@ -218,7 +218,7 @@
     \end{equation}
     so, each cell should be present in a set of neighbours for all of its neighbours.
 
-    Be warned, any border function that breaks the neighborhood homogeneity, will also break an energy conservation, unless the buffered interactions (see below) with off-board cells are explicitly restricted in update rules. 
+    Be warned, any border function that breaks the neighborhood homogeneity, will also break an energy conservation, unless the buffered interactions with off-board cells are explicitly restricted in update rules. See Section~\ref{subsec:energy-conservation} for more details.
 
   \subsection{Single Cell Design}
 
@@ -479,25 +479,27 @@
   \subsection{Invariance Patterns}
 
   \subsubsection{Energy conservation}
-
+    \label{subsec:energy-conservation}
     Using the design from previous sections, it is very easy to define a model that will behave like an isolated thermodynamic system (see Item~\ref{itm:isolation} from Section~\ref{subsec:manifest-scientific}). If $E: S_s \to \mathbb{Z}$ is a function for extracting the energy component from the generic state, then we can say the system will obey the energy conservation principle if the following equations holds:
     \begin{equation}
-      \sum_{i=0}^{N}{E(C_i)} = \sum_{i=0}^{N}{E(\gamma(\sigma(C), i))}, \quad \forall C \in S_s,
+      \label{emit-conservation}
+      \sum_{i=0}^{N}{E(c_i)} = \sum_{i=0}^{N}{E(\gamma(\sigma(c), i))}, \quad \forall c \in S_c,
     \end{equation}
     \begin{equation}
-      \sum_{i=0}^{N}{E(C_i)} = \sum_{i=0}^{N}{E(\gamma(\psi(C), i))}, \quad \forall C \in S_s.
+      \sum_{i=0}^{N}{E(c_i)} = \sum_{i=0}^{N}{E(\gamma(\psi(c), i))}, \quad \forall c \in S_c.
     \end{equation}
     Thus, the summed energy should stay the same for the argument and the result of either decision or blend function.
 
-    The broken neighborhood homogeneity (see Eq.~\ref{eq:neighborhood-homogeneity}) could easily break energy conservation too. (TODO) 
+    The broken neighborhood homogeneity (see Eq.~\ref{eq:neighborhood-homogeneity}) could easily be a threat for energy conservation. For example, in a case of static borders the energy may leak over the edge of the board. To prevent this, we must restrict buffered interactions with the off-board cells: at the emit phase, all the buffers pointing over the edge should be set to a state of zero energy, and Eq.~\ref{emit-conservation} should still be held.
 
-    Please also note, energy conservation described here is the mandatory criteria for ``genuine'' Artipixoids (see Item~\ref{itm:valid-artipixoid} from Section~\ref{subsec:manifest-artistic}).
+    Please also note, energy conservation is the mandatory criteria for ``genuine'' Artipixoids (see Item~\ref{itm:valid-artipixoid} from Section~\ref{subsec:manifest-artistic}).
 
   \subsubsection{Genetic Microprograms}
 
     (TODO)
 
   \subsection{Optimization Patterns}
+
     (TODO)
 
 \end{document}
