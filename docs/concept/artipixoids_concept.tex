@@ -78,7 +78,7 @@
         \item \textit{Discreteness:} the space and time of our environment should be discrete. So, space should consist of indivisible quanta, and their updates should occur in separate timesteps synchronously. In addition, any parameter of spatial quanta should take integer values only. This requirements will allow us to run the simulation of our environment on modern digital computational systems.
         \item \textit{Determinancy:} a global state of the environment at the timestep $t$ should lead to one and only one global state at the timestep $t + 1$. This will give us ensurance of the exactly same outcome, every time we run a particular experiment with the same initial state.
         \item \textit{Locality:} each quantum should have the same number and the same topology of its neighbors, and quantum's state should be updated using nothing more than the states of its neighbors and its own state. This will allow us to exploit the massively parallel computations, thus greatly speeding up the simulation.
-        \item \textit{Isolation:} the environment as a whole should behave like an isolated thermodynamic system. So, each quantum should have an energy level, and sum of all quanta's energy levels should be a constant value. Energy conservation will make us sure, that none of our experiments will lead neither to the extinction nor to the explosion of 'matter'.
+        \item \label{itm:isolation} \textit{Isolation:} the environment as a whole should behave like an isolated thermodynamic system. So, each quantum should have an energy level, and sum of all quanta's energy levels should be a constant value. Energy conservation will make us sure, that none of our experiments will lead neither to the extinction nor to the explosion of 'matter'.
         \item \textit{Isotropy:} all possible reflections of quantum's neighborhood at the timestep $t$ should lead to the same new quantum's state at timestep $t + 1$. This will allow energy to spread in all possible directions uniformly. 
         \item \textit{Polymorhism:} each quantum should have a microprogram, influencing its local update rules to some degree. A microprogram in return could also be changed according to update rules. This will allow us to add genetic informational component to the quantum level. We believe, this component is the key for the emergence of self-organized matter effects at the higher (macro) levels.
         \item \textit{Stochasticity:} optionally, some pseudorandom component would influence local updates too. For that, each quanta should have its own PRNG with long enough period. This will allow energy to spread in chaotic clouds, rather than in direct lines.
@@ -478,7 +478,13 @@
 
   \subsubsection{Energy conservation}
 
-    (TODO)
+    Using the design from previous sections, it is very easy to define a model that will behave like an isolated thermodynamic system (see Item~\ref{itm:isolation} from Section~\ref{subsec:manifest-scientific}). If $E: S_s \to \mathbb{Z}$ is a function for extracting the energy component from the generic state, then we can say the system will obey the energy conservation principle if the following equations holds:
+    \begin{equation}
+      \sum_{i=0}^{N}{E(C_i)} = \sum_{i=0}^{N}{E(\gamma(\varepsilon(C), i))}, \quad \forall C \in S_s,
+    \end{equation}
+    \begin{equation}
+      \sum_{i=0}^{N}{E(C_i)} = \sum_{i=0}^{N}{E(\gamma(\alpha(C), i))}, \quad \forall C \in S_s.
+    \end{equation}
 
   \subsubsection{Genetic Microprograms}
 
