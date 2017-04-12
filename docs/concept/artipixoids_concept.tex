@@ -366,6 +366,7 @@
       \item
         The cell is modifying its buffers and main state as a result of \textit{decision function} $\sigma: S_c \to S_c$:
         \begin{equation}
+          \label{eq:decision-function}
           C_i := \sigma(\eta_e(C, i)),
         \end{equation}
         where $i$ is the cell's index and $C$ is a board state at the current timestep $t$: $C = U_t$. The decision function $\sigma$ could be as complex as you need: from naive copy of main state to sophisticated microprogram execution.
@@ -500,10 +501,27 @@
 
     Since the cell is the smallest unit in our artificial environment, it's a good candidate for microprogram execution. For that, it must have several pre-defined properties:
     \begin{itemize}
-      \item an integer property to hold an execution pointer, let call it $p_p$;
-      \item an integer property to hold a set of microinstructions (memory), let call it $p_m$;
-      \item optionally, a sequence of integer properties for holding some values (registers), let call it $p_{r0}, p_{r1}, ...$ 
+      \item an integer property $p_p$ to hold an execution pointer;
+      \item an integer property $p_m$ to hold a set of microinstructions (program memory), $L_m$ bits in total, $L_c$ bits per instruction, $L_m, L_c \in {[1, \infty)}$;
+      \item a sequence of integer properties to hold some values (registers): $p_r = \langle p_{r_0}, p_{r_1}, ... \rangle$ 
     \end{itemize}
+
+    Then, at the emit phase the cell acts as follows:
+    \begin{enumerate}
+      \item Incrementing execution pointer, and returning it to the beginning as needed:
+        \begin{equation}
+          p_p = (p_p + 1) \text{ mod } (L_m / L_c).
+        \end{equation}
+      \item Obtaining a microinstruction at the position of execution pointer:
+        \begin{equation}
+          p_i = (p_m \text{ lsh } (p_p L_c)) \text{ and } (2^{L_c} - 1).
+        \end{equation}
+      \item Modifying its own state as shown in Eq.~\ref{eq:decision-function}, but the decision function is gotten from the pre-defined sequence of functions, one function per each microinstruction:
+        \begin{equation}
+          \sigma \Leftrightarrow \sigma_{p_i}
+        \end{equation}
+    \end{enumerate}
+
 
     (TODO)
 
