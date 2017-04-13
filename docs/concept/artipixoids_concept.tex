@@ -518,10 +518,12 @@
         \end{equation}
       \item Modifying its own state as shown in Eq.~\ref{eq:decision-function}, but the decision function is gotten from the pre-defined sequence of functions, one function per each microinstruction:
         \begin{equation}
-          \sigma \Leftrightarrow \sigma_{p_i}
+          \sigma \Leftrightarrow \sigma_{p_i}.
         \end{equation}
+        Thus, the decision function is depending on the current microinstruction.
     \end{enumerate}
 
+    We may consider a microprogram's memory as a genome. Then, at the absorb phase, the cell can change its microprogram with some genetic crossover algorithm using all ``incoming'' genomes from neighbor's buffers.
 
     (TODO)
 
