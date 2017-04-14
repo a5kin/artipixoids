@@ -501,7 +501,7 @@
     Since the cell is the smallest unit in our artificial environment, it's a good candidate for microprogram execution. For that, it must have several pre-defined properties:
     \begin{itemize}
       \item an integer property $p_p$ to hold an execution pointer;
-      \item an integer property $p_m$ to hold a set of microinstructions (program memory), $L_m$ bits in total, $L_c$ bits per instruction, $L_m, L_c \in {[1, \infty)}$;
+      \item an integer property $p_m$ to hold a set of microinstructions (program memory), $L_m$ bits in total, $L_c$ bits per instruction, $L_m, L_c \in {[1 .. \infty)}$;
       \item a sequence of integer properties to hold some values (registers): $p_r = \langle p_{r_0}, p_{r_1}, ... \rangle$ 
     \end{itemize}
 
@@ -524,10 +524,9 @@
 
     We may consider a microprogram's memory as a genome. Then, at the absorb phase, the cell can change its microprogram with some genetic crossover algorithm using all ``incoming'' genomes from neighbor's buffers. The exact crossover algorithm should be implemented as a part of blend function $\psi$ (see Eq.~\ref{eq:blend-function})
 
-    The microinstructions could take any form. Here, we'll give some insights to the ideas we are actively using in our microprograms.
+    The microinstructions could take many forms. Here, we'll give some insights to the ideas we are actively using in our microprograms.
     \begin{description}
-      \item [Value saturation.] ~\\
-        The energy values of neighbors could be saturated to a single bit. A possible saturation function $\theta: S_s \to \{ 0, 1 \}$ may take a form of:
+      \item [Value saturation.] The energy values of neighbors could be saturated to a single bit. A possible \textit{saturation function} $\theta: S_s \to \{ 0, 1 \}$ may take a form of:
         \begin{equation}
           \theta(s_m, s_n) = 
           \begin{cases}
@@ -535,13 +534,17 @@
             1 \quad & \text{if } \gamma(s_m) \geq \gamma(s_n),
           \end{cases}
         \end{equation}
-        where $s_m$ is a cell's main state, $s_n$ is a neighbor cell's state, and $\gamma$ is a function from Eq.~\ref{eq:item-obtaining}. Then, we can use those bit values in the functions described below in this list.
-      \item [Gated View.] ~\\
-        Sometimes, you need to reduce a number of neighbors to operate on. For that, let introduce a special property $p_g$ called \textit{gate}. (TODO)
-      \item [Elementary Rules.] ~\\
-        (TODO)
-      \item [Turing Machines.] ~\\
-        (TODO)
+        where $s_m$ is a cell's main state, $s_n$ is a neighbor cell's state, and $\gamma$ is a function from Eq.~\ref{eq:item-obtaining}. Then, we can use those bit values in the functions described below in this list. You can use other variations of saturation functions as well, like a fixed threshold, hysteresis, etc.
+      \item [Gated View.] Sometimes, you need to reduce a number of neighbors to operate on. For that, let introduce a special property $p_g \in {[1 .. N]}$ called \textit{gate}. The gate is an integer pointing to a neighbor's index. Thus, you can use this value i.e. for spreading an energy to a gate's direction only, or to get 3 saturated neighbors' values around the gate for using in elementary rule.
+        
+        The static gate, of course, would be quite boring. To make it dynamic, let define another function $\xi: {[1 .. N]} \to {[1 .. N]}$, which is called \textit{spin function}. Then, after each step, the gate would change its value as a result of this function:
+        \begin{equation}
+          p_g := \xi(p_g).
+        \end{equation}
+        The spin function may run the gate in loops of pre-defined sequences, or set it accordingly to other params values or even change it randomly.
+
+      \item [Elementary Rules.] (TODO)
+      \item [Turing Machines.] (TODO)
 
     \end{description}
 
