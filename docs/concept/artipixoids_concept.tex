@@ -463,6 +463,7 @@
       \item
         The cell is modifying its own main state as a result of \textit{blend function} $\psi: S_c \to S_c$:
         \begin{equation}
+          \label{eq:blend-function}
           C_i := \psi(\eta_a(C, i)),
         \end{equation}
         where $i$ is the cell's index and $C$ is a board state at the current timestep $t$: $C = U_t$. The blend function $\psi$ is generally performing a combination of incoming buffer states. It could be a sum or mean value or some genome crossover etc. Although, no one can keep you from inventing more exotic blend functions.
@@ -477,9 +478,7 @@
 
     Fig.~\ref{fig:absorb-phase} shows the absorb phase for 2-dimensional BSCA with Von Neumann neighborhood. The arrows are indicating the updates. So, at this phase, the buffered states are read-only, and the main states are write-only within every given cell, which in combination with emit phase, gives us the ability to safely run the whole process on massively parallel architectures.
 
-  \subsection{Invariance Patterns}
-
-  \subsubsection{Energy conservation}
+  \subsection{Energy conservation}
     \label{subsec:energy-conservation}
     Using the design from previous sections, it is very easy to define a model that will behave like an isolated thermodynamic system (see Item~\ref{itm:isolation} from Section~\ref{subsec:manifest-scientific}). If $E: S_s \to \mathbb{Z}$ is a function for extracting the energy component from the generic state, then we can say the system will obey the energy conservation principle if the following equations holds:
     \begin{equation}
@@ -495,7 +494,7 @@
 
     Please also note, energy conservation is the mandatory criteria for ``genuine'' Artipixoids (see Item~\ref{itm:valid-artipixoid} from Section~\ref{subsec:manifest-artistic}).
 
-  \subsubsection{Genetic Microprograms}
+  \subsection{Genetic Microprograms}
 
     As we stated in The Manifesto, informational component is the key aspect to the phenomenon of life as we know it. Without information, the energy would just be a dull clouds of dust wandering randomly in space and time. But, as we all can see, the matter is organizing in the complex self-replicating patterns, and this is happening at each level of existense: from galaxies to atoms. We believe, this principle of self-organization is scaling fractally from the very bottom level of indivisible Planck scale quanta, each behaving like a machine executing a genetic microprogram.
 
@@ -523,7 +522,28 @@
         Thus, the decision function is depending on the current microinstruction.
     \end{enumerate}
 
-    We may consider a microprogram's memory as a genome. Then, at the absorb phase, the cell can change its microprogram with some genetic crossover algorithm using all ``incoming'' genomes from neighbor's buffers.
+    We may consider a microprogram's memory as a genome. Then, at the absorb phase, the cell can change its microprogram with some genetic crossover algorithm using all ``incoming'' genomes from neighbor's buffers. The exact crossover algorithm should be implemented as a part of blend function $\psi$ (see Eq.~\ref{eq:blend-function})
+
+    The microinstructions could take any form. Here, we'll give some insights to the ideas we are actively using in our microprograms.
+    \begin{description}
+      \item [Value saturation.] ~\\
+        The energy values of neighbors could be saturated to a single bit. A possible saturation function $\theta: S_s \to \{ 0, 1 \}$ may take a form of:
+        \begin{equation}
+          \theta(s_m, s_n) = 
+          \begin{cases}
+            0 \quad & \text{if } \gamma(s_m) < \gamma(s_n),\\
+            1 \quad & \text{if } \gamma(s_m) \geq \gamma(s_n),
+          \end{cases}
+        \end{equation}
+        where $s_m$ is a cell's main state, $s_n$ is a neighbor cell's state, and $\gamma$ is a function from Eq.~\ref{eq:item-obtaining}. Then, we can use those bit values in the functions described below in this list.
+      \item [Gated View.] ~\\
+        Sometimes, you need to reduce a number of neighbors to operate on. For that, let introduce a special property $p_g$ called \textit{gate}. (TODO)
+      \item [Elementary Rules.] ~\\
+        (TODO)
+      \item [Turing Machines.] ~\\
+        (TODO)
+
+    \end{description}
 
     (TODO)
 
