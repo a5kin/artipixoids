@@ -11,6 +11,8 @@
 \usepackage{pstricks}
 \usepackage{tikz}
 \usepackage{ifthen}
+\usepackage{enumerate}
+\usepackage[inline]{enumitem}
 \usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
 
 \title{\bf Artipixoids!\\\large The Concept (draft)}
@@ -543,17 +545,21 @@
         \end{equation}
         The spin function may run the gate in loops of pre-defined sequences, or set it accordingly to other params values or even change it randomly.
 
-      \item [Elementary Rules.] One of the easier microprograms are those which using elementary CA rules as instructions. So, a microprogram is a set of rules, executing sequentially. Each rule directly mapping the neighborhood state to the state of the cell at the next timestep. The cells' states are binary, so here we may use saturated energy values as an input. The outcome is also a binary state: cell is either alive or dead. If we are using a model with energy conservation, we may interpret ``dying'' as a command to spread cell's energy (either whole or part) to its neighbors.
+      \item [Elementary Rules.] One of the easier microprograms are those which using elementary CA rules as instructions. So, a microprogram is a set of rules, executing sequentially. Each rule directly mapping the neighborhood state to the state of the cell at the next timestep. The cells' states are binary, so here we may use saturated energy values as an input. The outcome is also a binary state: cell is either alive or dead. If we are using a model with energy conservation, we may interpret ``dying'' as a command to spread cell's energy (either whole or part) to its neighbors. The ``birth'' may be simulated by setting a special property, telling the dying neighbors at the next timestep to send more energy to the direction of the ``borning'' cell.
 
         In case when we are using a rule with lower dimension (e.g. 1D rule in 2D automaton), we may use a gate to get only those neighbors that are closer to it. Then, apply corresponding rule, and, in the case of ``dying'', spread energy only in the direction of the gate.
 
         Since rules may take a lot of memory, we may also increment the execution pointer by a value less than a microinstruction (rule) width. This may produce interesting effects of ``shifting'' rules.
 
-      \item [Turing Machines.] (TODO)
+      \item [Turing Machines.] Another possible superset of microprograms is based on Turing machines. Here, neighbors may be interpreted as a tape symbols, gate as a tape pointer, microinstructions are Turing machine states, and the execution pointer points to the current state. Then, at the emit phase, we are 
+        \begin{enumerate*} [label={\alph*)},font={\bfseries}]
+          \item getting a machine state by the execution pointer
+          \item getting a saturated value from the neighbor at the direction of the gate
+          \item modifying the gate and the execution pointer according to the instruction and 
+          \item sending additional energy in the direction of the gate if the instruction telling us to write a 1 to the tape.
+        \end{enumerate*}
 
     \end{description}
-
-    (TODO)
 
   \subsection{Optimization Patterns}
 
