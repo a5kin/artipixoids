@@ -551,13 +551,23 @@
 
         Since rules may take a lot of memory, we may also increment the execution pointer by a value less than a microinstruction (rule) width. This may produce interesting effects of ``shifting'' rules.
 
-      \item [Turing Machines.] Another possible superset of microprograms is based on Turing machines. Here, neighbors may be interpreted as a tape symbols, gate as a tape pointer, microinstructions are Turing machine states, and the execution pointer points to the current state. Then, at the emit phase, we are 
+      \item [Turing Machines.] Another possible superset of microprograms is based on Turing machines. Here, neighbors may be interpreted as a tape, the gate as a head, the genetic microprogram as a table of states, and the execution pointer as a Turing machine state register. Then, at the emit phase, we are 
         \begin{enumerate*} [label={\alph*)},font={\bfseries}]
           \item getting a machine state by the execution pointer
           \item getting a saturated value from the neighbor at the direction of the gate
-          \item modifying the gate and the execution pointer according to the instruction and 
-          \item sending additional energy in the direction of the gate if the instruction telling us to write a 1 to the tape.
+          \item sending additional energy in the direction of the gate if the instruction telling us to write a 1 to the tape and
+          \item modifying the gate and the execution pointer according to the instruction.
         \end{enumerate*}
+
+        The gate is modifying as follows:
+        \begin{equation}
+          p_g := 
+          \begin{cases}
+            \xi(p_g) \quad & \text{if head is shifting left},\\
+            \xi^{-1}(p_g) \quad & \text{if head is shifting right},
+          \end{cases}
+        \end{equation}
+        where $\xi^{-1}$ is \textit{reverse spin function}.
 
     \end{description}
 
