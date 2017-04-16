@@ -500,11 +500,11 @@
 
     As we stated in The Manifesto, informational component is the key aspect to the phenomenon of life as we know it. Without information, the energy would just be a dull clouds of dust wandering randomly in space and time. But, as we all can see, the matter is organizing in the complex self-replicating patterns, and this is happening at each level of existense: from galaxies to atoms. We believe, this principle of self-organization is scaling fractally from the very bottom level of indivisible Planck scale quanta, each behaving like a machine executing a genetic microprogram.
 
-    Since the cell is the smallest unit in our artificial environment, it's a good candidate for microprogram execution. For that, it must have several pre-defined properties:
+    Since the cell is the smallest unit in our artificial environment, it's a good candidate for microprogram execution. For that, it must have several pre-defined parameters:
     \begin{itemize}
-      \item an integer property $p_p$ to hold an execution pointer;
-      \item an integer property $p_m$ to hold a set of microinstructions (program memory), $L_m$ bits in total, $L_c$ bits per instruction, $L_m, L_c \in {[1 .. \infty)}$;
-      \item a sequence of integer properties to hold some values (registers): $p_r = \langle p_{r_0}, p_{r_1}, ... \rangle$ 
+      \item an integer parameter $p_p$ to hold an execution pointer;
+      \item an integer parameter $p_m$ to hold a set of microinstructions (program memory), $L_m$ bits in total, $L_c$ bits per instruction, $L_m, L_c \in {[1 .. \infty)}$;
+      \item a sequence of integer parameters to hold some values (registers): $p_r = \langle p_{r_0}, p_{r_1}, ... \rangle$ 
     \end{itemize}
 
     Then, at the emit phase the cell acts as follows:
@@ -537,7 +537,7 @@
           \end{cases}
         \end{equation}
         where $s_m$ is a cell's main state, $s_n$ is a neighbor cell's state, and $E$ is a function from Eq.~\ref{eq:emit-conservation}. Then, we can use those bit values in the functions described below in this list. You can use other variations of saturation functions as well, like a fixed threshold, hysteresis, etc.
-      \item [Gated View.] Sometimes, you need to reduce a number of neighbors to operate on. For that, let introduce a special property $p_g \in {[1 .. N]}$ called \textit{gate}. The gate is an integer pointing to a neighbor's index. Thus, you can use this value i.e. for spreading an energy to a gate's direction only, or to get 3 saturated neighbors' values around the gate for using in elementary rule.
+      \item [Gated View.] Sometimes, you need to reduce a number of neighbors to operate on. For that, let introduce a special parameter $p_g \in {[1 .. N]}$ called \textit{gate}. The gate is an integer pointing to a neighbor's index. Thus, you can use this value i.e. for spreading an energy to a gate's direction only, or to get 3 saturated neighbors' values around the gate for using in elementary rule.
         
         The static gate, of course, would be quite boring. To make it dynamic, let define another function $\xi: {[1 .. N]} \to {[1 .. N]}$, which is called \textit{spin function}. Then, after each step, the gate would change its value as a result of this function:
         \begin{equation}
@@ -545,7 +545,7 @@
         \end{equation}
         The spin function may run the gate in loops of pre-defined sequences, or set it accordingly to other params values or even change it randomly.
 
-      \item [Elementary Rules.] One of the easier microprograms are those which using elementary CA rules as instructions. So, a microprogram is a set of rules, executing sequentially. Each rule directly mapping the neighborhood state to the state of the cell at the next timestep. The cells' states are binary, so here we may use saturated energy values as an input. The outcome is also a binary state: cell is either alive or dead. If we are using a model with energy conservation, we may interpret ``dying'' as a command to spread cell's energy (either whole or part) to its neighbors. The ``birth'' may be simulated by setting a special property, telling the dying neighbors at the next timestep to send more energy to the direction of the ``borning'' cell.
+      \item [Elementary Rules.] One of the easier microprograms are those which using elementary CA rules as instructions. So, a microprogram is a set of rules, executing sequentially. Each rule directly mapping the neighborhood state to the state of the cell at the next timestep. The cells' states are binary, so here we may use saturated energy values as an input. The outcome is also a binary state: cell is either alive or dead. If we are using a model with energy conservation, we may interpret ``dying'' as a command to spread cell's energy (either whole or part) to its neighbors. The ``birth'' may be simulated by setting a special parameter, telling the dying neighbors at the next timestep to send more energy to the direction of the ``borning'' cell.
 
         In case when we are using a rule with lower dimension (e.g. 1D rule in 2D automaton), we may use a gate to get only those neighbors that are closer to it. Then, apply corresponding rule, and, in the case of ``dying'', spread energy only in the direction of the gate.
 
@@ -568,6 +568,19 @@
           \end{cases}
         \end{equation}
         where $\xi^{-1}$ is \textit{reverse spin function}.
+
+      \item [XOR Networks.] This is another aproach we found interesting for microprograms implementation. A XOR Network is a graph with boolean values in the vertices. At the next timestep, each vertex taking a new value, XORing all the values of vertices it is sharing an edge with. The idea of using it in our automata is very simple. We are just looping through the vertices, getting their boolean values and using them as the instruction to ``born'', ``live'' or ``die'', just like for Elementary Rules.
+
+        The isolated XOR network is always changing its state in loops, usually it has several independent loops with ``garden of Eden'' states. But, if you interconnect a lot of XOR networks together and let them influence each other, the result would be quite unpredictable. Let just share some possible scenarios.
+        \begin{enumerate}
+          \item The network topology is fixed for all cells, but neighbors could change a value of the vertex at the execution pointer. 
+          \item The network topology is encoded in genome which is different for each cell, and a subject to interbreed with the neighbors.
+          \item The cells are emitting buffered values, that should be XORed with the neighbor's current vertex in addition to the network inner logic.
+          \item The Elementary rule is encoded in vertices values and changing with the state of network. Then, at each timestep this rule is applying to the neighbors as described in Elementary Rules paragraph.
+          \item The vertices has a different boolean operators, which are encoded into cell's genome. It takes us away from the XOR concept, but the results may still be interesting.
+        \end{enumerate}
+
+        XOR networks has a lot in common with the loop quantum gravity concept. Therefore, we must pay more attention to them if we'd like to implement models with the gravitational effects.
 
     \end{description}
 
