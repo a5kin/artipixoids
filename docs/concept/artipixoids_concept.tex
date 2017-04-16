@@ -586,7 +586,16 @@
 
   \subsection{Parameter Classes}
 
-    (TODO)
+    To make it easier to implement parameters for a new CA, we may inherit them from some pre-defined basic classes. In this section, we will categorize parameters into possible basic classes.
+    \begin{description}
+      \item [Scalar value.] The most basic parameter, it is just a common integer.
+      \item [Conservated value.] The scalar with additional checks for conservation. Every time we are changing this parameter in the buffer state, the system automatically change the main state with the opposite sign, and vice versa.
+      \item [Angular value.] The scalar ``rotating'' in $K$ grades. Generally, the system makes sure that the value is in $[0, K)$ range, dividing it modulo $K$. But there is also a special case of angular mean to be implemented additionally. 
+      \item [Weighted value.] At the absorb phase, this parameter's value is auto-scaled proportionally to some other parameter's value. 
+      \item [Decaying value.] At each timestep, this value is automatically divided by some factor.
+      \item [Random value.] The parameter is generating new value each timestep, using some PRNG algorithm. We are found KISS algorithm currently fits best for our purposes.
+      \item [Genetic value.] At the absorb phase, this value is calculated as crossover of all incoming genomes. It may also mutate randomly as needed.
+    \end{description}
 
   \subsection{Optimization Patterns}
 
