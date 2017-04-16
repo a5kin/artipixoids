@@ -220,11 +220,11 @@
     \end{equation}
     so, each cell should be present in a set of neighbours for all of its neighbours.
 
-    Be warned, any border function that breaks the neighborhood homogeneity, will also break an energy conservation, unless the buffered interactions with off-board cells are explicitly restricted in update rules. See Section~\ref{subsec:energy-conservation} for more details.
+    Be warned, any border function that breaks the neighborhood homogeneity, may also break an energy conservation, unless the buffered interactions with off-board cells are explicitly restricted in update rules. See Section~\ref{subsec:energy-conservation} for more details.
 
   \subsection{Single Cell Design}
 
-    Let recursively define a parameter as either an integer or a sequence of parameters. Then, the infinite set $P$ of all possible parameters is
+    Let recursively define a \textit{parameter} as either an integer or a sequence of parameters. Then, the infinite set $P$ of all possible parameters is
     \begin{align}
       \begin{split}
         P_0 &= \mathbb{Z},\\
@@ -297,7 +297,7 @@
         U_{t + 1} &= \omega(U_t),
       \end{split}
     \end{align}
-    where $C_s$ is an \textit{initial board state} (also called \textit{seed}), $t$ is a timestep number and $\omega: S_b \to S_B$ is an \textit{update function}.
+    where $C_s$ is an \textit{initial board state} (also called \textit{seed}), $t$ is a timestep number and $\omega: S_b \to S_b$ is an \textit{update function}.
 
     In BSCA, the evolution at a single timestep is going in two phases: \textit{emit phase} and \textit{absorb phase}, so update function will take a form of
     \begin{equation}
@@ -569,20 +569,24 @@
         \end{equation}
         where $\xi^{-1}$ is \textit{reverse spin function}.
 
-      \item [XOR Networks.] This is another aproach we found interesting for microprograms implementation. A XOR Network is a graph with boolean values in the vertices. At the next timestep, each vertex taking a new value, XORing all the values of vertices it is sharing an edge with. The idea of using it in our automata is very simple. We are just looping through the vertices, getting their boolean values and using them as the instruction to ``born'', ``live'' or ``die'', just like for Elementary Rules.
+      \item [XOR Networks.] This is another aproach we found interesting for microprograms implementation. XOR Network is a graph with boolean values in the vertices. At the next timestep, each vertex taking a new value, XORing all the values of vertices it is sharing an edge with. The idea of using it in our automata is very simple. We are just looping through the vertices, getting their boolean values and using them as the instruction to ``born'', ``live'' or ``die'', just like for Elementary Rules.
 
         The isolated XOR network is always changing its state in loops, usually it has several independent loops with ``garden of Eden'' states. But, if you interconnect a lot of XOR networks together and let them influence each other, the result would be quite unpredictable. Let just share some possible scenarios.
         \begin{enumerate}
           \item The network topology is fixed for all cells, but neighbors could change a value of the vertex at the execution pointer. 
           \item The network topology is encoded in genome which is different for each cell, and a subject to interbreed with the neighbors.
           \item The cells are emitting buffered values, that should be XORed with the neighbor's current vertex in addition to the network inner logic.
-          \item The Elementary rule is encoded in vertices values and changing with the state of network. Then, at each timestep this rule is applying to the neighbors as described in Elementary Rules paragraph.
-          \item The vertices has a different boolean operators, which are encoded into cell's genome. It takes us away from the XOR concept, but the results may still be interesting.
+          \item The Elementary rule is encoded in vertices values and changing with the state of network. Then, at each timestep the resulting rule is applying to the neighbors as described in Elementary Rules paragraph.
+          \item The vertices are implementing different boolean operators, which are encoded into cell's genome. It takes us away from the XOR concept, but the results may still be interesting.
         \end{enumerate}
 
         XOR networks has a lot in common with the loop quantum gravity concept. Therefore, we must pay more attention to them if we'd like to implement models with the gravitational effects.
 
     \end{description}
+
+  \subsection{Parameter Classes}
+
+    (TODO)
 
   \subsection{Optimization Patterns}
 
