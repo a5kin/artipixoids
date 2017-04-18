@@ -589,8 +589,8 @@
     To make it easier to implement parameters for a new CA, we may inherit them from some pre-defined basic classes. In this section, we will categorize parameters into possible basic classes.
     \begin{description}
       \item [Scalar value.] The most basic parameter, it is just a common integer.
-      \item [Conservated value.] The scalar with additional checks for conservation. Every time we are changing this parameter in the buffer state, the system automatically change the main state with the opposite sign, and vice versa.
-      \item [Angular value.] The scalar ``rotating'' in $K$ grades. Generally, the system makes sure that the value is in $[0, K)$ range, dividing it modulo $K$. But there is also a special case of angular mean to be implemented additionally. 
+      \item [Conservated value.] The scalar with additional checks for conservation. Every time we are changing this parameter in the buffer state, the system automatically changes the main state with the opposite sign, and vice versa.
+      \item [Angular value.] The scalar ``rotating'' in $K$ grades. Generally, the system makes sure that the value is in $[0, K)$ range, dividing it modulo $K$. But there are also special cases of angular mean and angular difference to be implemented additionally.
       \item [Weighted value.] At the absorb phase, this parameter's value is auto-scaled proportionally to some other parameter's value. 
       \item [Decaying value.] At each timestep, this value is automatically divided by some factor.
       \item [Random value.] The parameter is generating new value each timestep, using some PRNG algorithm. We are found KISS algorithm currently fits best for our purposes.
@@ -599,6 +599,15 @@
 
   \subsection{Optimization Patterns}
 
-    (TODO)
+    Our framework will generate a code for GPU, and there are several patterns that could help us to produce more effective code.
+    \begin{enumerate}
+      \item Parameters should be ``lazy''. We must read them from memory, only if we need them in kernel code further. They also could be completely discarded from the memory in the case if we're never actually using them.
+      \item Buffered states should also be ``lazy'', in the same manner as parameters: no need to read unnecessary buffers each time.
+      \item Parameters should be packed in memory in a most compact way, there should be no unused bits in a single parameter's representation in a memory. This will reduce both the memory access time and the memory space per each cell.
+      \item A special case, when we are using ``gate'' and interacting only with the neighbors in the direction of the gate, would be reduced to the less number of buffers, down to a single buffer.
+      \item Loops should be manually unrolled when it is possible.
+    \end{enumerate}
+    
+    This list is most likely not complete, we will extend it in future.
 
 \end{document}
