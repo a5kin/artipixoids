@@ -79,11 +79,11 @@
       \begin{enumerate}
 
         \item \textit{Discreteness:} the space and time of our environment should be discrete. So, space should consist of indivisible quanta, and their updates should occur in separate timesteps synchronously. In addition, any parameter of spatial quanta should take integer values only. This requirements will allow us to run the simulation of our environment on modern digital computational systems.
-        \item \textit{Determinancy:} a global state of the environment at the timestep $t$ should lead to one and only one global state at the timestep $t + 1$. This will give us ensurance of the exactly same outcome, every time we run a particular experiment with the same initial state.
+        \item \textit{Determinacy:} a global state of the environment at the timestep $t$ should lead to one and only one global state at the timestep $t + 1$. This will give us insurance of the exactly same outcome, every time we run a particular experiment with the same initial state.
         \item \textit{Locality:} each quantum should have the same number and the same topology of its neighbors, and quantum's state should be updated using nothing more than the states of its neighbors and its own state. This will allow us to exploit the massively parallel computations, thus greatly speeding up the simulation.
-        \item \label{itm:isolation} \textit{Isolation:} the environment as a whole should behave like an isolated thermodynamic system. So, each quantum should have an energy level, and sum of all quanta's energy levels should be a constant value. Energy conservation will make us sure, that none of our experiments will lead neither to the extinction nor to the explosion of 'matter'.
+        \item \label{itm:isolation} \textit{Isolation:} the environment as a whole should behave like an isolated thermodynamic system. So, each quantum should have an energy level, and sum of all quanta energy levels should be a constant value. Energy conservation will make us sure, that none of our experiments will lead neither to the extinction nor to the explosion of 'matter'.
         \item \textit{Isotropy:} all possible reflections of quantum's neighborhood at the timestep $t$ should lead to the same new quantum's state at timestep $t + 1$. This will allow energy to spread in all possible directions uniformly. 
-        \item \textit{Polymorhism:} each quantum should have a microprogram, influencing its local update rules to some degree. A microprogram in return could also be changed according to update rules. This will allow us to add genetic informational component to the quantum level. We believe, this component is the key for the emergence of self-organized matter effects at the higher (macro) levels.
+        \item \textit{Polymorphism:} each quantum should have a microprogram, influencing its local update rules to some degree. A microprogram in return could also be changed according to update rules. This will allow us to add genetic informational component to the quantum level. We believe, this component is the key for the emergence of self-organized matter effects at the higher (macro) levels.
         \item \textit{Stochasticity:} optionally, some pseudorandom component would influence local updates too. For that, each quanta should have its own PRNG with long enough period. This will allow energy to spread in chaotic clouds, rather than in direct lines.
         \item \textit{Mutability:} optionally, a quantum's microprogram would randomly mutate over time. This will result in wider genetic search for better microprograms, and also may prevent the whole environment from being conquested by a single genome.
         \item \textit{Magnetism:} optionally, quanta would have the tendency to 'attract' each other with some sort of force (gravitational, electromagnetic, or any other). We believe, magnetism is another key aspect behind the phenomenon of life as we know it.
@@ -100,7 +100,7 @@
           \textbf{\textit{The presumable methods of intervention}} are following.
       \begin{enumerate}
         \item \textit{Genetic selection:} during the simulation, we are collecting the most interesting and promising areas of space, then combine them all in a single initial state and repeat the process recursively while novel phenomena of interest are showing up.
-        \item \textit{Directed mutation (a.k.a. 'Hand of Fate')}: during the simulation, we are occasionaly pointing our finger to a small area of interest, and all quanta in this area are randomly changing parameters, excluding energy level. Then, evolution continues. 
+        \item \textit{Directed mutation (a.k.a. 'Hand of Fate')}: during the simulation, we are occasionally pointing our finger to a small area of interest, and all quanta in this area are randomly changing parameters, excluding energy level. Then, evolution continues. 
         \item \textit{Pre-designed components:} we are designing patterns of matter manually quantum by quantum, then using them either as a parts of more complex designs or to impact on 'raw' matter in some way.
       \end{enumerate}
 
@@ -114,7 +114,7 @@
     \item Then, the world begins to bloom, and it blooms the same every time we say the same Word.
     \item Some of us will just meditate on the beauty of their worlds, wandering around and changing the views.
     \item Others will actively play demiurges using scientific wizardry from previous section, or even more powerful stuff.
-    \item And some will get bored and destroy the creation with a single tap of the finger. Thus, letting its habitants live in some parallel universe, free of divine will and happy.
+    \item And some will get bored and destroy the creation with a single tap of the finger. Thus, letting its inhabitants live in some parallel universe, free of divine will and happy.
   \end{enumerate}
 
   \subsection{Social}
@@ -175,7 +175,7 @@
 
   \subsection {Border Effects}
 
-    A \textit{border cell} is a cell, having at least one of its neighbours off the board $X$. If $A_i$ is a set of all $i$-th cell's neighbors, that are inside $X$:
+    A \textit{border cell} is a cell, having at least one of its neighbors off the board $X$. If $A_i$ is a set of all $i$-th cell's neighbors, that are inside $X$:
     \begin{equation}
       A_i = \{ C_i \mid \nu(X_i, j) \in X, j \in [1 .. N] \}, \quad i \in {[0 .. M)},
     \end{equation}
@@ -184,7 +184,7 @@
       | A_i | \neq N, \quad i \in [0 .. M).
     \end{equation}
 
-    In order to correctly process all cells, including border ones, we have to define a conditional function $\eta$ for neighbors obtainment. Let call it a \textit{neighbour function}:
+    In order to correctly process all cells, including border ones, we have to define a conditional function $\eta$ for neighbors obtainment. Let call it a \textit{neighbor function}:
     \begin{equation}
       \eta(i, j) = 
       \begin{cases}
@@ -192,7 +192,7 @@
         \beta(\nu(X_i, j)) & \quad \text{if } \nu(X_i, j) \notin X,
       \end{cases}
     \end{equation}
-    where $\beta$ is a \textit{border function} returning a state for a hypothetic cells outside $X$, and $\chi^{-1}$ is a reverse lattice topology function, satisfying the following equation:
+    where $\beta$ is a \textit{border function} returning a state for a hypothetical cells outside $X$, and $\chi^{-1}$ is a reverse lattice topology function, satisfying the following equation:
     \begin{equation}
       \chi^{-1}(\chi(i)) = i.
     \end{equation}
@@ -218,7 +218,7 @@
       \label{eq:neighborhood-homogeneity}
       C_i \in \{ \eta(i', j) \mid j \in {[1 .. N]} \}, \quad i' \in \{ \beta^*(\nu(X_i, j)) \mid j \in {[1 .. N]} \}, \quad i \in {[0 .. M)},
     \end{equation}
-    so, each cell should be present in a set of neighbours for all of its neighbours.
+    so, each cell should be present in a set of neighbors for all of its neighbors.
 
     Be warned, any border function that breaks the neighborhood homogeneity, may also break an energy conservation, unless the buffered interactions with off-board cells are explicitly restricted in update rules. See Section~\ref{subsec:energy-conservation} for more details.
 
@@ -279,7 +279,7 @@
       \label{eq:cell-state}
       c = \langle S_0, ..., S_N \rangle, \quad S_i \in S_s \forall i \in {[0 .. N]},
     \end{equation}
-    where $S_0$ is the \textit{main state}, and $S_1$, ..., $S_N$ are the \textit{buffered states}, one per each neighbor. At the Fig.~\ref{fig:cell-design}, you can see a cell design for 2-dimensional BSCA with Von Neumann neighborhood. Buffered neighbor states is the cruicial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
+    where $S_0$ is the \textit{main state}, and $S_1$, ..., $S_N$ are the \textit{buffered states}, one per each neighbor. At the Fig.~\ref{fig:cell-design}, you can see a cell design for 2-dimensional BSCA with Von Neumann neighborhood. Buffered neighbor states is the crucial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
 
     Let also define two more sets for future use:
     \begin{align}
@@ -498,7 +498,7 @@
 
   \subsection{Genetic Microprograms}
 
-    As we stated in The Manifesto, informational component is the key aspect to the phenomenon of life as we know it. Without information, the energy would just be a dull clouds of dust wandering randomly in space and time. But, as we all can see, the matter is organizing in the complex self-replicating patterns, and this is happening at each level of existense: from galaxies to atoms. We believe, this principle of self-organization is scaling fractally from the very bottom level of indivisible Planck scale quanta, each behaving like a machine executing a genetic microprogram.
+    As we stated in The Manifesto, informational component is the key aspect to the phenomenon of life as we know it. Without information, the energy would just be a dull clouds of dust wandering randomly in space and time. But, as we all can see, the matter is organizing in the complex self-replicating patterns, and this is happening at each level of existence: from galaxies to atoms. We believe, this principle of self-organization is scaling fractally from the very bottom level of indivisible Planck scale quanta, each behaving like a machine executing a genetic microprogram.
 
     Since the cell is the smallest unit in our artificial environment, it's a good candidate for microprogram execution. For that, it must have several pre-defined parameters:
     \begin{itemize}
@@ -543,7 +543,7 @@
         \begin{equation}
           p_g := \xi(p_g).
         \end{equation}
-        The spin function may run the gate in loops of pre-defined sequences, or set it accordingly to other params values or even change it randomly.
+        The spin function may run the gate in loops of pre-defined sequences, or set it accordingly to other parameters' values or even change it randomly.
 
       \item [Elementary Rules.] One of the easier microprograms are those which using elementary CA rules as instructions. So, a microprogram is a set of rules, executing sequentially. Each rule directly mapping the neighborhood state to the state of the cell at the next timestep. The cells' states are binary, so here we may use saturated energy values as an input. The outcome is also a binary state: cell is either alive or dead. If we are using a model with energy conservation, we may interpret ``dying'' as a command to spread cell's energy (either whole or part) to its neighbors. The ``birth'' may be simulated by setting a special parameter, telling the dying neighbors at the next timestep to send more energy to the direction of the ``borning'' cell.
 
@@ -569,7 +569,7 @@
         \end{equation}
         where $\xi^{-1}$ is \textit{reverse spin function}.
 
-      \item [XOR Networks.] This is another aproach we found interesting for microprograms implementation. XOR Network is a graph with boolean values in the vertices. At the next timestep, each vertex taking a new value, XORing all the values of vertices it is sharing an edge with. The idea of using it in our automata is very simple. We are just looping through the vertices, getting their boolean values and using them as the instruction to ``born'', ``live'' or ``die'', just like for Elementary Rules.
+      \item [XOR Networks.] This is another approach we found interesting for microprograms implementation. XOR Network is a graph with boolean values in the vertices. At the next timestep, each vertex taking a new value, XORing all the values of vertices it is sharing an edge with. The idea of using it in our automata is very simple. We are just looping through the vertices, getting their boolean values and using them as the instruction to ``born'', ``live'' or ``die'', just like for Elementary Rules.
 
         The isolated XOR network is always changing its state in loops, usually it has several independent loops with ``garden of Eden'' states. But, if you interconnect a lot of XOR networks together and let them influence each other, the result would be quite unpredictable. Let just share some possible scenarios.
         \begin{enumerate}
@@ -589,7 +589,7 @@
     To make it easier to implement parameters for a new CA, we may inherit them from some pre-defined basic classes. In this section, we will categorize parameters into possible basic classes.
     \begin{description}
       \item [Scalar value.] The most basic parameter, it is just a common integer.
-      \item [Conservated value.] The scalar with additional checks for conservation. Every time we are changing this parameter in the buffer state, the system automatically changes the main state with the opposite sign, and vice versa.
+      \item [Conserved value.] The scalar with additional checks for conservation. Every time we are changing this parameter in the buffer state, the system automatically changes the main state with the opposite sign, and vice versa.
       \item [Angular value.] The scalar ``rotating'' in $K$ grades. Generally, the system makes sure that the value is in $[0, K)$ range, dividing it modulo $K$. But there are also special cases of angular mean and angular difference to be implemented additionally.
       \item [Weighted value.] At the absorb phase, this parameter's value is auto-scaled proportionally to some other parameter's value. 
       \item [Decaying value.] At each timestep, this value is automatically divided by some factor.
@@ -603,11 +603,16 @@
     \begin{enumerate}
       \item Parameters should be ``lazy''. We must read them from memory, only if we need them in kernel code further. They also could be completely discarded from the memory in the case if we're never actually using them.
       \item Buffered states should also be ``lazy'', in the same manner as parameters: no need to read unnecessary buffers each time.
-      \item Parameters should be packed in memory in a most compact way, there should be no unused bits in a single parameter's representation in a memory. This will reduce both the memory access time and the memory space per each cell.
+      \item Parameters should be packed in memory in a most compact way, there should be no unused bits in a cell's representation in memory. This will reduce both the memory access time and the memory space per each cell.
       \item A special case, when we are using ``gate'' and interacting only with the neighbors in the direction of the gate, would be reduced to the less number of buffers, down to a single buffer.
       \item Loops should be manually unrolled when it is possible.
+      \item Sorting networks should be used as the source for sorting algorithms.
     \end{enumerate}
     
     This list is most likely not complete, we will extend it in future.
+
+  \section*{Acknowledgments}
+
+    I would like to give special thanks to Alexey Shchepin, for the optimization ideas, testing, constructive criticism, advices in \LaTeX, and corrections to this document.
 
 \end{document}
