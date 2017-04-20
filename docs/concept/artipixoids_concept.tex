@@ -34,7 +34,7 @@
 
   \textbf{Artipixoids!} is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle. Started in the end of 2014, it has undergone several major modifications, and is still in development. But now is the right time to share basic concepts underlying all previous modifications, so others could use it to build their own wonderful worlds.
 
-  The document is split up in two parts. In \textit{The Manifesto} we will outline the main areas of the project development, and the main goals per each area. In \textit{The Core} section, we will give the formal definitions to the features we would like to see in the core of our future framework. 
+  The document is split up in two parts. In \textit{The Manifesto} we will outline the main areas of the project development, and the main goals per each area. In \textit{The Core} section, we will give the formal definition to all features we would like to see in the core of our future framework. 
 
   \newpage
   \tableofcontents
@@ -91,17 +91,17 @@
 
     \item \textbf{\textit{Random initial state}}, could be obtained using following known patterns.
       \begin{enumerate}
-        \item \textit{'Primordial Soup':} each and every quantum initially has an equally small amount of energy, other parameters are random. This is a good test for the ability of energy to self-organize in clusters from the completely uniform distribution. The bigger clusters are, the better. Fractal clusters are even better.
-        \item \textit{'Big Bang':} a small area of space is initialized with a high amount of energy and random parameters per each quantum. Outside the area, quanta has either zero or minimum possible amount of energy. This is a good test for the ability of energy to spread in empty space. We could also detect the fastest types of energy using this pattern. 
-        \item \textit{'Super Cluster':} same as Big Bang, but several areas with a bit lower energies are randomly initialized. The positions of areas are random across the space. This is a good test for gravitational effects, and also for collisions of different energy beams, produced in micro-bangs.
+        \item \textit{``Primordial Soup'':} each and every quantum initially has an equally small amount of energy, other parameters are random. This is a good test for the ability of energy to self-organize in clusters from the completely uniform distribution. The bigger clusters are, the better. Fractal clusters are even better.
+        \item \textit{``Big Bang'':} a small area of space is initialized with a high amount of energy and random parameters per each quantum. Outside the area, quanta has either zero or minimum possible amount of energy. This is a good test for the ability of energy to spread in empty space. We could also detect the fastest types of energy using this pattern. 
+        \item \textit{``Super Cluster'':} same as Big Bang, but several areas with a bit lower energies are randomly initialized. The positions of areas are random across the space. This is a good test for gravitational effects, and also for collisions of different energy beams, produced in micro-bangs.
       \end{enumerate}
 
     \item To obtain the better results, we reserve the rights to intervene the natural process of evolution. This will ruin the idea of self-emergence, but still may prove the possibility of artificial life in our environment.\\\\
           \textbf{\textit{The presumable methods of intervention}} are following.
       \begin{enumerate}
         \item \textit{Genetic selection:} during the simulation, we are collecting the most interesting and promising areas of space, then combine them all in a single initial state and repeat the process recursively while novel phenomena of interest are showing up.
-        \item \textit{Directed mutation (a.k.a. 'Hand of Fate')}: during the simulation, we are occasionally pointing our finger to a small area of interest, and all quanta in this area are randomly changing parameters, excluding energy level. Then, evolution continues. 
-        \item \textit{Pre-designed components:} we are designing patterns of matter manually quantum by quantum, then using them either as a parts of more complex designs or to impact on 'raw' matter in some way.
+        \item \textit{Directed mutation (a.k.a. ``Hand of Fate'')}: during the simulation, we are occasionally pointing our finger to a small area of interest, and all quanta in this area are randomly changing parameters, excluding energy level. Then, evolution continues. 
+        \item \textit{Pre-designed components:} we are designing patterns of matter manually quantum by quantum, then using them either as parts of more complex designs or to impact on a ``raw'' matter in some way.
       \end{enumerate}
 
   \end{enumerate}
@@ -114,7 +114,7 @@
     \item Then, the world begins to bloom, and it blooms the same every time we say the same Word.
     \item Some of us will just meditate on the beauty of their worlds, wandering around and changing the views.
     \item Others will actively play demiurges using scientific wizardry from previous section, or even more powerful stuff.
-    \item And some will get bored and destroy the creation with a single tap of the finger. Thus, letting its inhabitants live in some parallel universe, free of divine will and happy.
+    \item And some will get bored and destroy the creation with a single tap of one's finger. Thus, letting its inhabitants live in some parallel universe, free of divine will and happy.
   \end{enumerate}
 
   \subsection{Social}
@@ -124,7 +124,7 @@
     \item For that, we need a framework, implementing basic CA engine described below, along with a set of modular tools to easily build engine modifications.
     \item Then, we will be able to exchange new modifications in a form of compact modules.
     \item We will also be able to exchange new modular tools and extend our framework with them for future re-using.
-    \item Finally, for each modification, we will be able to make a collection of the experiment files with initial state and hyperparameters included, and run them in uniform interactive environment on massively parallel hardware like GPU clusters.
+    \item Finally, for each modification, we will be able to make a collection of the experiment files with the initial state and hyper-parameters included, and run them in the uniform interactive environment on a massively parallel hardware like GPU clusters.
   \end{enumerate}
 
   \subsection{Alien}
@@ -155,11 +155,11 @@
     \end{equation}
     where elements are nested sequences with uniform structure called \textit{cell state}. See the exact definition of the cell state in Eq.~17 below. We may refer to $C$ as to a \textit{board state} later.
 
-    The cartesian coordinates of the cell with index $i$ could be obtained as 
+    The Cartesian coordinates of the cell with index $i$ could be obtained as 
     \begin{equation}
       [ x_0, ..., x_{D - 1} ] = \chi(i), \quad i \in {[0 .. M)},
     \end{equation}
-    where $\chi$ is \textit{lattice topology function}. 
+    where $\chi: \mathbb{Z} \to \mathbb{R}^D$ is \textit{lattice topology function}. 
 
     Let also define a sequence of all cells' coordinates as 
     \begin{equation}
@@ -167,15 +167,15 @@
     \end{equation}
     We may refer to $X$ as to just a \textit{board} later.
 
-    The cartesian coordinates of cell's $j$-th neighbor could be obtained as
+    The Cartesian coordinates of cell's $j$-th neighbor could be obtained as
     \begin{equation}
       [ x_0, ..., x_{D - 1} ] = \nu(X_i, j), \quad i \in {[0 .. M)}, \quad j \in {[1 .. N]},
     \end{equation}
-    where $\nu$ is \textit{neighborhood topology function}. 
+    where $\nu: \mathbb{R}^D, \mathbb{Z} \to \mathbb{R}^D$ is \textit{neighborhood topology function}. 
 
-    Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of $j$:
+    Thus, we will assume the whole grid topology is homogeneous if and only if the following equation holds for each value of $j$ separately:
     \begin{equation}
-      X_i - \nu(X_i, j) = d_j, \quad \forall i \in {[0 .. M)}, j \in [1 .. N],
+      X_i - \nu(X_i, j) = d_j, \quad \;\forall\; i \in {[0 .. M)}, \quad j \in [1 .. N],
     \end{equation}
     where $d_j$ is a constant vector for each $j$. So, the vector difference between the positions of cell and its $j$-th neighbor should be a constant for each cell in a grid.
 
@@ -190,7 +190,7 @@
       | A_i | \neq N, \quad i \in [0 .. M).
     \end{equation}
 
-    In order to correctly process all cells, including border ones, we have to define a conditional function $\eta$ for neighbors obtainment. Let call it a \textit{neighbor function}:
+    In order to correctly process all cells, including border ones, we have to define a conditional function $\eta: \mathbb{Z}, \mathbb{Z} \to S_c$ for neighbors obtainment. Let call it a \textit{neighbor function}:
     \begin{equation}
       \eta(i, j) = 
       \begin{cases}
@@ -198,7 +198,7 @@
         \beta(\nu(X_i, j)) & \quad \text{if } \nu(X_i, j) \notin X,
       \end{cases}
     \end{equation}
-    where $\beta$ is a \textit{border function} returning a state for a hypothetical cells outside $X$, and $\chi^{-1}$ is a reverse lattice topology function, satisfying the following equation:
+    where $\beta: \mathbb{R}^D \to S_c$ is a \textit{border function} returning a state for a hypothetical cells outside $X$, $S_c$ is a set of all possible cell states (see Eq.~\ref{eq:state-sets}), and $\chi^{-1}: \mathbb{R}^D \to \mathbb{Z}$ is a reverse lattice topology function, satisfying the following equation:
     \begin{equation}
       \chi^{-1}(\chi(i)) = i.
     \end{equation}
@@ -210,7 +210,7 @@
       \label{eq:border-function-wrapping}
       \beta(x) = C_{\beta^*(x)}, \quad \beta^*(x) \in {[0 .. M)},
     \end{equation}
-    where $\beta^*$ is a \textit{wrap function}, mapping off-board coordinates to other cells on the board, and on-board coordinates strictly to the cells with those coordinates:
+    where $\beta^*: \mathbb{R}^D \to \mathbb{Z}$ is a \textit{wrap function}, mapping off-board coordinates to other cells on the board, and on-board coordinates strictly to the cells with those coordinates:
     \begin{equation}
       \beta^*(x) = 
       \begin{cases}
@@ -222,7 +222,7 @@
     We will assume that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq.~\ref{eq:border-function-wrapping}, and the following condition holds:
     \begin{equation}
       \label{eq:neighborhood-homogeneity}
-      C_i \in \{ \eta(i', j) \mid j \in {[1 .. N]} \}, \quad i' \in \{ \beta^*(\nu(X_i, j)) \mid j \in {[1 .. N]} \}, \quad i \in {[0 .. M)},
+      C_i \in \{ \eta(i', j) \mid j \in {[1 .. N]} \}, \quad \forall\; i' \in \{ \beta^*(\nu(X_i, j)) \mid j \in {[1 .. N]} \}, \quad i \in {[0 .. M)},
     \end{equation}
     so, each cell should be present in a set of neighbors for all of its neighbors.
 
@@ -239,7 +239,7 @@
     \end{align}
     thus we can say that $p$ is a \textit{parameter} if and only if $p \in P$.
 
-    Let also define a recursive function $\varphi$, that will replace all integers with zeros in a parameter:
+    Let also define a recursive function $\varphi: P \to P$, that will replace all integers with zeros in a parameter:
     \begin{equation}
       \varphi(p) = 
       \begin{cases}
@@ -255,9 +255,9 @@
 
     The \textit{generic state} then is a parameter with the constant topology within a particular BSCA. Let define $S_s$ as a set of all possible generic states:
     \begin{equation}
-      S_s = \{ s \mid s \in P, \varphi(s) = p_c \},
+      S_s = \{ s \mid s \in P, \;\varphi(s) = p_c \},
     \end{equation}
-    where $p_c$ is a constant topology value.
+    where $p_c \in P$ is a constant topology value.
 
     \begin{figure}[h]
       \centering
@@ -283,12 +283,13 @@
     The \textit{cell state} $c$ (see Eq.~\ref{eq:cells}) is a sequence of $N + 1$ generic states:
     \begin{equation}
       \label{eq:cell-state}
-      c = \langle S_0, ..., S_N \rangle, \quad S_i \in S_s \forall i \in {[0 .. N]},
+      c = \langle s_0, ..., s_N \rangle, \quad s_i \in S_s \;\forall\; i \in {[0 .. N]},
     \end{equation}
-    where $S_0$ is the \textit{main state}, and $S_1$, ..., $S_N$ are the \textit{buffered states}, one per each neighbor. At the Fig.~\ref{fig:cell-design}, you can see a cell design for 2-dimensional BSCA with Von Neumann neighborhood. Buffered neighbor states is the crucial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
+    where $s_0$ is the \textit{main state}, and $s_1$, ..., $s_N$ are the \textit{buffered states}, one per each neighbor. At the Fig.~\ref{fig:cell-design}, you can see a cell design for 2-dimensional BSCA with Von Neumann neighborhood. Buffered neighbor states is the crucial aspect of BSCA, it is the basic feature allowing us to implement lossless models with energy exchanges and genome crossbreeding across all neighbor cells. See more on this topic in the sections below.
 
     Let also define two more sets for future use:
     \begin{align}
+      \label{eq:state-sets}
       S_c &= S_s^{N + 1},\\
       S_b &= S_c^M,
     \end{align}
@@ -303,7 +304,7 @@
         U_{t + 1} &= \omega(U_t),
       \end{split}
     \end{align}
-    where $C_s$ is an \textit{initial board state} (also called \textit{seed}), $t$ is a timestep number and $\omega: S_b \to S_b$ is an \textit{update function}.
+    where $C_s \in S_b$ is an \textit{initial board state} (also called \textit{seed}), $t$ is a timestep number and $\omega: S_b \to S_b$ is an \textit{update function}.
 
     In BSCA, the evolution at a single timestep is going in two phases: \textit{emit phase} and \textit{absorb phase}, so update function will take a form of
     \begin{equation}
@@ -491,10 +492,10 @@
     Using the design from previous sections, it is very easy to define a model that will behave like an isolated thermodynamic system (see Item~\ref{itm:isolation} from Section~\ref{subsec:manifest-scientific}). If $E: S_s \to \mathbb{Z}$ is a function for extracting the energy component from the generic state, then we can say the system will obey the energy conservation principle if the following equations holds:
     \begin{equation}
       \label{eq:emit-conservation}
-      \sum_{i=0}^{N}{E(c_i)} = \sum_{i=0}^{N}{E(\gamma(\sigma(c), i))}, \quad \forall c \in S_c,
+      \sum_{i=0}^{N}{E(c_i)} = \sum_{i=0}^{N}{E(\gamma(\sigma(c), i))}, \quad \forall \;c \in S_c,
     \end{equation}
     \begin{equation}
-      \sum_{i=0}^{N}{E(c_i)} = \sum_{i=0}^{N}{E(\gamma(\psi(c), i))}, \quad \forall c \in S_c.
+      \sum_{i=0}^{N}{E(c_i)} = \sum_{i=0}^{N}{E(\gamma(\psi(c), i))}, \quad \forall \;c \in S_c.
     \end{equation}
     Thus, the summed energy should stay the same for the argument and the result of either decision or blend function.
 
@@ -504,7 +505,7 @@
 
   \subsection{Genetic Microprograms}
 
-    As we stated in The Manifesto, informational component is the key aspect to the phenomenon of life as we know it. Without information, the energy would just be a dull clouds of dust wandering randomly in space and time. But, as we all can see, the matter is organizing in the complex self-replicating patterns, and this is happening at each level of existence: from galaxies to atoms. We believe, this principle of self-organization is scaling fractally from the very bottom level of indivisible Planck scale quanta, each behaving like a machine executing a genetic microprogram.
+    As we stated in The Manifesto, informational component is the key aspect to the phenomenon of life as we know it. Without information, the energy could just be a dull cloud of dust wandering randomly in space and time. But, as we all can see, the matter is organizing in the complex self-replicating patterns, and this is happening at each level of existence: from galaxies to atoms. We believe, this principle of self-organization is scaling fractally from the very bottom level of indivisible Planck scale quanta, each behaving like a machine executing a genetic microprogram.
 
     Since the cell is the smallest unit in our artificial environment, it's a good candidate for microprogram execution. For that, it must have several pre-defined parameters:
     \begin{itemize}
@@ -517,11 +518,11 @@
     \begin{enumerate}
       \item Incrementing execution pointer, and returning it to the beginning as needed:
         \begin{equation}
-          p_p = (p_p + 1) \text{ mod } (L_m / L_c).
+          p_p := (p_p + 1) \text{ mod } (L_m / L_c).
         \end{equation}
       \item Obtaining a microinstruction at the position of execution pointer:
         \begin{equation}
-          p_i = (p_m \text{ lsh } (p_p * L_c)) \text{ and } (2^{L_c} - 1).
+          p_i := (p_m \text{ lsh } (p_p * L_c)) \text{ and } (2^{L_c} - 1).
         \end{equation}
       \item Modifying its own state as shown in Eq.~\ref{eq:decision-function}, but the decision function is gotten from the pre-defined sequence of functions, one function per each microinstruction:
         \begin{equation}
@@ -599,7 +600,7 @@
       \item [Angular value.] The scalar ``rotating'' in $K$ grades. Generally, the system makes sure that the value is in $[0, K)$ range, dividing it modulo $K$. But there are also special cases of angular mean and angular difference to be implemented additionally.
       \item [Weighted value.] At the absorb phase, this parameter's value is auto-scaled proportionally to some other parameter's value. 
       \item [Decaying value.] At each timestep, this value is automatically divided by some factor.
-      \item [Random value.] The parameter is generating new value each timestep, using some PRNG algorithm. We are found KISS algorithm currently fits best for our purposes.
+      \item [Random value.] The parameter is generating a new value each timestep, using some PRNG algorithm. We found KISS algorithm currently fits best for our purposes.
       \item [Genetic value.] At the absorb phase, this value is calculated as crossover of all incoming genomes. It may also mutate randomly as needed.
     \end{description}
 
@@ -607,18 +608,19 @@
 
     Our framework will generate a code for GPU, and there are several patterns that could help us to produce more effective code.
     \begin{enumerate}
-      \item Parameters should be ``lazy''. We must read them from memory, only if we need them in kernel code further. They also could be completely discarded from the memory in the case if we're never actually using them.
+      \item Parameters should be ``lazy''. We must read them from the memory, only if we need them in the kernel code further. They also could be completely discarded from the memory in case if we'll never actually use them.
       \item Buffered states should also be ``lazy'', in the same manner as parameters: no need to read unnecessary buffers each time.
-      \item Parameters should be packed in memory in a most compact way, there should be no unused bits in a cell's representation in memory. This will reduce both the memory access time and the memory space per each cell.
-      \item A special case, when we are using ``gate'' and interacting only with the neighbors in the direction of the gate, would be reduced to the less number of buffers, down to a single buffer.
+      \item Parameters should be packed in the memory the most compact way, there should be no unused bits in a cell's memory representation. This will reduce both the memory access time and the memory space per each cell.
+      \item A special case, when we are using ``gate'' and interacting only with neighbors in the direction of the gate, would be reduced to the less number of buffers, down to a single buffer.
       \item Loops should be manually unrolled when it is possible.
       \item Sorting networks should be used as the source for sorting algorithms.
+      \item Writing operations to the global memory should be ``delayed''. We gonna accumulate the necessary value in the local variable, then flush it to the global memory once.
     \end{enumerate}
     
     This list is most likely not complete, we will extend it in future.
 
   \section*{Acknowledgments}
 
-    I would like to give special thanks to Alexey Shchepin, for the optimization ideas, testing, constructive criticism, advices in \LaTeX, and corrections to this document.
+    I would like to give special thanks to Alexey Shchepin, for optimization ideas, testing, constructive criticism, advice in \LaTeX, and corrections to this document.
 
 \end{document}
