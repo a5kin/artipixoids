@@ -141,11 +141,11 @@
                     	<ul id="thumbs">
                             {% for category in site.data.gallery %}{% for image in category.images %}
                             <li class="item-thumbs span3 {{ category.folder }}">
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ category.category }}: {{ image.title }}" href="/assets/img/gallery/{{ category.folder }}/{{ image.file }}">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ category.category }}: {{ image.title }}" href="assets/img/gallery/{{ category.folder }}/{{ image.file }}">
                                	    <span class="overlay-img"></span>
                                     <span class="overlay-img-thumb font-icon-plus"></span>
                                 </a>
-                                <img src="/assets/img/gallery/{{ category.folder }}/{{ image.file }}" alt="{{ image.desc }}" />
+                                <img src="assets/img/gallery/{{ category.folder }}/{{ image.file }}" alt="{{ image.desc }}" />
                             </li>
                             {% endfor %}{% endfor %}
                         </ul>
