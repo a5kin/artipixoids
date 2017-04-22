@@ -107,8 +107,8 @@ BRUSHED.nav = function(){
 ================================================== */
 
 BRUSHED.filter = function (){
-	if($('#projects').length > 0){		
-		var $container = $('#projects');
+	if($('#antology').length > 0){		
+		var $container = $('#antology');
 		
 		$container.imagesLoaded(function() {
 			$container.isotope({
