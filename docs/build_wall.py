@@ -51,7 +51,9 @@ with open('mod2c_wall.html', 'w') as f:
             if img_id in visited:
                 continue
             visited.add(img_id)
-            f.write("  <td colspan='%s' rowspan='%s'><img src='%s' width='100%%'/></td>\n" % (width, height, img))
+            bw = 4 #+ (width - 1) * 8
+            bh = 4 #+ (height - 1) * 8
+            f.write("  <td colspan='%s' rowspan='%s' valign='center' align='center'><img style='border-color: #aaa; border-style: solid; border-width: %spx %spx %spx %spx; margin: 14px;' width='%s' src='%s'/></td>\n" % (width, height, bh, bw, bh, bw, width * 200, img))
         f.write("</tr>\n")
         
 for row in cells:
