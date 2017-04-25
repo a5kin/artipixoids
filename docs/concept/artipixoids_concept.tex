@@ -32,9 +32,9 @@
     2D pleasure, 2D pain.
   }{--- Flatlander credo}
 
-  \textbf{Artipixoids!} is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle. Started in the end of 2014, it has undergone several major modifications, and is still in development. But now is the right time to share basic concepts underlying all previous modifications, so others could use it to build their own wonderful worlds.
+  \textbf{Artipixoids!} is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle. Started in the end of 2014, the main engine has undergone several major modifications, and is still in development. Now is the right time to share basic concepts underlying all previous modifications, and begin to work on public framework, allowing others to build their own wonderful worlds.
 
-  The document is split up in two parts. In \textit{The Manifesto} we will outline the main areas of the project development, and the main goals per each area. In \textit{The Core} section, we will give the formal definition to all features we would like to see in the core of our future framework. 
+  The document is split up in two parts. In \textit{The Manifesto} we will outline the main areas of the project development, and the main goals per each area. Some of them my seem unfeasible, but actually it's just a matter of time and resources to be involved. In \textit{The Core} section, we will give the formal definition to all features we would like to see in the core of our future framework. Please do not consider this section as a paper, it is just an attempt to describe ideas in a strict language. 
 
   \newpage
   \tableofcontents
@@ -131,9 +131,9 @@
 
   \begin{enumerate}
     \item We are going to monitor any signs of life in the artificial environment described in Section~\ref{subsec:manifest-scientific}.
-    \item We will study the potential candidates for the role of living creatures.
-    \item We are swearing to refrain from any act resulting in irreversible harm to any particular creature we will consider as sentient.
-    \item We will try to make a contact with those creatures we will find intelligent.
+    \item We will study potential candidates for the role of ``living'' artificial creatures.
+    \item We are swearing to refrain from any act resulting in irreversible harm to any artificial creature we will find sentient.
+    \item We will try to make a contact with those artificial creatures we will find intelligent.
     \item We are responsible for any loss of data containing sentient or intelligent creatures.
   \end{enumerate}
 
@@ -153,7 +153,7 @@
       \label{eq:cells}
       C = \langle c_0, ..., c_{M - 1} \rangle, \quad M \in {[1 .. \infty)},
     \end{equation}
-    where elements are nested sequences with uniform structure called \textit{cell state}. See the exact definition of the cell state in Eq.~17 below. We may refer to $C$ as to a \textit{board state} later.
+    where elements are nested sequences with uniform structure called \textit{cell state}. See the exact definition of the cell state in Eq.~(17) below. We may refer to $C$ as to a \textit{board state} later.
 
     The Cartesian coordinates of the cell with index $i$ could be obtained as 
     \begin{equation}
@@ -198,7 +198,7 @@
         \beta(\nu(X_i, j)) & \quad \text{if } \nu(X_i, j) \notin X,
       \end{cases}
     \end{equation}
-    where $\beta: \mathbb{R}^D \to S_c$ is a \textit{border function} returning a state for a hypothetical cells outside $X$, $S_c$ is a set of all possible cell states (see Eq.~\ref{eq:state-sets}), and $\chi^{-1}: \mathbb{R}^D \to \mathbb{Z}$ is a reverse lattice topology function, satisfying the following equation:
+    where $\beta: \mathbb{R}^D \to S_c$ is a \textit{border function} returning a state for a hypothetical cells outside $X$, $S_c$ is a set of all possible cell states, as stated in Eq.~(\ref{eq:state-sets}), and $\chi^{-1}: \mathbb{R}^D \to \mathbb{Z}$ is a reverse lattice topology function, satisfying the following equation:
     \begin{equation}
       \chi^{-1}(\chi(i)) = i.
     \end{equation}
@@ -219,7 +219,7 @@
       \end{cases}
     \end{equation}
 
-    We will assume that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq.~\ref{eq:border-function-wrapping}, and the following condition holds:
+    We will assume that the whole grid neighborhood is homogeneous if and only if the border function takes a form as in Eq.~(\ref{eq:border-function-wrapping}), and the following condition holds:
     \begin{equation}
       \label{eq:neighborhood-homogeneity}
       C_i \in \{ \eta(i', j) \mid j \in {[1 .. N]} \}, \quad \forall\; i' \in \{ \beta^*(\nu(X_i, j)) \mid j \in {[1 .. N]} \}, \quad i \in {[0 .. M)},
@@ -280,7 +280,7 @@
       \label{fig:cell-design}
     \end{figure}
 
-    The \textit{cell state} $c$ (see Eq.~\ref{eq:cells}) is a sequence of $N + 1$ generic states:
+    The \textit{cell state} $c$, as stated in Eq.~(\ref{eq:cells}) is a sequence of $N + 1$ generic states:
     \begin{equation}
       \label{eq:cell-state}
       c = \langle s_0, ..., s_N \rangle, \quad s_i \in S_s \;\forall\; i \in {[0 .. N]},
@@ -465,7 +465,7 @@
           \label{eq:neighbors-main-sequence}
           \eta_a(C, i) = \langle \gamma({C_i}, 0), \gamma(\eta(i, 1), \iota^{-1}(i)), ..., \gamma(\eta(i, N), \iota^{-1}(i)) \rangle,
         \end{equation}
-        where $i$ is the cell's index, $\gamma$ is a function from Eq.~\ref{eq:item-obtaining}, and $\iota^{-1}: \mathbb{Z} \to \mathbb{Z}$ is the function for reverse neighbor index obtaining, for which the following equation holds:
+        where $i$ is the cell's index, $\gamma$ is a function from Eq.~(\ref{eq:item-obtaining}), and $\iota^{-1}: \mathbb{Z} \to \mathbb{Z}$ is the function for reverse neighbor index obtaining, for which the following equation holds:
         \begin{equation}
           \eta(i, j) = \eta(\chi^{-1}(\nu(X_i, j)), \iota^{-1}(j)).
         \end{equation}
@@ -499,7 +499,7 @@
     \end{equation}
     Thus, the summed energy should stay the same for the argument and the result of either decision or blend function.
 
-    The broken neighborhood homogeneity (see Eq.~\ref{eq:neighborhood-homogeneity}) could easily be a threat for energy conservation. For example, in a case of static borders the energy may leak over the edge of the board. To prevent this, we must restrict buffered interactions with the off-board cells: at the emit phase, all the buffers pointing over the edge should be set to a state of zero energy, and Eq.~\ref{eq:emit-conservation} should still be held.
+    The broken neighborhood homogeneity from Eq.~(\ref{eq:neighborhood-homogeneity}) could easily be a threat for energy conservation. For example, in a case of static borders the energy may leak over the edge of the board. To prevent this, we must restrict buffered interactions with the off-board cells: at the emit phase, all the buffers pointing over the edge should be set to a state of zero energy, and Eq.~(\ref{eq:emit-conservation}) should still be held.
 
     Please also note, energy conservation is the mandatory criteria for ``genuine'' Artipixoids (see Item~\ref{itm:valid-artipixoid} from Section~\ref{subsec:manifest-artistic}).
 
@@ -524,14 +524,14 @@
         \begin{equation}
           p_i := (p_m \text{ lsh } (p_p * L_c)) \text{ and } (2^{L_c} - 1).
         \end{equation}
-      \item Modifying its own state as shown in Eq.~\ref{eq:decision-function}, but the decision function is gotten from the pre-defined sequence of functions, one function per each microinstruction:
+      \item Modifying its own state as shown in Eq.~(\ref{eq:decision-function}), but the decision function is gotten from the pre-defined sequence of functions, one function per each microinstruction:
         \begin{equation}
           \sigma \Leftrightarrow \sigma_{p_i}.
         \end{equation}
         Thus, the decision function is depending on the current microinstruction.
     \end{enumerate}
 
-    We may consider a microprogram's memory as a genome. Then, at the absorb phase, the cell can change its microprogram with some genetic crossover algorithm using all ``incoming'' genomes from neighbor's buffers. The exact crossover algorithm should be implemented as a part of blend function $\psi$ (see Eq.~\ref{eq:blend-function})
+    We may consider a microprogram's memory as a genome. Then, at the absorb phase, the cell can change its microprogram with some genetic crossover algorithm using all ``incoming'' genomes from neighbor's buffers. The exact crossover algorithm should be implemented as a part of blend function $\psi$, see Eq.~(\ref{eq:blend-function})
 
     The microinstructions could take many forms. Here, we'll give some insights to the ideas we are actively using in our microprograms.
     \begin{description}
@@ -543,7 +543,7 @@
             1 \quad & \text{if } E(s_m) \geq E(s_n),
           \end{cases}
         \end{equation}
-        where $s_m$ is a cell's main state, $s_n$ is a neighbor cell's state, and $E$ is a function from Eq.~\ref{eq:emit-conservation}. Then, we can use those bit values in the functions described below in this list. You can use other variations of saturation functions as well, like a fixed threshold, hysteresis, etc.
+        where $s_m$ is a cell's main state, $s_n$ is a neighbor cell's state, and $E$ is a function from Eq.~(\ref{eq:emit-conservation}). Then, we can use those bit values in the functions described below in this list. You can use other variations of saturation functions as well, like a fixed threshold, hysteresis, etc.
       \item [Gated View.] Sometimes, you need to reduce a number of neighbors to operate on. For that, let introduce a special parameter $p_g \in {[1 .. N]}$ called \textit{gate}. The gate is an integer pointing to a neighbor's index. Thus, you can use this value i.e. for spreading an energy to a gate's direction only, or to get 3 saturated neighbors' values around the gate for using in elementary rule.
         
         The static gate, of course, would be quite boring. To make it dynamic, let define another function $\xi: {[1 .. N]} \to {[1 .. N]}$, which is called \textit{spin function}. Then, after each step, the gate would change its value as a result of this function:
