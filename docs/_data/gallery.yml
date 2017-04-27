@@ -1,6 +1,7 @@
 - category: Mod 0 [Dec/2014]
   folder: mod0
   featured: 1
+  description: This is the very early attempt to write a CA with energy conservation. The engine was very buggy, it even don't fully comply the conservation principle. Nevertheless, it produced decent pixel art, so I decided to take some screens of it.
   images:
     - file: edgewalker-cat.png
       title: Edge Walking Cat
@@ -12,6 +13,7 @@
 - category: Mod 1 [Jun/2016]
   folder: mod1
   featured: 0
+  description: 
   images:
     - file: mephisto.png
       title: Mephisto

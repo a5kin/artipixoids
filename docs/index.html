@@ -101,7 +101,7 @@
         </div>
         
         <nav id="menu">
-        	<ul id="menu-nav">
+            <ul id="menu-nav">
                 <li><a href="#history">Past</a></li>
                 <li><a href="#concept">Present</a></li>
                 <li><a href="#projects">Future</a></li>
@@ -126,31 +126,35 @@
         </div>
 
         <div class="row">
-       	    <div class="span3">
-                <nav id="options" class="work-nav">
-                    <ul id="filters" class="option-set" data-option-key="filter">
-                    	<li class="type-work">Modification</li>
-                        {% for c in site.data.gallery %}<li><a href="#filter" data-option-value=".{{ c.folder }}">{{ c.category }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-            </div>
-            
             <div class="span9">
             	<div class="row">
-               	    <section id="antology">
-                    	<ul id="thumbs">
-                            {% for category in site.data.gallery %}{% for image in category.images %}{% if image.hidden != 1 %}
-                            <li class="item-thumbs span2 {{ category.folder }}">
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ category.category }}: {{ image.title }}" href="assets/img/gallery/{{ category.folder }}/{{ image.file }}">
+                      <div class="accordion" id="accordionArea">
+                        {% for category in site.data.gallery %}
+                        <div class="accordion-group thumbs">
+                          <div class="accordion-heading accordionize">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionArea" href="#{{ category.folder }}">
+                                {{ category.category }}
+                                <span class="font-icon-arrow-simple-down"></span>
+                            </a>
+                          </div>
+                          <div id="{{ category.folder }}" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                              <div class="row"><div class="span9">{{ category.description }}<hr class="condense" /></div>
+                              {% for image in category.images %}{% if image.hidden != 1 %}
+                                <div class="item-thumbs span2">
+                            	  <a class="hover-wrap fancybox" data-fancybox-group="{{ category.folder }}" title="{{ category.category }}: {{ image.title }}" href="assets/img/gallery/{{ category.folder }}/{{ image.file }}">
                                	    <span class="overlay-img"></span>
                                     <span class="overlay-img-thumb font-icon-plus"></span>
-                                </a>
-                                <img src="assets/img/gallery/{{ category.folder }}/tm_{{ image.file }}" alt="{{ image.desc }}" />
-                            </li>
-                            {% endif %}{% endfor %}{% endfor %}
-                        </ul>
-                    </section>
+                                  </a>
+                                  <img src="assets/img/gallery/{{ category.folder }}/tm_{{ image.file }}" alt="{{ image.desc }}" />
+                                </div>
+                              {% endif %}{% endfor %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
                     
             	</div>
             </div>

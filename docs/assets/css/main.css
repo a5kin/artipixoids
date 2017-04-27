@@ -81,6 +81,10 @@ hr {
 	margin: 50px 0;	
 }
 
+hr.condense { 
+        margin: 10px 0 20px 0;
+}
+
 .align_left{
 	float:left;
 	margin:0 25px 0 0px!important;
