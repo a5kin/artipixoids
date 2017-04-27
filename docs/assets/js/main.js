@@ -170,6 +170,7 @@ BRUSHED.fancyBox = function(){
 				},
 				helpers : {
 					title : { type: 'inside' },
+				        media: true,
 				}
 			});
 			
