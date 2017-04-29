@@ -1,7 +1,7 @@
 - category: Mod 0 [Dec/2014]
   folder: mod0
   featured: 1
-  description: This is the very early attempt to write a CA with energy conservation. The engine was very buggy, it even doesn't fully comply the conservation principle. Nevertheless, it produced decent pixel art, so I decided to take some screens of it. Only two of them survived, but recently I found the oldest version in my stash, so new shots of <b>Mod 0</b> are on their way.
+  description: This is the very early attempt to write a CA with energy conservation. The engine was very buggy, it even didn't fully comply the conservation principle. Nevertheless, it produced decent pixel art, so I decided to take some screens of it. Only two of them survived, but recently I found the oldest version in my stash, so new shots of <b>Mod 0</b> are on their way.
   images:
     - file: edgewalker-cat.png
       title: Edge Walking Cat
@@ -119,7 +119,7 @@
 - category: Mod 2c [Feb/2017]
   folder: mod2c
   featured: 0
-  description: Finally, after many re-designs I ended up with the most wonderful 2-dimensional modification. There is some real PRNG magic in it, and I am not sure myself how exactly it works :) But the one thing is important, the images it produces are <a href="mod2c.html">mind-blowing</a>.
+  description: Finally, after many re-designs I ended up with the most wonderful 2-dimensional modification. There is some real PRNG magic in it, and I am not sure myself how exactly it works :) But the one thing is important, the images it produces are <a target="_blank" href="mod2c.html">mind-blowing</a>.
   images:
     - file: another-reef.png
       title: Another Reef

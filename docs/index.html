@@ -126,39 +126,60 @@
         </div>
 
         <div class="row">
-            <div class="span9 centred">
-            	<div class="row">
-                      <div class="accordion" id="accordionArea">
-                        {% for category in site.data.gallery %}
-                        <div class="accordion-group thumbs">
-                          <div class="accordion-heading accordionize">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionArea" href="#{{ category.folder }}">
-                                {{ category.category }}
-                                <span class="font-icon-arrow-simple-down"></span>
-                            </a>
-                          </div>
-                          <div id="{{ category.folder }}" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                              <div class="row"><div class="span9">{{ category.description }}<hr class="condense" /></div>
-                              {% for image in category.images %}{% if image.hidden != 1 %}
-                                <div class="item-thumbs span2">
-                                  
-                            	  <a class="hover-wrap fancybox" data-fancybox-group="{{ category.folder }}" title="{{ category.category }}: {{ image.title }}" href="{% if image.video %}{{ image.video }}{% else %}assets/img/gallery/{{ category.folder }}/{{ image.file }}{% endif %}">
-                               	    <span class="overlay-img"></span>
-                                    <span class="overlay-img-thumb font-icon-plus"></span>
-                                  </a>
-                                  <img src="assets/img/gallery/{{ category.folder }}/tm_{{ image.file }}" alt="{{ image.desc }}" />
-                                </div>
-                              {% endif %}{% endfor %}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        {% endfor %}
-                      </div>
-                    
-            	</div>
-            </div>
+           <div class="span9 centred">
+             <div class="tabbable">
+               <ul class="nav nav-tabs" id="myTab">
+                 <li><a href="#1d" data-toggle="tab">1D</a></li>
+                 <li class="active"><a href="#2d" data-toggle="tab">2D</a></li>
+                 <li><a href="#3d" data-toggle="tab">3D</a></li>
+               </ul>
+  
+               <div class="tab-content">
+
+                 <div class="tab-pane fade in" id="1d">
+                     We have several 1-dimensional mods now, but only one of them has an artistic value. It's called <b>Elemafter</b>, and specialize in creating cool vertical patterns and power spectrum images for the subsequent sound generation.
+                 </div>
+
+                 <div class="tab-pane fade in active" id="2d">
+                     The project was thought as a Flatlander's paradise, but with the growth, it has been extended to 3D, and then down to 1D. Still, 2D is the main dimension we are working at. Below is the history of how 2D mods were developing.<hr class="condense" />
+                     <div class="accordion" id="accordionArea">
+                       {% for category in site.data.gallery %}
+                       <div class="accordion-group thumbs">
+                         <div class="accordion-heading accordionize">
+                           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionArea" href="#{{ category.folder }}">
+                               {{ category.category }}
+                               <span class="font-icon-arrow-simple-down"></span>
+                           </a>
+                         </div>
+                         <div id="{{ category.folder }}" class="accordion-body collapse">
+                           <div class="accordion-inner">
+                             <div class="row"><div class="span8">{{ category.description }}<hr class="condense" /></div>
+                             {% for image in category.images %}{% if image.hidden != 1 %}
+                               <div class="item-thumbs span2">
+                                 
+                        	 <a class="hover-wrap fancybox" data-fancybox-group="{{ category.folder }}" title="{{ category.category }}: {{ image.title }}" href="{% if image.video %}{{ image.video }}{% else %}assets/img/gallery/{{ category.folder }}/{{ image.file }}{% endif %}">
+                              	   <span class="overlay-img"></span>
+                                   <span class="overlay-img-thumb font-icon-plus"></span>
+                                 </a>
+                                 <img src="assets/img/gallery/{{ category.folder }}/tm_{{ image.file }}" alt="{{ image.desc }}" />
+                               </div>
+                             {% endif %}{% endfor %}
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                       {% endfor %}
+                     </div>
+                 </div>
+
+                 <div class="tab-pane fade in" id="3d">
+                     Yes, we already have a full-functioning 3D engine with the interactive environment allowing to explore your growing world in a manner of the good old <a target="_blank" href="https://en.wikipedia.org/wiki/Descent_%28video_game%29">Descent</a>. The mod is called <b>Mod 3</b> and is very similar to <b>Mod 2a</b>, just extended to 3 dimensions.
+                 </div>
+
+               </div>
+             </div>
+
+           </div>
         </div>
     </div>
 </div>
@@ -237,7 +258,7 @@
         <div class="span12">
           <div class="info-block">
             <div class="info-text">
-              <h4><b>NOTE:</b> Backgrounds for projects' banners above are generated by <a href="mod2c.html">Mod 2c</a>.<br />You may find them at the <a href="mod2c.html">gallery</a> dedicated specially to this mod.</h4>
+              <h4><b>NOTE:</b> Backgrounds for projects' banners above are generated by <a target="_blank" href="mod2c.html">Mod 2c</a>.<br />You may find them at the <a target="_blank" href="mod2c.html">gallery</a> dedicated specially to this mod.</h4>
 {% comment %}
               <a target="blank" href="mod2c.html" class="button button-large" style="font-size: 32px;" data-toggle="tooltip" data-placement="bottom" title="Download The Concept PDF"><i class="font-icon-picture"></i><br /><i class="font-icon-eye"></i></a>
 {% endcomment %}
