@@ -100,6 +100,10 @@
     - file: tentacled3.png
       title: Tentacled #1
       desc: 
+    - video: https://www.youtube.com/watch?v=oZzJdWhlmTA
+      file: sinister-currents.png
+      title: Sinister Currents - The Birth
+      desc: 
 
 - category: Mod 2a [Sep/2016]
   folder: mod2a
@@ -114,6 +118,10 @@
       desc: 
     - file: china.png
       title: China
+      desc: 
+    - video: https://www.youtube.com/watch?v=EOoS9VQWufQ
+      file: blasphemous-tissues.png
+      title: Blasphemous Tissues - The Genesis
       desc: 
 
 - category: Mod 2c [Feb/2017]
@@ -141,4 +149,8 @@
       desc: 
     - file: beacon.png
       title: Beacon
+      desc: 
+    - video: https://www.youtube.com/watch?v=52a-rME10Uk
+      file: mega-particles.png
+      title: Mega Particles - Entangled Stability
       desc: 
