@@ -330,17 +330,17 @@ BRUSHED.scrollToTop = function(){
 BRUSHED.utils = function(){
 	
 	$('.item-thumbs').bind('touchstart', function(){
-		$(".active").removeClass("active");
+		$(".item-thumbs .active").removeClass("active");
       	$(this).addClass('active');
     });
 	
 	$('.image-wrap').bind('touchstart', function(){
-		$(".active").removeClass("active");
+		$(".image-wrap .active").removeClass("active");
       	$(this).addClass('active');
     });
 	
 	$('#social ul li').bind('touchstart', function(){
-		$(".active").removeClass("active");
+		$("#social ul li .active").removeClass("active");
       	$(this).addClass('active');
     });
 	

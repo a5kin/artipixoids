@@ -161,10 +161,9 @@
                              <div class="row"><div class="span8">{{ category.description }}<hr class="condense" /></div>
                              {% for image in category.images %}{% if image.hidden != 1 %}
                                <div class="item-thumbs span2">
-                                 
                         	 <a class="hover-wrap fancybox" data-fancybox-group="{{ category.folder }}" title="{{ category.category }}: {{ image.title }}" href="{% if image.video %}{{ image.video }}{% else %}assets/img/gallery/{{ category.folder }}/{{ image.file }}{% endif %}">
-                              	   <span class="overlay-img"></span>
-                                   <span class="overlay-img-thumb font-icon-plus"></span>
+                              	   <!--<span class="overlay-img"></span>-->
+                                   <!--<span class="overlay-img-thumb font-icon-plus"></span>-->
                                  </a>
                                  <img src="assets/img/gallery/{{ category.folder }}/tm_{{ image.file }}" alt="{{ image.desc }}" />
                                </div>
