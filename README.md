@@ -7,3 +7,7 @@ For more information:
  
 It is also a place to run general discussion about the project. Feel free to [open an issue](https://github.com/a5kin/artipixoids/issues/new) if you have any ideas, questions, critique and so on.
 
+If you are interested in being informed about the project development, please consider to watch the folowing repositories:
+- [HECATE](https://github.com/a5kin/hecate): The core CA framework for the project;
+- [MOIRE](https://github.com/a5kin/moire): The interactive runtime environment for HECATE models.
+- [VAULT](https://github.com/a5kin/hecate-vault): The collection of HECATE mods.
