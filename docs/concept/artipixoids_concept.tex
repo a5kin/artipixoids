@@ -535,7 +535,7 @@
 
     The microinstructions could take many forms. Here, we'll give some insights to the ideas we are actively using in our microprograms.
     \begin{description}
-      \item [Value Saturation.] The energy values of neighbors could be saturated to a single bit. A possible \textit{saturation function} $\theta: S_s \to \{ 0, 1 \}$ may take a form of:
+      \item [Value Saturation.] The energy values of neighbors could be saturated to a single bit. A possible \textit{saturation function} $\theta: S_s, S_s \to \{ 0, 1 \}$ may take a form of:
         \begin{equation}
           \theta(s_m, s_n) = 
           \begin{cases}
@@ -609,8 +609,8 @@
     Our framework will generate a code for GPU, and there are several patterns that could help us to produce more effective code.
     \begin{enumerate}
       \item Parameters should be ``lazy''. We must read them from the memory, only if we need them in the kernel code further. They also could be completely discarded from the memory in case if we'll never actually use them.
-      \item Buffered states should also be ``lazy'', in the same manner as parameters: no need to read unnecessary buffers each time.
-      \item Parameters should be packed in the memory the most compact way, there should be no unused bits in a cell's memory representation. This will reduce both the memory access time and the memory space per each cell.
+      \item Buffered states should also be ``lazy'' in the same manner as parameters: no need to read unnecessary buffers each time.
+      \item Parameters should be packed in the memory the most compact way, there should be as less unused bits in a cell's memory representation as possible. This will reduce both the memory access time and the memory space per each cell.
       \item A special case, when we are using ``gate'' and interacting only with neighbors in the direction of the gate, would be reduced to the less number of buffers, down to a single buffer.
       \item Loops should be manually unrolled when it is possible.
       \item Sorting networks should be used as the source for sorting algorithms.
