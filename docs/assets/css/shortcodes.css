@@ -104,6 +104,10 @@
   	cursor: pointer;
 }
 
+.default-cursor {  
+        cursor: default !important;
+}
+
 .accordion-heading:hover .accordion-toggle,
 .accordion-heading:hover .accordion-toggle.inactive {
 	background:#DE5E60;
@@ -111,7 +115,7 @@
 }
 
 .accordion-heading .accordion-toggle.active {
-	background:#DE5E60;
+	background: /*#DE5E60*/ #3C3F45;
 	color:#FFFFFF;
 }
 
@@ -133,6 +137,15 @@
 	-ms-transition: all 0.1s linear 0s;
 	-o-transition: all 0.1s linear 0s;
 	transition: all 0.1s linear 0s;
+}
+
+.accordion-heading.pseudonize .accordion-toggle span {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin: -8px 0 0 0;
+    color: #23262C;
+    font-size: 18px;
 }
 
 .accordion-heading:hover .accordion-toggle span {
