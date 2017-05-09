@@ -127,7 +127,7 @@
 - category: Mod 2c [Feb/2017]
   folder: mod2c
   featured: 0
-  description: Finally, after many re-designs I ended up with the most wonderful 2-dimensional modification. There is some real PRNG magic in it, and I am not sure myself how exactly it works :) But the one thing is important, the images it produces are <a target="_blank" href="mod2c.html">mind-blowing</a>.
+  description: Finally, after many re-designs I ended up with the most wonderful 2-dimensional modification. There is some real PRNG magic in it, and I am not sure myself how exactly it works :) But the one thing is important, the images it produces are simply mind-blowing.
   images:
     - file: another-reef.png
       title: Another Reef
