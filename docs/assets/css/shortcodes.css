@@ -116,7 +116,7 @@
 
 .accordion-heading .accordion-toggle.active {
 	background: /*#DE5E60*/ #3C3F45;
-	color:#FFFFFF;
+	color: /*#FFFFFF*/ #CCCCCC;
 }
 
 .accordion-heading .accordion-toggle.inactive {

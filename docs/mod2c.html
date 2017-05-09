@@ -65,13 +65,6 @@
 
 <body>
 
-<!-- This section is for Splash Screen -->
-<div class="ole">
-<section id="jSplash">
-	<div id="circle"></div>
-</section>
-</div>
-<!-- End of Splash Screen -->
 
 <!-- Header -->
 <header>
@@ -158,6 +151,24 @@
 <script src="assets/js/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
 <script src="assets/js/jquery.tweet.js"></script> <!-- Tweet -->
 <script src="assets/js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
-<script src="assets/js/main.js"></script> <!-- Default JS -->
+<!--<script src="assets/js/main.js"></script>--> <!-- Default JS -->
+<script language="javascript">
+jQuery(function($){
+  var windowWidth = $(window).width();
+  if( windowWidth <= 540 ) {
+    $("img").each(function(){
+      $(this).attr("width", $(this).attr("width") * 0.25);
+    });
+  } else if( windowWidth <= 800 ) {
+    $("img").each(function(){
+      $(this).attr("width", $(this).attr("width") * 0.5);
+    });
+  } else if( windowWidth <= 1200 ) {
+    $("img").each(function(){
+      $(this).attr("width", $(this).attr("width") * 0.75);
+    });
+  }
+x});
+</script>
 </body>
 </html>
