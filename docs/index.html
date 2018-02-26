@@ -1,349 +1,40 @@
 ---
+layout: splash
+permalink: /
+header:
+  overlay_color: "#232323"
+  overlay_image: /assets/images/slider/splash01.png
+  cta_label: "<i class='fas fa-download'></i> The Concept"
+  cta_url: "/concept/artipixoids_concept.pdf"
+  caption:
+excerpt: 'Half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle.'
+feature_row:
+  - image_path: /assets/images/banners/xentica.png
+    alt: "xentica"
+    title: "XENTICA"
+    excerpt: "XENTICA is the new aeon goddess of digital universe. Besides, it is the core framework, allowing us to build new CA modifications and run them on different parallel hardware."
+    url: "https://github.com/a5kin/xentica/"
+    btn_class: "btn--primary"
+    btn_label: "Visit at GitHub"
+  - image_path: /assets/images/banners/moire.png
+    alt: "moire"
+    title: "MOIRE"
+    excerpt: "XENTICA is covered in MOIRE, Multi-Objective Interactive Runtime Environment. It is the official user interface, allowing us to run XENTICA models interactively."
+    url: "https://github.com/a5kin/moire/"
+    btn_class: "btn--primary"
+    btn_label: "Visit at GitHub"
+  - image_path: /assets/images/banners/vault.png
+    alt: "vault"
+    title: "VAULT"
+    excerpt: "There is a rumor about a public place called VAULT for keeping and sharing all XENTICA mods over the world. Unfortunately, it is now locked for everyone, including core developers."
+    btn_class: "btn--primary"
+    btn_label: "Visit at GitHub"
+github:
+  - excerpt: ''
+intro:
+  - excerpt: 'The development is split up into 3 sub-projects.'
 ---
-<!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
-<head>
 
-<!-- Meta Tags -->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+{% include feature_row id="intro" type="center" %}
 
-<title>Artipixoids! | Views of the artificial universe</title>   
-
-<meta name="description" content="Artipixoids! is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle" /> 
-
-<!-- Mobile Specifics -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="HandheldFriendly" content="true"/>
-<meta name="MobileOptimized" content="320"/>   
-
-<!-- Mobile Internet Explorer ClearType Technology -->
-<!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
-
-<!-- Bootstrap -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Main Style -->
-<link href="assets/css/main.css" rel="stylesheet">
-
-<!-- Supersized -->
-<link href="assets/css/supersized.css" rel="stylesheet">
-<link href="assets/css/supersized.shutter.css" rel="stylesheet">
-
-<!-- FancyBox -->
-<link href="assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-
-<!-- Font Icons -->
-<link href="assets/css/fonts.css" rel="stylesheet">
-
-<!-- Shortcodes -->
-<link href="assets/css/shortcodes.css" rel="stylesheet">
-
-<!-- Responsive -->
-<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="assets/css/responsive.css" rel="stylesheet">
-
-<!-- Google Font -->
-<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
-
-<!-- Fav Icon -->
-<link rel="shortcut icon" href="#">
-
-<link rel="apple-touch-icon" href="#">
-<link rel="apple-touch-icon" sizes="114x114" href="#">
-<link rel="apple-touch-icon" sizes="72x72" href="#">
-<link rel="apple-touch-icon" sizes="144x144" href="#">
-
-<!-- Modernizr -->
-<script src="assets/js/modernizr.js"></script>
-
-</head>
-
-
-<body>
-
-<!-- This section is for Splash Screen -->
-<div class="ole">
-<section id="jSplash">
-	<div id="circle"></div>
-</section>
-</div>
-<!-- End of Splash Screen -->
-
-<!-- Homepage Slider -->
-<div id="demo">	
-    <div class="overlay"></div>
-
-    <div class="slider-text">
-    	<div id="slidecaption"></div>
-    </div>   
-	
-	<div class="control-nav">
-        <a id="prevslide" class="load-item"><i class="font-icon-arrow-simple-left"></i></a>
-        <a id="nextslide" class="load-item"><i class="font-icon-arrow-simple-right"></i></a>
-        <ul id="slide-list"></ul>
-        
-        <a id="nextsection" href="#history"><i class="font-icon-arrow-simple-down"></i></a>
-    </div>
-</div>
-<!-- End Homepage Slider -->
-
-<!-- Header -->
-<header>
-    <div class="sticky-nav">
-    	<a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
-        
-        <div id="logo">
-        	<a id="goUp" href="#demo" title="Artipixoids! | Views of the artificial universe">Artipixoids!</a>
-        </div>
-        
-        <nav id="menu">
-            <ul id="menu-nav">
-                <li><a href="#history">Past</a></li>
-                <li><a href="#concept">Present</a></li>
-                <li><a href="#projects">Future</a></li>
-                <li><a href="#contacts">Feedback</a></li>
-            </ul>
-        </nav>
-        
-    </div>
-</header>
-<!-- End Header -->
-
-<div id="history" class="page">
-	<div class="container">
-    	<!-- Title Page -->
-        <div class="row">
-            <div class="span12">
-                <div class="title-page">
-                    <h2 class="title">The Past</h2>
-                    <h3 class="title-description"><b>Artipixoids!</b> is half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle. Started in the end of 2014, the engine has undergone several major modifications, and is still in development. Below, you can see an antology of legacy modifications.</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-           <div class="span9 centred">
-
-             <div class="tabbable">
-               <ul class="nav nav-tabs" id="myTab1">
-                 <li class="active"><a href="#1d" data-toggle="tab">1D</a></li>
-               </ul>
-               <div class="tab-content">
-                 <div class="tab-pane fade in active" id="1d">
-                     We have several 1-dimensional mods now, but only one of them has an artistic value. It's called <b>Elemafter</b>, and specialize in creating cool vertical patterns and power spectrum images for the subsequent sound generation.
-                     <hr class="condense" />
-                     <div class="video-container">
-                       <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320542328&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-                     </div>
-                 </div>
-               </div>
-             </div>
-
-             <hr/ >
-
-             <div class="tabbable">
-               <ul class="nav nav-tabs" id="myTab2">
-                 <li class="active"><a href="#2d" data-toggle="tab">2D</a></li>
-               </ul>
-               <div class="tab-content">
-                 <div class="tab-pane fade in active" id="2d">
-                     The project was thought as a Flatlander's paradise, but with the growth, it has been extended to 3D, and then down to 1D. Still, 2D is the main dimension we are working at. Below is the history of how 2D mods were developing.<hr class="condense" />
-                     <div class="accordion" id="toggleArea">
-                       {% for category in site.data.gallery %}
-                       <div class="accordion-group thumbs">
-                         <div class="accordion-heading">
-                           <span class="accordion-toggle active default-cursor" data-toggle="" data-parent="#">
-                               {{ category.category }}
-                               <!--<span class="font-icon-arrow-simple-down"></span>-->
-                           </span>
-                         </div>
-                         <div id="{{ category.folder }}" class="accordion-body">
-                           <div class="accordion-inner">
-                             <div class="row"><div class="span8">{{ category.description }}<hr class="condense" /></div>
-                             {% for image in category.images %}{% if image.hidden != 1 %}
-                               <div class="item-thumbs span2">
-                        	 <a class="hover-wrap fancybox" data-fancybox-group="{{ category.folder }}" title="{{ category.category }}: {{ image.title }}" href="{% if image.video %}{{ image.video }}{% else %}assets/img/gallery/{{ category.folder }}/{{ image.file }}{% endif %}">
-                              	   <!--<span class="overlay-img"></span>-->
-                                   <!--<span class="overlay-img-thumb font-icon-plus"></span>-->
-                                 </a>
-                                 <img src="assets/img/gallery/{{ category.folder }}/tm_{{ image.file }}" alt="{{ image.desc }}" />
-                               </div>
-                             {% endif %}{% endfor %}
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                       {% endfor %}
-                       <div class="accordion-group thumbs">
-                         <div class="accordion-heading pseudonize">
-                           <a class="accordion-toggle active" data-toggle="" data-parent="#" href="mod2c.html" target="_blank">
-                               More Mod 2C
-                               <span class="font-icon-arrow-light-round-right-circle"></span>
-                           </a>
-                         </div>
-                     </div>
-                 </div>
-               </div>
-             </div>
-
-             <hr/ >
-
-             <div class="tabbable">
-               <ul class="nav nav-tabs" id="myTab3">
-                 <li class="active"><a href="#3d" data-toggle="tab">3D</a></li>
-               </ul>
-               <div class="tab-content">
-                 <div class="tab-pane fade in active" id="3d">
-                     Yes, we already have a full-functioning 3D engine with the interactive environment allowing to explore your growing world in a manner of the good old <a target="_blank" href="https://en.wikipedia.org/wiki/Descent_%28video_game%29">Descent</a>. The mod is called <b>Mod 3</b> and is very similar to <b>Mod 2a</b>, just extended to 3 dimensions.
-                     <hr class="condense" />
-                     <div class="video-container">
-                       <iframe width="560" height="315" src="https://www.youtube.com/embed/te60Acyzxi8" frameborder="0" allowfullscreen></iframe>
-                     </div>
-                 </div>
-               </div>
-             </div>
-
-             <hr/ >
-
-           </div>
-        </div>
-    </div>
-</div>
-
-<div id="concept" class="page-alternate">
-  <div class="container">
-    <div class="row">
-        <div class="span12">
-            <div class="title-page">
-                <h2 class="title">The Present</h2>
-                <h3 class="title-description">At this moment, we have only <b>The Concept</b> PDF as the roadmap.<br />Feel free to peek into it, if you are interested in what is on our minds.<br /><br /><a target="blank" href="concept/artipixoids_concept.pdf" class="button button-large" style="font-size: 100px;" data-toggle="tooltip" data-placement="bottom" title="Download The Concept PDF"><i class="font-icon-file"></i><br /><i class="font-icon-download_2"></i></a></h3>
-
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div id="projects" class="page">
-<div class="container">
-    <div class="row">
-        <div class="span12">
-            <div class="title-page">
-                <h2 class="title">The Future</h2>
-                <h3 class="title-description">The project will be split into 3 main parts.</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-    	
-    	<div class="span4 profile">
-       	    <div class="image-wrap">
-                <img src="assets/img/banners/xentica.png" alt="XENTICA: Core Engine">
-            </div>
-            <h3 class="profile-name">XENTICA</h3>
-            <p class="profile-description">XENTICA is the new aeon goddess of digital universe. Besides, it will be the core framework, allowing us to build new CA modifications and run them on different parallel hardware.
-            	<ul class="social-icons">
-                	<li><a target="_blank" href="https://github.com/a5kin/xentica"><img src="assets/img/banners/github.png" /></a></li>
-                </ul>
-            </p>
-        </div>
-        
-    	<div class="span4 profile">
-       	    <div class="image-wrap">
-                <img src="assets/img/banners/moire.png" alt="MOIRE: User Interface">
-            </div>
-            <h3 class="profile-name">MOIRE</h3>
-            <p class="profile-description">XENTICA will be covered in MOIRE, which is Multi-Objective Interactive Runtime Environment. Generally it is intended to be the user interface, allowing us to run XENTICA models interactively.
-            	<ul class="social-icons">
-                	<li><a target="_blank" href="https://github.com/a5kin/moire"><img src="assets/img/banners/github.png" /></a></li>
-                </ul>
-            </p>
-        </div>
-
-    	<div class="span4 profile">
-            <div class="image-wrap">
-                <img src="assets/img/banners/vault.png" alt="VAULT: Mods Collection">
-            </div>
-            <h3 class="profile-name">VAULT</h3>
-            <p class="profile-description">It would also be nice to have a public place for keeping and sharing all XENTICA mods over the world. VAULT is a good name for it. But honestly, we are not yet sure about details.
-            	<ul class="social-icons">
-                	<li><a target="_blank" href="https://github.com/a5kin/xentica-vault"><img src="assets/img/banners/github.png" /></a></li>
-                </ul>
-            </p>
-        </div>
-        <div class="span12">
-          <div class="info-block">
-            <div class="info-text">
-              <h4><b>NOTE:</b> Backgrounds for projects' banners above are generated by <a target="_blank" href="mod2c.html">Mod 2c</a>.<br />You may find them at the gallery dedicated specially to this mod.</h4>
-{% comment %}
-              <a target="blank" href="mod2c.html" class="button button-large" style="font-size: 32px;" data-toggle="tooltip" data-placement="bottom" title="Download The Concept PDF"><i class="font-icon-picture"></i><br /><i class="font-icon-eye"></i></a>
-{% endcomment %}
-            </div>
-          </div>
-        </div>
-        
-    </div>
-</div>
-</div>
-
-<div id="contacts" class="page-alternate">
-  <div class="container">
-    <div class="row">
-        <div class="span12">
-            <div class="title-page">
-                <h2 class="title">Feedback</h2>
-                <h3 class="title-description">If you have something to say regarding the project,<br />just <a target="_blank" href="https://github.com/a5kin/artipixoids/issues/new">open an issue</a> at GitHub.<br />For quick impressions, please comment below.<br /><br /></h3>
-<div class="row">
-  <div class="span2"></div>
-  <div class="span8" id="disqus_thread"></div>
-  <div class="span2"></div>
-  <script>
-    var disqus_config = function () {
-        this.page.url = 'http://artipixoids.a5kin.net/';
-        this.page.identifier = 'home';
-    };
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        
-        s.src = 'https://artipixoids.disqus.com/embed.js';
-        
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</div>
-
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-
-<footer>
-	<p class="credits">&copy;2017 Andrey Zamaraev (a5kin).<br /><a href="http://themes.alessioatzeni.com/html/brushed/" title="Brushed | Responsive One Page Template">Brushed Template</a> by <a href="http://www.alessioatzeni.com/" title="Alessio Atzeni | Web Designer &amp; Front-end Developer">Alessio Atzeni</a></p>
-</footer>
-
-<a id="back-to-top" href="#">
-	<i class="font-icon-arrow-simple-up"></i>
-</a>
-
-<script src="assets/js/jquery.min.js"></script> <!-- jQuery Core -->
-<script src="assets/js/bootstrap.min.js"></script> <!-- Bootstrap -->
-<script src="assets/js/supersized.3.2.7.min.js"></script> <!-- Slider -->
-<script src="assets/js/waypoints.js"></script> <!-- WayPoints -->
-<script src="assets/js/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
-<script src="assets/js/jquery.isotope.js"></script> <!-- Isotope Filter -->
-<script src="assets/js/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
-<script src="assets/js/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
-<script src="assets/js/jquery.tweet.js"></script> <!-- Tweet -->
-<script src="assets/js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
-<script src="assets/js/main.js"></script> <!-- Default JS -->
-
-</body>
-</html>
+{% include feature_row %}

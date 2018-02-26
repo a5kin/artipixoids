@@ -6,3 +6,4 @@
 *.log
 *.toc
 docs/_site/*
+.sass-cache

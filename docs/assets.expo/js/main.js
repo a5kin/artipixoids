@@ -77,11 +77,11 @@ BRUSHED.slider = function(){
 		thumb_links				:	0,			// Individual thumb links for each slide
 		thumbnail_navigation    :   0,			// Thumbnail navigation
 		slides 					:  	[			// Slideshow Images
-											{image : 'assets/img/slider-images/splash-10.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
-											{image : 'assets/img/slider-images/splash-11.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
-											{image : 'assets/img/slider-images/splash-01.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
-											{image : 'assets/img/slider-images/splash-06.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
-											{image : 'assets/img/slider-images/splash-08.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
+											{image : 'assets.expo/img/slider-images/splash-10.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
+											{image : 'assets.expo/img/slider-images/splash-11.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
+											{image : 'assets.expo/img/slider-images/splash-01.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
+											{image : 'assets.expo/img/slider-images/splash-06.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
+											{image : 'assets.expo/img/slider-images/splash-08.png', title : '<div class="slide-content">Artipixoids!</div>', thumb : '', url : ''},
 									],
 									
 		// Theme Options			   
