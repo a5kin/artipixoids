@@ -7,7 +7,7 @@ minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "
 locale                   : "en-US"
 title                    : "Artipixoids!"
 title_separator          : "-"
-name                     : &name "Andrey Zamaraev" # &name is a YAML anchor which can be *referenced later
+name                     : &name "a5kin" # &name is a YAML anchor which can be *referenced later
 description              : &description "Half generative art, half artificial life project with a focus on genetic cellular automata obeying energy conservation principle."
 url                      : http://artipixoids.a5kin.net 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -60,9 +60,9 @@ algolia:
 # Site Author
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar           : ""
+  avatar           : "https://s.gravatar.com/avatar/7700aedf0ac50a4c692ac2b22ea80679?s=300"
   bio              : "Intergalactic power grid on the canvas of the Universe."
-  location         : "Russia"
+  location         : "Laniakea"
   email            :
   uri              : "http://a5kin.net"
   home             : "https://a5kin.net"
@@ -90,4 +90,23 @@ author:
   xing             :
   youtube          :
 
-
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
