@@ -32,6 +32,16 @@ There are also a number of bugs and optimization issues we are going to
 fix in 0.1.x releases. Then, we will focus on version 0.2.0, the main
 goal of which is to run [Evolife][9] with **Xentica/Moire**.
 
+Current performance results for Game Of Life, in gigacells per second:
+
+| GPU | Performance |
+| --- | --- |
+| GTX 860M | 1.05 Gcells/s |
+| GTX TITAN | 3.27 Gcells/s |
+
+Special thanks to [@nikkonofune][10] for testing and help with
+installation instructions.
+
 *Stay connected,<br />
 Xentica/Moire Team*
 
@@ -44,3 +54,4 @@ Xentica/Moire Team*
 [7]: http://xentica.readthedocs.io/en/latest/manual/installation.html
 [8]: https://github.com/a5kin/xentica/issues/new
 [9]: https://github.com/a5kin/evolife
+[10]: https://github.com/nikkonofune
